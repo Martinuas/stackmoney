@@ -274,10 +274,8 @@ function renderGoal(){
   $("gtg").className="tg "+(done?"pos":"");
 }
 function renderNW(){
-  const A=[...S.acc.bank,...S.acc.save].filter(r=>+r.a>0),D=S.acc.debt.filter(r=>+r.a>0),at=sum(A),dt=sum(D),net=at-dt,mx=Math.max(at,dt,1);
-  const bar=(l,p)=>l.map((r,i)=>`<span class="seg" style="width:${r.a/mx*100}%;background:${p[i%6]}" title="${esc(r.n)}: ${fmt(+r.a)}"></span>`).join("");
-  const lg=(l,p)=>l.map((r,i)=>`<span class="lg"><i style="background:${p[i%6]}"></i>${esc(r.n||"Unnamed")} ${fmt(+r.a)}</span>`).join("");
-  $("nwc").innerHTML=`<div class="nw"><div><small>Net worth</small><b class="big ${net<0?"neg":"pos"}">${fmt(net)}</b></div><div class="bars"><div class="lab">Assets ${fmt(at)}</div><div class="bar2">${bar(A,PA)}</div><div class="leg">${lg(A,PA)}</div><div class="lab">Debt ${fmt(-dt)}</div><div class="bar2">${bar(D,PD)}</div><div class="leg">${lg(D,PD)}</div></div></div>`;
+  const net=sum([...S.acc.bank,...S.acc.save])-sum(S.acc.debt);
+  $("nwc").innerHTML=`<div class="nw"><div><small>Net worth</small><b class="big ${net<0?"neg":"pos"}">${fmt(net)}</b></div></div>`;
 }
 function shade(hex,k){const n=parseInt(hex.slice(1),16);return "#"+[n>>16,(n>>8)&255,n&255].map(v=>Math.round(v*k).toString(16).padStart(2,"0")).join("")}
 function pieSvg(all,T){
