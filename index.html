@@ -43,7 +43,7 @@ button.x{background:transparent;color:var(--mu);border:0;padding:2px 6px}
 .bar2{display:flex;height:18px;border-radius:9px;overflow:hidden;background:var(--inp);border:1px solid var(--bd)}
 .seg{display:block;height:100%}
 .leg{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;color:var(--mu);margin-top:4px}
-.lg i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:4px}
+.lg i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-inline-end:4px}
 .flow svg{width:100%;height:auto;display:block}
 .acc{margin:12px 0}
 .acc .card h2{margin:-14px -14px 10px;padding:8px 14px;border-radius:12px 12px 0 0;color:#fff;text-align:center}
@@ -73,8 +73,8 @@ body[data-tab=home] #tabs [data-tab=home],body[data-tab=add] #tabs [data-tab=add
 body[data-tab=add] #nwc,body[data-tab=add] .flow,body[data-tab=add] #catc,body[data-tab=acc] #nwc,body[data-tab=acc] .flow,body[data-tab=acc] #catc,body[data-tab=acc] #logc,body[data-tab=notes] #nwc,body[data-tab=notes] .flow,body[data-tab=notes] #catc,body[data-tab=notes] #logc{display:none}
 body[data-tab=add] #addc,body[data-tab=acc] .acc,body[data-tab=notes] #nv,body[data-tab=notes] #bkc{display:block}
 .acc .card h2,#logc h2{cursor:pointer;position:relative}
-.acc .card h2::after,#logc h2::after{content:"\25be";position:absolute;right:14px}
-#logc h2::after{right:0}
+.acc .card h2::after,#logc h2::after{content:"\25be";position:absolute;inset-inline-end:14px}
+#logc h2::after{inset-inline-end:0}
 .card.cl h2::after{content:"\25b8"!important}
 .card.cl>:not(h2){display:none}
 #logc table{min-width:0}
@@ -87,11 +87,11 @@ body[data-tab=add] #addc,body[data-tab=acc] .acc,body[data-tab=notes] #nv,body[d
 @media(prefers-reduced-motion:reduce){.fl{animation:none}}
 .cb{display:grid;grid-template-columns:110px 1fr 90px;gap:8px;align-items:center;margin-bottom:6px}
 .cb i{display:block;height:10px;border-radius:6px;background:var(--ac)}
-.cb span:last-child{text-align:right}
+.cb span:last-child{text-align:end}
 .add{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;margin-bottom:10px}
 .tw{overflow-x:auto}
 table{border-collapse:collapse;width:100%;min-width:560px}
-th,td{text-align:left;padding:6px;border-bottom:1px solid var(--bd);font-size:14px}
+th,td{text-align:start;padding:6px;border-bottom:1px solid var(--bd);font-size:14px}
 th{color:var(--mu);font-weight:500}
 .note{position:fixed;z-index:30;background:#fde68a;color:#1b1f24;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.28);min-width:150px;min-height:44px;display:flex;flex-direction:column;resize:both;overflow:hidden}
 .nh{cursor:grab;padding:4px 6px 4px 10px;display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.13);touch-action:none;user-select:none;font-size:12px;font-weight:600}
@@ -103,8 +103,8 @@ th{color:var(--mu);font-weight:500}
 .cm{margin-top:10px;border-top:1px solid var(--bd);padding-top:8px}
 .cm summary{cursor:pointer;color:var(--ac);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
-.chip{display:inline-flex;align-items:center;gap:2px;background:var(--inp);border:1px solid var(--bd);border-radius:999px;padding:2px 4px 2px 10px;font-size:13px}
-.chip.lock{padding-right:10px;color:var(--mu)}
+.chip{display:inline-flex;align-items:center;gap:2px;background:var(--inp);border:1px solid var(--bd);border-radius:999px;padding-block:2px;padding-inline:10px 4px;font-size:13px}
+.chip.lock{padding-inline-end:10px;color:var(--mu)}
 .chip button.x{padding:0 6px;font-size:13px}
 .filt{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:6px;margin-bottom:10px}
 .filt input,.filt select,.filt button{width:100%;min-width:0}
@@ -120,12 +120,12 @@ th{color:var(--mu);font-weight:500}
 .lgr{display:grid;grid-template-columns:10px 1fr auto 36px;gap:6px;align-items:center;margin-bottom:3px}
 .lgr i{width:10px;height:10px;border-radius:3px}
 .lgr .ln{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.lgr .pc{color:var(--mu);text-align:right}
+.lgr .pc{color:var(--mu);text-align:end}
 .ms{position:relative}
 .ms summary{list-style:none;cursor:pointer;background:var(--inp);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;display:flex;justify-content:space-between;align-items:center;gap:6px}
 .ms summary::-webkit-details-marker{display:none}
 .ms summary::after{content:"▾";color:var(--mu)}
-.msp{position:absolute;z-index:25;left:0;min-width:100%;width:max-content;max-width:280px;margin-top:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:8px;max-height:300px;overflow:auto}
+.msp{position:absolute;z-index:25;inset-inline-start:0;min-width:100%;width:max-content;max-width:280px;margin-top:4px;background:var(--card);border:1px solid var(--bd);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:8px;max-height:300px;overflow:auto}
 .msa{display:flex;gap:6px;margin-bottom:6px}.msa button{flex:1;width:auto;padding:4px 6px;font-size:13px}
 .msi{display:flex;align-items:center;gap:8px;padding:5px 2px;cursor:pointer;font-size:14px}
 .msi input{width:auto;flex:none}
@@ -146,94 +146,286 @@ th{color:var(--mu);font-weight:500}
 .gst .tg{margin-top:6px;font-weight:600;font-size:14px}
 @media(prefers-reduced-motion:reduce){.tank i.f{transition:none}}
 @media(max-width:820px){body:not([data-tab=home]) #goalc{display:none}}
+.nwi{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 36px}
+.sis{position:relative;width:240px;height:170px;flex:none}
+.sis svg{width:100%;height:100%;display:block;overflow:visible}
+.sis .hl{fill:var(--bd)}.sis .hl2{fill:none;stroke:var(--mu);stroke-width:2;stroke-linecap:round}
+.sis .flag path:first-child{stroke:var(--mu);stroke-width:2;fill:none}.sis .flag path:last-child{fill:#22c55e}
+.sis .man{fill:none;stroke:var(--tx);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.sis .head{fill:var(--tx)}
+.sis .rock{fill:#8b95a1;stroke:#5b6572;stroke-width:2;stroke-linejoin:round}
+.bub{position:absolute;left:0;top:2px;background:var(--card);color:var(--tx);border:2px solid var(--bd);border-radius:14px;padding:5px 12px;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 3px 10px rgba(0,0,0,.14);z-index:1}
+.bub::after{content:"";position:absolute;left:46px;bottom:-9px;width:12px;height:12px;background:var(--card);border-right:2px solid;border-bottom:2px solid;border-color:inherit;transform:rotate(45deg)}
+.bub.hi,.bub.ok{border-color:var(--gr)}.bub.lo{border-color:var(--rd)}
+.nwt{text-align:center}.nwt small{display:block;color:var(--mu);font-size:15px;margin-bottom:2px}
+.nwv{display:block;font-size:clamp(40px,6vw,60px);line-height:1.05;font-weight:700}
+.tabadd{display:block;width:20px;height:19.8px;margin:0}
+.sis{direction:ltr}.bub{unicode-bidi:plaintext}input.money{direction:ltr}#lang{flex:none;max-width:130px}
+.rx{flex:1 1 170px;max-width:210px;margin:0 auto;direction:ltr}.rx[hidden]{display:none}
+.rxb{display:block;text-align:center;margin:0 auto 4px;width:max-content;max-width:100%;background:var(--card);border:2px solid var(--ac);border-radius:14px;padding:4px 10px;font-weight:700;font-size:13px;position:relative;unicode-bidi:plaintext}
+.rxb::after{content:"";position:absolute;left:50%;bottom:-8px;width:10px;height:10px;margin-left:-5px;background:var(--card);border-right:2px solid var(--ac);border-bottom:2px solid var(--ac);transform:rotate(45deg)}
+.rx svg{width:100%;height:auto;display:block;overflow:visible}
+.rx .rf{fill:none;stroke:var(--tx);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.rx .rh{fill:var(--tx)}.rx .gd{stroke:var(--bd);stroke-width:2}
+html[dir=rtl] .arrows svg{transform:scaleX(-1)}
+@media(max-width:820px){
+body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
+}
 </style></head>
 <body data-tab="home">
 
 
 <div class="wrap">
 <div class="bar-top">
-  <div><h1>💰 Stack Money</h1><div class="muted">Your numbers stay in this browser. Nothing is uploaded.</div></div>
-  <div class="row" style="margin:0"><input type="month" id="month"><button id="add-note" class="ghost">+ Sticky note</button></div>
+  <div><h1>💰 Stack Money</h1><div class="muted" data-t="tagline">Your numbers stay in this browser. Nothing is uploaded.</div></div>
+  <div class="row" style="margin:0"><input type="month" id="month"><select id="lang" data-aria="langL" aria-label="Language"></select><button id="add-note" class="ghost" data-t="sticky">+ Sticky note</button></div>
 </div>
 
-<div class="card" id="nwc"></div>
+<div class="card" id="nwc">
+  <div class="nwi">
+    <div class="sis" id="sis">
+      <div class="bub zero" id="nwb">Let's get stacking!</div>
+      <svg viewBox="0 0 240 170" aria-hidden="true" focusable="false">
+        <path class="hl" d="M0,150 L240,70 L240,170 L0,170Z"/>
+        <path class="hl2" d="M0,150 L240,70"/>
+        <g class="flag"><path d="M214,79 V50" /><path d="M214,50 L233,57 L214,64Z"/></g>
+        <g transform="translate(30,140) rotate(-18.43)">
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0 0;7 0;0 0" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+            <path class="man" d="M40,-32 L24,0"><animateTransform attributeName="transform" type="rotate" values="-16 40 -32;16 40 -32;-16 40 -32" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".45 0 .55 1;.45 0 .55 1"/></path>
+            <path class="man" d="M40,-32 L50,0"><animateTransform attributeName="transform" type="rotate" values="16 40 -32;-16 40 -32;16 40 -32" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".45 0 .55 1;.45 0 .55 1"/></path>
+            <path class="man" d="M40,-32 L57,-62"/>
+            <path class="man" d="M57,-60 L87,-41 M57,-60 L86,-31"/>
+            <circle class="head" cx="62" cy="-72" r="8"/>
+            <polygon class="rock" points="139.0,-27.0 133.7,-14.5 126.0,-2.8 112.0,-1.0 97.5,-1.9 90.3,-14.5 85.0,-27.0 87.8,-41.0 100.0,-47.8 112.0,-54.0 126.5,-52.1 134.5,-40.0"><animateTransform attributeName="transform" type="rotate" values="0 112 -27;22 112 -27;0 112 -27" dur="2.6s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".45 0 .55 1;.45 0 .55 1"/></polygon>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="nwt"><small data-t="netWorth">Net worth</small><b class="nwv pos" id="nwv">$0.00</b></div>
+  </div>
+</div>
 
 <div class="acc">
-  <div class="card bankbox"><h2>🏦 Bank accounts</h2><div id="bank"></div><button class="ghost" data-add="bank">+ Add</button><div class="tot"><span>Total</span><span id="t-bank"></span></div></div>
+  <div class="card bankbox"><h2 data-t="bank">🏦 Bank accounts</h2><div id="bank"></div><button class="ghost" data-add="bank" data-t="add">+ Add</button><div class="tot"><span data-t="total">Total</span><span id="t-bank"></span></div></div>
   <div class="arrows" aria-hidden="true">
     <svg viewBox="0 0 200 62"><path d="M190,8 H70 Q50,8 50,28 V46" fill="none" stroke="#ef4444" stroke-width="12"/><polygon points="34,44 66,44 50,60" fill="#ef4444"/></svg>
     <svg viewBox="0 0 200 62"><path d="M10,8 H130 Q150,8 150,28 V46" fill="none" stroke="#84cc16" stroke-width="12"/><polygon points="134,44 166,44 150,60" fill="#84cc16"/></svg>
   </div>
   <div class="two">
-    <div class="card debtbox"><h2>🔻 Accounts (−) Debt</h2><div id="debt"></div><button class="ghost" data-add="debt">+ Add</button><div class="tot"><span>Total debt</span><span id="t-debt" class="neg"></span></div></div>
-    <div class="card savbox"><h2>🔺 Accounts (+) Savings &amp; investing</h2><div id="save"></div><button class="ghost" data-add="save">+ Add</button><div class="tot"><span>Total savings</span><span id="t-save" class="pos"></span></div></div>
+    <div class="card debtbox"><h2 data-t="debtH">🔻 Accounts (−) Debt</h2><div id="debt"></div><button class="ghost" data-add="debt" data-t="add">+ Add</button><div class="tot"><span data-t="totalDebt">Total debt</span><span id="t-debt" class="neg"></span></div></div>
+    <div class="card savbox"><h2 data-t="saveH">🔺 Accounts (+) Savings &amp; investing</h2><div id="save"></div><button class="ghost" data-add="save" data-t="add">+ Add</button><div class="tot"><span data-t="totalSav">Total savings</span><span id="t-save" class="pos"></span></div></div>
   </div>
 </div>
 
 <div class="main">
   <div class="col">
-    <div class="card flow"><h2>🧭 Net Worth Breakdown</h2><div id="flow"></div><div class="muted">Each slice is one account’s share of your total balances. Assets minus debt equals your net worth, shown on the left.</div></div>
+    <div class="card flow"><h2 data-t="flowH">🧭 Net Worth Breakdown</h2><div id="flow"></div><div class="muted" data-t="pieCap">Each slice is one account’s share of your total balances. Assets minus debt equals your net worth.</div></div>
     <div class="card" id="goalc"><h2 id="goalh">🎯 Goal</h2>
       <div class="gl">
         <div class="gf">
-          <input id="goal-t" maxlength="60" placeholder="What are you saving for?" aria-label="Goal name">
-          <label class="gfl">Goal amount<input id="goal-g" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="$0.00"></label>
-          <label class="gfl">Saved so far<input id="goal-b" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="$0.00"></label>
+          <input id="goal-t" maxlength="60" data-ph="goalPh" data-aria="goalNameAria" placeholder="What are you saving for?" aria-label="Goal name">
+          <label class="gfl"><span data-t="goalAmt">Goal amount</span><input id="goal-g" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="$0.00"></label>
+          <label class="gfl"><span data-t="goalSaved">Saved so far</span><input id="goal-b" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="$0.00"></label>
         </div>
+        <div class="rx" id="rx" hidden><div class="rxb" id="rxb"></div><div id="rxs" aria-hidden="true"></div></div>
         <div class="gv">
           <div class="tankw"><span id="gtop">$0</span><span>$0</span></div>
-          <div class="tank" id="gtank" role="progressbar" aria-label="Goal progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i class="f" id="gfill"></i><span class="tk" style="bottom:25%"></span><span class="tk" style="bottom:50%"></span><span class="tk" style="bottom:75%"></span></div>
+          <div class="tank" id="gtank" role="progressbar" data-aria="goalProg" aria-label="Goal progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i class="f" id="gfill"></i><span class="tk" style="bottom:25%"></span><span class="tk" style="bottom:50%"></span><span class="tk" style="bottom:75%"></span></div>
           <div class="gst"><div class="pct" id="gpct">–</div><div class="of" id="gof"></div><div class="tg" id="gtg"></div></div>
         </div>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card" id="catc"><h2>Transaction Breakdown</h2><div class="filt"><select id="bc-acct" aria-label="Filter by account"></select><details class="ms" id="bc-ms"><summary id="bc-sum">All categories</summary><div class="msp"><div class="msa"><button class="ghost" id="bc-all" type="button">Select all</button><button class="ghost" id="bc-none" type="button">Clear</button></div><div id="bc-list"></div></div></details></div><div id="cats"></div><div class="tot" style="margin-bottom:0"><span id="rem-l">$$$ Remaining</span><span id="rem"></span></div></div>
-    <div class="card" id="addc"><h2>Add a transaction</h2>
-      <div class="add"><input id="f-v" placeholder="Vendor"><input id="f-a" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="Amount"><select id="f-acct"></select><select id="f-cat"></select><input id="f-d" type="date"><input id="f-n" placeholder="Notes"></div>
-      <button id="add-tx">Add</button>
-      <p class="muted">Enter amounts as positive numbers. “Income” adds money, everything else is spending.</p>
-      <details class="cm" id="cm"><summary>Edit categories</summary>
+    <div class="card" id="catc"><h2 data-t="tbH">Transaction Breakdown</h2><div class="filt"><select id="bc-acct" data-aria="fAcc" aria-label="Filter by account"></select><details class="ms" id="bc-ms"><summary id="bc-sum">All categories</summary><div class="msp"><div class="msa"><button class="ghost" id="bc-all" type="button" data-t="selAll">Select all</button><button class="ghost" id="bc-none" type="button" data-t="clear">Clear</button></div><div id="bc-list"></div></div></details></div><div id="cats"></div><div class="tot" style="margin-bottom:0"><span id="rem-l">$$$ Remaining</span><span id="rem"></span></div></div>
+    <div class="card" id="addc"><h2 data-t="addTxH">Add a transaction</h2>
+      <div class="add"><input id="f-v" data-ph="phVendor" placeholder="Vendor"><input id="f-a" class="money" type="text" inputmode="decimal" autocomplete="off" data-ph="phAmount" placeholder="Amount"><select id="f-acct"></select><select id="f-cat"></select><input id="f-d" type="date"><input id="f-n" data-ph="notes" placeholder="Notes"></div>
+      <button id="add-tx" data-t="addBtn">Add</button>
+      <p class="muted" data-t="txHint">Enter amounts as positive numbers. “Income” adds money, everything else is spending.</p>
+      <details class="cm" id="cm"><summary data-t="editCats">Edit categories</summary>
         <div class="chips" id="chips"></div>
-        <div class="row"><input id="cm-n" maxlength="30" placeholder="New category name"><button id="cm-add" style="flex:none">Add</button></div>
+        <div class="row"><input id="cm-n" maxlength="30" data-ph="newCat" placeholder="New category name"><button id="cm-add" style="flex:none" data-t="addBtn">Add</button></div>
         <div id="cm-err" role="alert"></div>
-        <p class="muted" style="margin:0">“Income” is built in and can’t be removed. Deleting a category moves its transactions to “Misc” (or “Uncategorized” if you delete Misc).</p>
+        <p class="muted" style="margin:0" data-t="catNote">“Income” is built in and can’t be removed. Deleting a category moves its transactions to “Misc” (or “Uncategorized” if you delete Misc).</p>
       </details></div>
   </div>
 </div>
 
-<div class="card" id="logc"><h2>Transactions</h2>
-  <div class="filt"><input id="lg-q" type="search" placeholder="Search vendor or notes" aria-label="Search transactions"><select id="lg-acct" aria-label="Filter by account"></select><select id="lg-cat" aria-label="Filter by category"></select><select id="lg-scope" aria-label="Month range"><option value="month">Selected month</option><option value="all">All months</option></select><button id="lg-clear" class="ghost">Clear filters</button></div>
+<div class="card" id="logc"><h2 data-t="txH">Transactions</h2>
+  <div class="filt"><input id="lg-q" type="search" data-ph="search" data-aria="sTx" placeholder="Search vendor or notes" aria-label="Search transactions"><select id="lg-acct" data-aria="fAcc" aria-label="Filter by account"></select><select id="lg-cat" data-aria="fCat" aria-label="Filter by category"></select><select id="lg-scope" data-aria="mRange" aria-label="Month range"><option value="month" data-t="selMonth">Selected month</option><option value="all" data-t="allMonths">All months</option></select><button id="lg-clear" class="ghost" data-t="clearF">Clear filters</button></div>
   <div class="muted" id="lg-count" style="margin-bottom:6px"></div>
-  <div class="tw"><table><thead><tr><th>Date</th><th>Vendor</th><th>Amount</th><th>Account</th><th>Category</th><th>Notes</th><th></th></tr></thead><tbody id="log"></tbody></table></div></div>
+  <div class="tw"><table><thead><tr><th data-t="thDate">Date</th><th data-t="phVendor">Vendor</th><th data-t="phAmount">Amount</th><th data-t="phAccount">Account</th><th data-t="thCat">Category</th><th data-t="notes">Notes</th><th></th></tr></thead><tbody id="log"></tbody></table></div></div>
 
-<div class="card" id="nv"><h2>📝 Notes</h2><div id="nvl"></div><button id="nv-add">+ Add note</button></div>
+<div class="card" id="nv"><h2 data-t="notesH">📝 Notes</h2><div id="nvl"></div><button id="nv-add" data-t="addNote">+ Add note</button></div>
 
-<details class="card" id="bkc" style="margin-top:12px"><summary>Backup &amp; restore</summary>
-  <p class="muted">Copy this text somewhere safe. To restore, paste it back and press Restore.</p>
+<details class="card" id="bkc" style="margin-top:12px"><summary data-t="backupH">Backup &amp; restore</summary>
+  <p class="muted" data-t="backupHelp">Copy this text somewhere safe. To restore, paste it back and press Restore.</p>
   <textarea id="bk"></textarea>
-  <div class="row"><button id="bk-copy">Copy backup</button><button id="bk-show" class="ghost">Show backup</button><button id="bk-load">Restore</button><button id="reset" class="ghost">Reset everything</button></div>
+  <div class="row"><button id="bk-copy" data-t="copyB">Copy backup</button><button id="bk-show" class="ghost" data-t="showB">Show backup</button><button id="bk-load" data-t="restoreB">Restore</button><button id="reset" class="ghost" data-t="resetB">Reset everything</button></div>
 </details>
-<p class="muted" style="text-align:center;margin:16px 0 8px">🔒 Private by design: everything you enter is stored only in this browser on this device. It is never sent to any server. Clearing your browser data will erase it, so use “Copy backup” now and then and keep the text somewhere safe. Don’t use a shared or public computer. Never enter account numbers or passwords here; balances and amounts are all this tool needs.</p>
+<p class="muted" style="text-align:center;margin:16px 0 8px" data-t="privacy">🔒 Private by design: everything you enter is stored only in this browser on this device. It is never sent to any server. Clearing your browser data will erase it, so use “Copy backup” now and then and keep the text somewhere safe. Don’t use a shared or public computer. Never enter account numbers or passwords here; balances and amounts are all this tool needs.</p>
 </div>
-<nav id="tabs"><button data-tab="home">🏠<span>Home</span></button><button data-tab="add">➕<span>Add</span></button><button data-tab="acc">🏦<span>Accounts</span></button><button data-tab="notes">📝<span>Notes</span></button></nav>
+<nav id="tabs"><button data-tab="home">🏠<span data-t="tabHome">Home</span></button><button data-tab="add"><svg class="tabadd" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span data-t="tabAdd">Add</span></button><button data-tab="acc">🏦<span data-t="tabAcc">Accounts</span></button><button data-tab="notes">📝<span data-t="tabNotes">Notes</span></button></nav>
 <div id="notes"></div>
 
 <script>
+/* ---------- languages ---------- */
+const LANGS={en:{n:"English",h:"en",d:"ltr"},es:{n:"Español",h:"es",d:"ltr"},fr:{n:"Français",h:"fr",d:"ltr"},pt:{n:"Português",h:"pt",d:"ltr"},zh:{n:"中文(简体)",h:"zh-CN",d:"ltr"},vi:{n:"Tiếng Việt",h:"vi",d:"ltr"},ar:{n:"العربية",h:"ar",d:"rtl"}};
+const LC=Object.keys(LANGS);
+let LANG="en";
+try{const sv=localStorage.getItem("stackmoney.lang");if(LC.includes(sv))LANG=sv;else{const nl=(navigator.language||"en").toLowerCase().slice(0,2);if(LC.includes(nl))LANG=nl}}catch(e){}
+/* order: en, es, fr, pt, zh, vi, ar */
+const T={
+rxPlan:["what's the plan?","¿cuál es el plan?","c'est quoi le plan ?","qual é o plano?","计划是什么?","kế hoạch là gì?","ما الخطة؟"],
+rxGo:["YOU CAN DO IT!!","¡TÚ PUEDES!!","VOUS POUVEZ Y ARRIVER !!","VOCÊ CONSEGUE!!","你一定可以!!","BẠN LÀM ĐƯỢC!!","أنت قادر على ذلك!!"],
+rxClose:["so close yet so FAR!","¡tan cerca y tan LEJOS!","si proche et pourtant si LOIN !","tão perto e tão LONGE!","近在咫尺,却又那么远!","gần thế mà lại xa QUÁ!","قريب جدًا لكن بعيد جدًا!"],
+rxDone:["YOU DID IT!","¡LO LOGRASTE!","VOUS L'AVEZ FAIT !","VOCÊ CONSEGUIU!","你做到了!","BẠN ĐÃ LÀM ĐƯỢC!","لقد فعلتها!"],
+langL:["Language","Idioma","Langue","Idioma","语言","Ngôn ngữ","اللغة"],
+tagline:["Your numbers stay in this browser. Nothing is uploaded.","Tus números se quedan en este navegador. No se sube nada.","Vos chiffres restent dans ce navigateur. Rien n'est envoyé.","Seus números ficam neste navegador. Nada é enviado.","你的数据只保存在此浏览器中,不会上传。","Số liệu của bạn chỉ nằm trong trình duyệt này. Không có gì được tải lên.","تبقى أرقامك في هذا المتصفح. لا يتم رفع أي شيء."],
+sticky:["+ Sticky note","+ Nota adhesiva","+ Pense-bête","+ Nota adesiva","+ 便签","+ Ghi chú dán","+ ملاحظة لاصقة"],
+netWorth:["Net worth","Patrimonio neto","Valeur nette","Patrimônio líquido","净资产","Tài sản ròng","صافي الثروة"],
+bHi:["Hell yeah!","¡Así se hace!","Trop bien !","Isso aí!","太赞了!","Quá đỉnh!","رائع جدًا!"],
+bOk:["Fantastic!","¡Fantástico!","Fantastique !","Fantástico!","很棒!","Tuyệt vời!","رائع!"],
+bLo:["We got some work to do 💯","Tenemos trabajo por hacer 💯","On a du pain sur la planche 💯","Temos trabalho a fazer 💯","我们还得加把劲 💯","Chúng ta còn nhiều việc phải làm 💯","أمامنا عمل لننجزه 💯"],
+bZero:["Let's get stacking!","¡A ahorrar!","C'est parti pour épargner !","Vamos juntar dinheiro!","开始攒钱吧!","Bắt đầu tích lũy thôi!","هيا نبدأ الادخار!"],
+bank:["🏦 Bank accounts","🏦 Cuentas bancarias","🏦 Comptes bancaires","🏦 Contas bancárias","🏦 银行账户","🏦 Tài khoản ngân hàng","🏦 الحسابات المصرفية"],
+debtH:["🔻 Accounts (−) Debt","🔻 Cuentas (−) Deudas","🔻 Comptes (−) Dettes","🔻 Contas (−) Dívidas","🔻 账户(−)债务","🔻 Tài khoản (−) Nợ","🔻 حسابات (−) الديون"],
+saveH:["🔺 Accounts (+) Savings & investing","🔺 Cuentas (+) Ahorros e inversiones","🔺 Comptes (+) Épargne et investissements","🔺 Contas (+) Poupança e investimentos","🔺 账户(+)储蓄与投资","🔺 Tài khoản (+) Tiết kiệm & đầu tư","🔺 حسابات (+) المدخرات والاستثمارات"],
+phAccount:["Account","Cuenta","Compte","Conta","账户","Tài khoản","الحساب"],
+phBalance:["Balance","Saldo","Solde","Saldo","余额","Số dư","الرصيد"],
+phNext:["Next check","Próximo pago","Prochaine paie","Próximo pagamento","下次到账","Lần nhận lương tới","الراتب القادم"],
+phVendor:["Vendor","Comercio","Marchand","Estabelecimento","商家","Cửa hàng","الجهة"],
+phOwed:["Owed","Adeudo","Dû","Devido","欠款","Còn nợ","المستحق"],
+phMin:["Min","Mín.","Min.","Mín.","最低还款","Tối thiểu","الحد الأدنى"],
+phDue:["Due","Vence","Échéance","Vence","到期日","Hạn","الاستحقاق"],
+phAmount:["Amount","Monto","Montant","Valor","金额","Số tiền","المبلغ"],
+phDesc:["Description","Descripción","Description","Descrição","说明","Mô tả","الوصف"],
+add:["+ Add","+ Añadir","+ Ajouter","+ Adicionar","+ 添加","+ Thêm","+ إضافة"],
+total:["Total","Total","Total","Total","合计","Tổng","الإجمالي"],
+totalDebt:["Total debt","Deuda total","Dette totale","Dívida total","债务合计","Tổng nợ","إجمالي الديون"],
+totalSav:["Total savings","Ahorros totales","Épargne totale","Poupança total","储蓄合计","Tổng tiết kiệm","إجمالي المدخرات"],
+remove:["Remove","Quitar","Retirer","Remover","移除","Xóa","إزالة"],
+flowH:["🧭 Net Worth Breakdown","🧭 Desglose del patrimonio neto","🧭 Détail de la valeur nette","🧭 Composição do patrimônio líquido","🧭 净资产构成","🧭 Cơ cấu tài sản ròng","🧭 تفصيل صافي الثروة"],
+assets:["Assets","Activos","Actifs","Ativos","资产","Tài sản","الأصول"],
+debt:["Debt","Deuda","Dette","Dívida","债务","Nợ","الديون"],
+overdrawn:["overdrawn","en descubierto","à découvert","no negativo","透支","thấu chi","مكشوف"],
+unnamed:["Unnamed","Sin nombre","Sans nom","Sem nome","未命名","Chưa đặt tên","بدون اسم"],
+pieEmpty:["Add your balances above to see the breakdown.","Agrega tus saldos arriba para ver el desglose.","Ajoutez vos soldes ci-dessus pour voir le détail.","Adicione seus saldos acima para ver a composição.","在上方添加余额即可查看构成。","Hãy thêm số dư ở phía trên để xem cơ cấu.","أضف أرصدتك أعلاه لعرض التفصيل."],
+pieCap:["Each slice is one account’s share of your total balances. Assets minus debt equals your net worth.","Cada porción es la parte de una cuenta en tus saldos totales. Activos menos deuda es igual a tu patrimonio neto.","Chaque part représente la proportion d'un compte dans vos soldes totaux. Actifs moins dette égale votre valeur nette.","Cada fatia é a parte de uma conta no total dos seus saldos. Ativos menos dívida é igual ao seu patrimônio líquido.","每个扇区代表一个账户占你总余额的比例。资产减去债务等于净资产。","Mỗi phần là tỷ trọng của một tài khoản trong tổng số dư của bạn. Tài sản trừ nợ bằng tài sản ròng.","كل شريحة تمثل حصة حساب واحد من إجمالي أرصدتك. الأصول ناقص الديون تساوي صافي ثروتك."],
+pieAria:["3D pie chart of account balances","Gráfico circular 3D de los saldos de las cuentas","Graphique circulaire 3D des soldes des comptes","Gráfico de pizza 3D dos saldos das contas","账户余额 3D 饼图","Biểu đồ tròn 3D số dư các tài khoản","مخطط دائري ثلاثي الأبعاد لأرصدة الحسابات"],
+goalDef:["Goal","Meta","Objectif","Meta","目标","Mục tiêu","الهدف"],
+goalPh:["What are you saving for?","¿Para qué estás ahorrando?","Pour quoi épargnez-vous ?","Para que você está economizando?","你在为什么而攒钱?","Bạn đang tiết kiệm để làm gì?","لأي غرض تدّخر؟"],
+goalNameAria:["Goal name","Nombre de la meta","Nom de l'objectif","Nome da meta","目标名称","Tên mục tiêu","اسم الهدف"],
+goalAmt:["Goal amount","Monto de la meta","Montant de l'objectif","Valor da meta","目标金额","Số tiền mục tiêu","مبلغ الهدف"],
+goalSaved:["Saved so far","Ahorrado hasta ahora","Épargné jusqu'ici","Economizado até agora","已攒金额","Đã tiết kiệm được","المدّخر حتى الآن"],
+goalProg:["Goal progress","Progreso de la meta","Progression de l'objectif","Progresso da meta","目标进度","Tiến độ mục tiêu","تقدم الهدف"],
+toGo:["{x} to go","Faltan {x}","Encore {x}","Faltam {x}","还差 {x}","Còn {x}","المتبقي {x}"],
+of:["{a} of {b}","{a} de {b}","{a} sur {b}","{a} de {b}","{a} / {b}","{a} / {b}","{a} من {b}"],
+reached:["🎉 Goal reached!","🎉 ¡Meta alcanzada!","🎉 Objectif atteint !","🎉 Meta alcançada!","🎉 目标达成!","🎉 Đã đạt mục tiêu!","🎉 تم تحقيق الهدف!"],
+reachedOver:["🎉 Goal reached! {x} over","🎉 ¡Meta alcanzada! {x} de más","🎉 Objectif atteint ! {x} de plus","🎉 Meta alcançada! {x} a mais","🎉 目标达成!超出 {x}","🎉 Đã đạt mục tiêu! Vượt {x}","🎉 تم تحقيق الهدف! بزيادة {x}"],
+goalStart:["Enter a goal amount to start.","Ingresa un monto para empezar.","Saisissez un montant pour commencer.","Informe um valor para começar.","输入目标金额以开始。","Nhập số tiền mục tiêu để bắt đầu.","أدخل مبلغ الهدف للبدء."],
+tbH:["Transaction Breakdown","Desglose de transacciones","Répartition des transactions","Resumo das transações","交易明细","Phân tích giao dịch","تفصيل المعاملات"],
+allAcc:["All accounts","Todas las cuentas","Tous les comptes","Todas as contas","所有账户","Tất cả tài khoản","كل الحسابات"],
+allCat:["All categories","Todas las categorías","Toutes les catégories","Todas as categorias","所有类别","Tất cả danh mục","كل الفئات"],
+nOfM:["{n} of {m} categories","{n} de {m} categorías","{n} catégories sur {m}","{n} de {m} categorias","{n}/{m} 个类别","{n}/{m} danh mục","{n} من {m} فئات"],
+noCats:["No categories","Ninguna categoría","Aucune catégorie","Nenhuma categoria","无类别","Không có danh mục","لا فئات"],
+selAll:["Select all","Seleccionar todo","Tout sélectionner","Selecionar tudo","全选","Chọn tất cả","تحديد الكل"],
+clear:["Clear","Borrar","Effacer","Limpar","清除","Xóa","مسح"],
+nothingSel:["Nothing logged for this selection.","No hay registros para esta selección.","Rien d'enregistré pour cette sélection.","Nada registrado para esta seleção.","所选范围内没有记录。","Không có giao dịch nào cho lựa chọn này.","لا توجد معاملات لهذا الاختيار."],
+selOne:["Select at least one category.","Selecciona al menos una categoría.","Sélectionnez au moins une catégorie.","Selecione pelo menos uma categoria.","请至少选择一个类别。","Hãy chọn ít nhất một danh mục.","اختر فئة واحدة على الأقل."],
+remaining:["$$$ Remaining","$$$ Restante","$$$ Restant","$$$ Restante","$$$ 剩余","$$$ Còn lại","$$$ المتبقي"],
+totSel:["Total · selected","Total · selección","Total · sélection","Total · seleção","合计 · 所选","Tổng · đã chọn","الإجمالي · المحدد"],
+addTxH:["Add a transaction","Agregar una transacción","Ajouter une transaction","Adicionar uma transação","添加交易","Thêm giao dịch","إضافة معاملة"],
+notes:["Notes","Notas","Notes","Notas","备注","Ghi chú","ملاحظات"],
+addBtn:["Add","Agregar","Ajouter","Adicionar","添加","Thêm","إضافة"],
+txHint:["Enter amounts as positive numbers. “{inc}” adds money, everything else is spending.","Ingresa los montos como números positivos. «{inc}» suma dinero; todo lo demás es gasto.","Saisissez les montants en nombres positifs. « {inc} » ajoute de l'argent ; tout le reste est une dépense.","Informe os valores como números positivos. “{inc}” soma dinheiro; todo o resto é gasto.","请输入正数金额。“{inc}”表示进账,其余均为支出。","Nhập số tiền dạng số dương. “{inc}” là tiền vào, mọi mục khác là chi tiêu.","أدخل المبالغ كأرقام موجبة. «{inc}» يضيف المال وكل ما عداه إنفاق."],
+editCats:["Edit categories","Editar categorías","Modifier les catégories","Editar categorias","编辑类别","Chỉnh sửa danh mục","تعديل الفئات"],
+newCat:["New category name","Nombre de la nueva categoría","Nom de la nouvelle catégorie","Nome da nova categoria","新类别名称","Tên danh mục mới","اسم الفئة الجديدة"],
+catNote:["“{inc}” is built in and can’t be removed. Deleting a category moves its transactions to “{misc}” (or “{unc}” if you delete {misc}).","«{inc}» viene incluida y no se puede eliminar. Al eliminar una categoría, sus transacciones pasan a «{misc}» (o a «{unc}» si eliminas {misc}).","« {inc} » est intégrée et ne peut pas être supprimée. Supprimer une catégorie déplace ses transactions vers « {misc} » (ou « {unc} » si vous supprimez {misc}).","“{inc}” é padrão e não pode ser removida. Ao excluir uma categoria, suas transações vão para “{misc}” (ou “{unc}” se você excluir {misc}).","“{inc}”为内置类别,不能删除。删除类别后,其交易会移到“{misc}”(若删除的是{misc},则移到“{unc}”)。","“{inc}” là danh mục có sẵn và không thể xóa. Khi xóa một danh mục, các giao dịch của nó chuyển sang “{misc}” (hoặc “{unc}” nếu bạn xóa {misc}).","«{inc}» فئة أساسية ولا يمكن حذفها. عند حذف فئة تنتقل معاملاتها إلى «{misc}» (أو «{unc}» إذا حذفت {misc})."],
+catDup:["That category already exists.","Esa categoría ya existe.","Cette catégorie existe déjà.","Essa categoria já existe.","该类别已存在。","Danh mục này đã tồn tại.","هذه الفئة موجودة بالفعل."],
+delConf:["{n} transaction(s) use “{c}”. They will be moved to “{to}”. Continue?","{n} transacción(es) usan «{c}». Se moverán a «{to}». ¿Continuar?","{n} transaction(s) utilisent « {c} ». Elles seront déplacées vers « {to} ». Continuer ?","{n} transação(ões) usam “{c}”. Elas serão movidas para “{to}”. Continuar?","有 {n} 笔交易使用“{c}”,将被移到“{to}”。要继续吗?","{n} giao dịch đang dùng “{c}”. Chúng sẽ được chuyển sang “{to}”. Tiếp tục?","{n} معاملة تستخدم «{c}». سيتم نقلها إلى «{to}». هل تريد المتابعة؟"],
+del:["Delete","Eliminar","Supprimer","Excluir","删除","Xóa","حذف"],
+builtIn:["Built in","Incluida","Intégrée","Padrão","内置","Có sẵn","أساسية"],
+txH:["Transactions","Transacciones","Transactions","Transações","交易记录","Giao dịch","المعاملات"],
+search:["Search vendor or notes","Buscar comercio o notas","Rechercher un marchand ou une note","Buscar estabelecimento ou nota","搜索商家或备注","Tìm cửa hàng hoặc ghi chú","ابحث في الجهة أو الملاحظات"],
+selMonth:["Selected month","Mes seleccionado","Mois sélectionné","Mês selecionado","所选月份","Tháng đã chọn","الشهر المحدد"],
+allMonths:["All months","Todos los meses","Tous les mois","Todos os meses","所有月份","Tất cả các tháng","كل الأشهر"],
+clearF:["Clear filters","Borrar filtros","Effacer les filtres","Limpar filtros","清除筛选","Xóa bộ lọc","مسح عوامل التصفية"],
+showing:["Showing {a} of {b} · Net {n}","Mostrando {a} de {b} · Neto {n}","{a} sur {b} affichées · Net {n}","Mostrando {a} de {b} · Líquido {n}","显示 {a}/{b} · 净额 {n}","Hiển thị {a}/{b} · Ròng {n}","عرض {a} من {b} · الصافي {n}"],
+thDate:["Date","Fecha","Date","Data","日期","Ngày","التاريخ"],
+thCat:["Category","Categoría","Catégorie","Categoria","类别","Danh mục","الفئة"],
+nothingYet:["Nothing here yet. Add your first transaction.","Aún no hay nada. Agrega tu primera transacción.","Rien pour l'instant. Ajoutez votre première transaction.","Ainda não há nada. Adicione sua primeira transação.","这里还没有内容。添加你的第一笔交易吧。","Chưa có gì. Hãy thêm giao dịch đầu tiên.","لا شيء هنا بعد. أضف معاملتك الأولى."],
+noMatch:["No transactions match your filters.","Ninguna transacción coincide con los filtros.","Aucune transaction ne correspond aux filtres.","Nenhuma transação corresponde aos filtros.","没有符合筛选条件的交易。","Không có giao dịch nào khớp với bộ lọc.","لا توجد معاملات تطابق عوامل التصفية."],
+fAcc:["Filter by account","Filtrar por cuenta","Filtrer par compte","Filtrar por conta","按账户筛选","Lọc theo tài khoản","تصفية حسب الحساب"],
+fCat:["Filter by category","Filtrar por categoría","Filtrer par catégorie","Filtrar por categoria","按类别筛选","Lọc theo danh mục","تصفية حسب الفئة"],
+sTx:["Search transactions","Buscar transacciones","Rechercher des transactions","Buscar transações","搜索交易","Tìm giao dịch","البحث في المعاملات"],
+mRange:["Month range","Rango de meses","Période","Intervalo de meses","月份范围","Phạm vi tháng","نطاق الأشهر"],
+notesH:["📝 Notes","📝 Notas","📝 Notes","📝 Notas","📝 笔记","📝 Ghi chú","📝 ملاحظات"],
+addNote:["+ Add note","+ Agregar nota","+ Ajouter une note","+ Adicionar nota","+ 添加笔记","+ Thêm ghi chú","+ إضافة ملاحظة"],
+noNotes:["No notes yet. Tap + Add note.","Aún no hay notas. Toca + Agregar nota.","Pas encore de notes. Touchez + Ajouter une note.","Ainda não há notas. Toque em + Adicionar nota.","还没有笔记。点按“+ 添加笔记”。","Chưa có ghi chú. Chạm “+ Thêm ghi chú”.","لا توجد ملاحظات بعد. اضغط + إضافة ملاحظة."],
+writeHere:["Write here…","Escribe aquí…","Écrivez ici…","Escreva aqui…","在此输入…","Viết tại đây…","اكتب هنا…"],
+noteHdr:["📝 Note","📝 Nota","📝 Note","📝 Nota","📝 笔记","📝 Ghi chú","📝 ملاحظة"],
+collapse:["Collapse","Contraer","Réduire","Recolher","折叠","Thu gọn","طي"],
+delNote:["Delete note","Eliminar nota","Supprimer la note","Excluir nota","删除笔记","Xóa ghi chú","حذف الملاحظة"],
+defNote:["Scratch paper: ideas, goals, reminders. Drag me anywhere!","Borrador: ideas, metas, recordatorios. ¡Arrástrame a donde quieras!","Brouillon : idées, objectifs, rappels. Déplacez-moi où vous voulez !","Rascunho: ideias, metas, lembretes. Arraste-me para onde quiser!","草稿纸:想法、目标、提醒。可以把我拖到任何位置!","Giấy nháp: ý tưởng, mục tiêu, lời nhắc. Kéo tôi đi bất cứ đâu!","ورقة مسودة: أفكار وأهداف وتذكيرات. اسحبني إلى أي مكان!"],
+defChk:["Checking","Cuenta corriente","Compte courant","Conta corrente","活期账户","Tài khoản thanh toán","حساب جاري"],
+defCC:["Credit card","Tarjeta de crédito","Carte de crédit","Cartão de crédito","信用卡","Thẻ tín dụng","بطاقة ائتمان"],
+defEF:["Emergency fund","Fondo de emergencia","Fonds d'urgence","Reserva de emergência","应急基金","Quỹ khẩn cấp","صندوق الطوارئ"],
+backupH:["Backup & restore","Copia de seguridad y restauración","Sauvegarde et restauration","Backup e restauração","备份与恢复","Sao lưu & khôi phục","النسخ الاحتياطي والاستعادة"],
+backupHelp:["Copy this text somewhere safe. To restore, paste it back and press Restore.","Copia este texto en un lugar seguro. Para restaurar, pégalo de nuevo y pulsa Restaurar.","Copiez ce texte dans un endroit sûr. Pour restaurer, collez-le ici et appuyez sur Restaurer.","Copie este texto em um lugar seguro. Para restaurar, cole-o de volta e toque em Restaurar.","请把这段文字保存到安全的地方。恢复时,将其粘贴回来并点击“恢复”。","Hãy sao chép đoạn văn bản này và lưu ở nơi an toàn. Để khôi phục, dán lại và nhấn Khôi phục.","انسخ هذا النص واحفظه في مكان آمن. للاستعادة الصقه هنا واضغط استعادة."],
+copyB:["Copy backup","Copiar copia de seguridad","Copier la sauvegarde","Copiar backup","复制备份","Sao chép bản sao lưu","نسخ النسخة الاحتياطية"],
+copied:["Copied ✓","Copiado ✓","Copié ✓","Copiado ✓","已复制 ✓","Đã sao chép ✓","تم النسخ ✓"],
+selCopy:["Select & copy ↑","Selecciona y copia ↑","Sélectionnez et copiez ↑","Selecione e copie ↑","请选中并复制 ↑","Chọn rồi sao chép ↑","حدّد وانسخ ↑"],
+showB:["Show backup","Mostrar copia","Afficher la sauvegarde","Mostrar backup","显示备份","Hiện bản sao lưu","عرض النسخة"],
+restoreB:["Restore","Restaurar","Restaurer","Restaurar","恢复","Khôi phục","استعادة"],
+resetB:["Reset everything","Restablecer todo","Tout réinitialiser","Redefinir tudo","全部重置","Đặt lại tất cả","إعادة ضبط كل شيء"],
+badBackup:["That backup text isn’t valid.","Ese texto de copia no es válido.","Ce texte de sauvegarde n'est pas valide.","Esse texto de backup não é válido.","这段备份文字无效。","Văn bản sao lưu này không hợp lệ.","نص النسخة الاحتياطية غير صالح."],
+eraseConfirm:["Erase all data in this browser?","¿Borrar todos los datos de este navegador?","Effacer toutes les données de ce navigateur ?","Apagar todos os dados deste navegador?","要清除此浏览器中的所有数据吗?","Xóa toàn bộ dữ liệu trong trình duyệt này?","هل تريد مسح كل البيانات في هذا المتصفح؟"],
+privacy:["🔒 Private by design: everything you enter is stored only in this browser on this device. It is never sent to any server. Clearing your browser data will erase it, so use “Copy backup” now and then and keep the text somewhere safe. Don’t use a shared or public computer. Never enter account numbers or passwords here; balances and amounts are all this tool needs.","🔒 Privado por diseño: todo lo que escribes se guarda solo en este navegador de este dispositivo y nunca se envía a ningún servidor. Si borras los datos del navegador, se perderá, así que usa “Copiar copia de seguridad” de vez en cuando y guarda el texto en un lugar seguro. No uses un equipo compartido o público. Nunca escribas números de cuenta ni contraseñas; esta herramienta solo necesita saldos y montos.","🔒 Confidentialité par conception : tout ce que vous saisissez est stocké uniquement dans ce navigateur, sur cet appareil, et n'est jamais envoyé à un serveur. Effacer les données du navigateur supprimera tout : utilisez « Copier la sauvegarde » de temps en temps et conservez le texte en lieu sûr. N'utilisez pas un ordinateur partagé ou public. Ne saisissez jamais de numéros de compte ni de mots de passe : seuls les soldes et les montants sont nécessaires.","🔒 Privado por princípio: tudo o que você digita fica salvo apenas neste navegador, neste dispositivo, e nunca é enviado a nenhum servidor. Limpar os dados do navegador apaga tudo, então use “Copiar backup” de vez em quando e guarde o texto em um lugar seguro. Não use um computador compartilhado ou público. Nunca digite números de conta ou senhas; esta ferramenta só precisa de saldos e valores.","🔒 隐私优先:你输入的所有内容仅保存在此设备的此浏览器中,绝不会发送到任何服务器。清除浏览器数据会删除这些内容,因此请不时使用“复制备份”并把文字存放在安全的地方。请勿在共用或公共电脑上使用。切勿在此输入账号或密码;本工具只需要余额和金额。","🔒 Riêng tư theo thiết kế: mọi thứ bạn nhập chỉ được lưu trong trình duyệt này trên thiết bị này và không bao giờ được gửi tới máy chủ nào. Xóa dữ liệu trình duyệt sẽ làm mất chúng, vì vậy hãy thỉnh thoảng dùng “Sao chép bản sao lưu” và cất văn bản ở nơi an toàn. Không dùng máy tính dùng chung hoặc công cộng. Tuyệt đối không nhập số tài khoản hay mật khẩu; công cụ chỉ cần số dư và số tiền.","🔒 الخصوصية أولًا: كل ما تدخله يُحفظ فقط في هذا المتصفح على هذا الجهاز ولا يُرسل إلى أي خادم. مسح بيانات المتصفح سيحذفه، لذا استخدم «نسخ النسخة الاحتياطية» من وقت لآخر واحتفظ بالنص في مكان آمن. لا تستخدم حاسوبًا مشتركًا أو عامًا. لا تُدخل أبدًا أرقام حسابات أو كلمات مرور؛ فالأداة تحتاج فقط إلى الأرصدة والمبالغ."],
+tabHome:["Home","Inicio","Accueil","Início","首页","Trang chủ","الرئيسية"],
+tabAdd:["Add","Agregar","Ajouter","Adicionar","添加","Thêm","إضافة"],
+tabAcc:["Accounts","Cuentas","Comptes","Contas","账户","Tài khoản","الحسابات"],
+tabNotes:["Notes","Notas","Notes","Notas","笔记","Ghi chú","ملاحظات"],
+cInc:["Income","Ingresos","Revenus","Receita","收入","Thu nhập","الدخل"],
+cBills:["Bills","Facturas","Factures","Contas a pagar","账单","Hóa đơn","الفواتير"],
+cTrans:["Transportation","Transporte","Transport","Transporte","交通","Đi lại","المواصلات"],
+cGas:["Gas","Gasolina","Carburant","Combustível","燃油","Xăng","الوقود"],
+cSub:["Subscription","Suscripciones","Abonnements","Assinaturas","订阅","Đăng ký dịch vụ","الاشتراكات"],
+cCare:["Self Care","Cuidado personal","Soins personnels","Autocuidado","个人护理","Chăm sóc bản thân","العناية الشخصية"],
+cImp:["Self Improvement","Desarrollo personal","Développement personnel","Desenvolvimento pessoal","自我提升","Phát triển bản thân","تطوير الذات"],
+cCC:["Credit Card Payment","Pago de tarjeta de crédito","Paiement de carte de crédit","Pagamento de cartão de crédito","信用卡还款","Thanh toán thẻ tín dụng","سداد بطاقة الائتمان"],
+cMisc:["Misc","Varios","Divers","Diversos","其他","Khác","متفرقات"],
+cUnc:["Uncategorized","Sin categoría","Sans catégorie","Sem categoria","未分类","Chưa phân loại","غير مصنّف"]
+};
+const DEFCAT={"Income":"cInc","Bills":"cBills","Transportation":"cTrans","Gas":"cGas","Subscription":"cSub","Self Care":"cCare","Self Improvement":"cImp","Credit Card Payment":"cCC","Misc":"cMisc","Uncategorized":"cUnc"};
+const nd=s=>String(s??"").replace(/[\u0660-\u0669]/g,c=>c.charCodeAt(0)-1632).replace(/[\u06f0-\u06f9]/g,c=>c.charCodeAt(0)-1776).replace(/[\uff10-\uff19]/g,c=>c.charCodeAt(0)-65248).replace(/[\u066b\uff0e]/g,".");
+const word=k=>{const a=T[k];return a?(a[LC.indexOf(LANG)]||a[0]):k};
+const cn=c=>DEFCAT[c]?word(DEFCAT[c]):c;
+function tr(k,v){const d={inc:cn("Income"),misc:cn("Misc"),unc:cn("Uncategorized"),...(v||{})};return word(k).replace(/\{(\w+)\}/g,(m,x)=>x in d?d[x]:m)}
+function applyLang(){
+  const L=LANGS[LANG];document.documentElement.lang=L.h;document.documentElement.dir=L.d;
+  document.querySelectorAll("[data-t]").forEach(e=>{e.textContent=tr(e.dataset.t)});
+  document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=tr(e.dataset.ph)});
+  document.querySelectorAll("[data-aria]").forEach(e=>{e.setAttribute("aria-label",tr(e.dataset.aria))});
+  renderAcc();renderMonth();renderNotes();
+}
+function setLang(c){if(!LANGS[c])return;LANG=c;try{localStorage.setItem("stackmoney.lang",c)}catch(e){}document.getElementById("lang").value=c;applyLang()}
+function initLang(){const el=document.getElementById("lang");el.innerHTML=LC.map(c=>`<option value="${c}">${LANGS[c].n}</option>`).join("");el.value=LANG;el.onchange=e=>setLang(e.target.value);applyLang()}
+/* ---------- end languages ---------- */
+
 const CATS=["Income","Bills","Transportation","Gas","Subscription","Self Care","Self Improvement","Credit Card Payment","Misc"];
-const COLS={bank:[["n","text","Account"],["a","number","Balance"],["x","text","Next check"]],
- debt:[["n","text","Vendor"],["a","number","Owed"],["m","number","Min"],["x","text","Due"]],
- save:[["n","text","Vendor"],["a","number","Amount"],["x","text","Description"]]};
+const COLS={bank:[["n","text","phAccount"],["a","number","phBalance"],["x","text","phNext"]],
+ debt:[["n","text","phVendor"],["a","number","phOwed"],["m","number","phMin"],["x","text","phDue"]],
+ save:[["n","text","phVendor"],["a","number","phAmount"],["x","text","phDesc"]]};
 const PA=["#2563eb","#0ea5e9","#14b8a6","#16a34a","#84cc16","#6366f1"],PD=["#dc2626","#f97316","#e11d48","#f59e0b","#b91c1c","#fb7185"];
 const KEY="stackmoney.v1";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const fmt=n=>(n<0?"−":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
-const parseMoney=v=>{const s=String(v??"");const neg=/^\s*-/.test(s);const n=parseFloat(s.replace(/[^0-9.]/g,""));return isNaN(n)?0:(neg?-n:n)};
+const fmt=n=>{const s=(n<0?"−":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});return LANG==="ar"?"\u2066"+s+"\u2069":s};
+const parseMoney=v=>{const s=nd(v);const neg=/^\s*-/.test(s);const n=parseFloat(s.replace(/[^0-9.]/g,""));return isNaN(n)?0:(neg?-n:n)};
 const fmtIn=n=>n?(n<0?"-":"")+"$"+Math.abs(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2}):"";
 function liveMoney(v){
-  let s=String(v).replace(/[^0-9.\-]/g,"");const neg=s.startsWith("-");s=s.replace(/-/g,"");
+  let s=nd(v).replace(/[^0-9.\-]/g,"");const neg=s.startsWith("-");s=s.replace(/-/g,"");
   const i=s.indexOf(".");let ip=i<0?s:s.slice(0,i),dp=i<0?null:s.slice(i+1).replace(/\./g,"").slice(0,2);
   ip=ip.replace(/^0+(?=\d)/,"");
   if(ip===""&&dp===null)return neg?"-":"";
@@ -242,11 +434,11 @@ function liveMoney(v){
 }
 const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
 const newNote=(i,t)=>({id:Date.now()+i,x:Math.max(8,innerWidth-250),y:190+i*34,w:230,h:170,t:t||"",c:false});
-const fresh=()=>({acc:{bank:[{n:"Checking",a:0,x:""}],debt:[{n:"Credit card",a:0,m:0,x:""}],save:[{n:"Emergency fund",a:0,x:""}]},tx:{},cats:CATS.slice(),month:today().slice(0,7),goal:{t:"",g:0,b:0},notes:[newNote(0,"Scratch paper: ideas, goals, reminders. Drag me anywhere!")]});
+const fresh=()=>({acc:{bank:[{n:tr("defChk"),a:0,x:""}],debt:[{n:tr("defCC"),a:0,m:0,x:""}],save:[{n:tr("defEF"),a:0,x:""}]},tx:{},cats:CATS.slice(),month:today().slice(0,7),goal:{t:"",g:0,b:0},notes:[newNote(0,tr("defNote"))]});
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){S=fresh()}
 S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");
-S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[newNote(0,"Scratch paper: ideas, goals, reminders. Drag me anywhere!")];
+S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[newNote(0,tr("defNote"))];
 let BCATS=[];
 const F={bc:{acct:"(All)",ex:[]},lg:{q:"",acct:"(All)",cat:"(All)",scope:"month"}};
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
@@ -254,29 +446,56 @@ const sum=a=>a.reduce((t,r)=>t+(+r.a||0),0);
 const acctNames=()=>[...S.acc.bank,...S.acc.debt].map(r=>r.n).filter(Boolean);
 
 function renderAcc(){
-  for(const s in COLS)$(s).innerHTML=S.acc[s].map((r,i)=>`<div class="row">${COLS[s].map(([f,t,p])=>`<input data-s="${s}" data-i="${i}" data-f="${f}" ${t=="number"?`type="text" inputmode="decimal" autocomplete="off" class="money" value="${fmtIn(+r[f]||0)}"`:`type="${t}" value="${esc(r[f]??"")}"`} placeholder="${p}">`).join("")}<button class="x" data-del="${s}" data-i="${i}" aria-label="Remove">✕</button></div>`).join("");
+  for(const s in COLS)$(s).innerHTML=S.acc[s].map((r,i)=>`<div class="row">${COLS[s].map(([f,t,p])=>`<input data-s="${s}" data-i="${i}" data-f="${f}" ${t=="number"?`type="text" inputmode="decimal" autocomplete="off" class="money" value="${fmtIn(+r[f]||0)}"`:`type="${t}" value="${esc(r[f]??"")}"`} placeholder="${esc(tr(p))}">`).join("")}<button class="x" data-del="${s}" data-i="${i}" aria-label="${esc(tr("remove"))}">✕</button></div>`).join("");
   totals();fillSelects();
 }
 function totals(){
   $("t-bank").textContent=fmt(sum(S.acc.bank));$("t-debt").textContent=fmt(-sum(S.acc.debt));$("t-save").textContent=fmt(sum(S.acc.save));
   renderNW();renderFlow();renderGoal();
 }
-const fmt0=n=>"$"+Math.round(n).toLocaleString("en-US");
+const fmt0=n=>{const s="$"+Math.round(n).toLocaleString("en-US");return LANG==="ar"?"\u2066"+s+"\u2069":s};
+let RX={s:null};
+function rxSvg(k){
+  const A=(d,v,dur,x)=>`<animate attributeName="${d}" values="${v}" dur="${dur}" repeatCount="indefinite" ${x||""}/>`;
+  const T=(v,dur,x,ty)=>`<animateTransform attributeName="transform" type="${ty||"translate"}" values="${v}" dur="${dur}" repeatCount="indefinite" ${x||""}/>`;
+  const SP='calcMode="spline" keySplines=".4 0 .6 1;.4 0 .6 1"';
+  const body='<path d="M80,61 V90 M80,90 L68,125 M80,90 L92,125"/>',head='<circle class="rh" cx="80" cy="52" r="9"/>',gr='<path class="gd" d="M20,128 H140"/>';
+  let g="";
+  if(k=="idle")g=gr+`<g class="rf">${body}</g><g>${T("0 0;0 0;0 -5;0 -5;0 0","1.8s",'keyTimes="0;.2;.4;.7;1"')}<g class="rf"><path d="M80,68 L64,80 L54,68 M80,68 L96,80 L106,68"/><path stroke-width="2.5" d="M50,64 L50,60 M54,63 L54,59 M58,64 L58,60 M102,64 L102,60 M106,63 L106,59 M110,64 L110,60"/></g>${head}</g>`;
+  else if(k=="clap")g=gr+`<g class="rf">${body}<path d="M80,68 L62,80 L66,62">${A("d","M80,68 L62,80 L66,62;M80,68 L66,82 L79,72;M80,68 L62,80 L66,62",".5s")}</path><path d="M80,68 L98,80 L94,62">${A("d","M80,68 L98,80 L94,62;M80,68 L94,82 L81,72;M80,68 L98,80 L94,62",".5s")}</path><path stroke-width="2" d="M80,62 V55 M71,64 L66,59 M89,64 L94,59">${A("opacity","0;1;0",".5s")}</path></g>${head}`;
+  else if(k=="cheer")g=gr+`<g>${T("0 0;0 -24;0 0",".7s",SP)}<g class="rf">${body}<path d="M80,68 L62,52 L56,36">${A("d","M80,68 L62,52 L56,36;M80,68 L64,50 L62,32;M80,68 L62,52 L56,36",".7s")}</path><path d="M80,68 L98,52 L104,36">${A("d","M80,68 L98,52 L104,36;M80,68 L96,50 L98,32;M80,68 L98,52 L104,36",".7s")}</path></g>${head}</g>`;
+  else if(k=="flip")g=gr+`<g>${T("0 0;0 -30;0 0;0 0","1.6s",'keyTimes="0;.35;.7;1"')}<g>${T("0 80 80;-360 80 80;-360 80 80","1.6s",'keyTimes="0;.7;1"',"rotate")}<g class="rf"><path d="M80,61 V90 M80,90 L70,112 L76,126 M80,90 L90,112 L84,126"/><path d="M80,68 L64,60 M80,68 L96,60"/></g>${head}</g></g>`;
+  else if(k=="cry")g=gr+`<ellipse cx="86" cy="127" rx="4" ry="2" fill="#60a5fa" opacity=".6">${A("rx","4;16;16","2s")}</ellipse><g>${T("0 0;1.5 0;-1.5 0;0 0",".3s")}<g class="rf"><path d="M74,89 L78,112 M78,112 L100,112 L86,127 M75,96 L64,90 L68,82 M75,96 L86,92 L80,84"/></g><circle class="rh" cx="74" cy="80" r="9"/></g><circle cx="69" cy="90" r="2.6" fill="#60a5fa">${A("cy","90;118","1s")}${A("opacity","1;0","1s")}</circle><circle cx="79" cy="90" r="2.6" fill="#60a5fa">${A("cy","90;118","1s",'begin=".5s"')}${A("opacity","1;0","1s",'begin=".5s"')}</circle>`;
+  else if(k=="done"){const gun=(x,y,r)=>`<g transform="translate(${x},${y}) rotate(${r})" fill="#374151"><rect x="-3" y="-16" width="6" height="14" rx="2"/><rect x="-3" y="-4" width="5" height="10" rx="2"/></g>`;
+    const fl=(x,y,b)=>`<path d="M${x},${y-10} l3,7 7,-1 -5,5 5,6 -8,-2 -2,7 -3,-7 -7,2 5,-6 -6,-5 7,1z" fill="#fde047" stroke="#f59e0b" stroke-width="1" opacity="0">${A("opacity","0;1;0",".5s",'begin="'+b+'"')}</path>`;
+    g=gr+`<g><g>${T("-50 0;210 0","5s")}<ellipse cx="25" cy="16" rx="14" ry="5" fill="#ef4444"/><path d="M12,16 L5,7 L16,12Z" fill="#b91c1c"/><rect x="19" y="17" width="15" height="3" rx="1.5" fill="#b91c1c"/><rect x="19" y="9" width="15" height="3" rx="1.5" fill="#b91c1c"/><line x1="40" y1="10" x2="40" y2="22" stroke="#6b7280" stroke-width="2">${A("y1","10;16;10",".2s")}${A("y2","22;16;22",".2s")}</line></g></g><g class="rf">${body}<path d="M80,68 L62,52 L56,40"/><path d="M80,68 L98,52 L104,40"/></g>${head}${gun(55,40,-15)}${gun(105,40,15)}${fl(52,20,"0s")}${fl(108,20,".25s")}`}
+  else if(k=="super")g=gr+`<ellipse cx="80" cy="76" rx="40" ry="60" fill="#fde047" opacity=".3">${A("ry","56;66;56",".6s")}${A("opacity",".2;.45;.2",".6s")}</ellipse><ellipse cx="80" cy="76" rx="26" ry="48" fill="#fef08a" opacity=".35">${A("ry","44;52;44",".5s")}</ellipse><g>${T("0 0;0 -5;0 0","1s",SP)}<g class="rf"><path d="M80,61 V90 M80,90 L62,125 M80,90 L98,125 M80,68 L60,66 L58,50 M80,68 L100,66 L102,50"/></g>${head}<polygon points="70,50 64,30 74,40 78,20 83,38 92,24 90,48" fill="#facc15" stroke="#ca8a04" stroke-width="1.5" stroke-linejoin="round"/><g fill="none" stroke="#facc15" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M40,36 l7,10 -7,0 7,12">${A("opacity","1;0;1",".35s")}</path><path d="M120,36 l-7,10 7,0 -7,12">${A("opacity","0;1;0",".35s")}</path></g></g>`;
+  return `<svg viewBox="0 0 160 140">${g}</svg>`}
+function rxUpdate(st){
+  if(st!==RX.s){RX.s=st;$("rxs").innerHTML=st?rxSvg(st):"";$("rx").hidden=!st;
+    try{if(st&&matchMedia("(prefers-reduced-motion: reduce)").matches){const v=$("rxs").querySelector("svg");v.pauseAnimations&&v.pauseAnimations()}}catch(e){}}
+  const k={idle:"rxPlan",flip:"rxGo",cry:"rxClose",done:"rxDone"}[st];$("rxb").textContent=k?tr(k):"";$("rxb").style.display=k?"":"none";
+}
 function renderGoal(){
   const g=+S.goal.g||0,b=+S.goal.b||0,p=g>0?Math.max(0,Math.min(100,b/g*100)):0,done=g>0&&b>=g;
-  $("goalh").textContent="🎯 "+((S.goal.t||"").trim()||"Goal");
+  $("goalh").textContent="🎯 "+((S.goal.t||"").trim()||tr("goalDef"));
   $("gfill").style.height=p+"%";
   $("gtank").classList.toggle("done",done);$("gtank").setAttribute("aria-valuenow",Math.round(p));
-  $("gtop").textContent=g>0?fmt0(g):"Goal";
+  $("gtop").textContent=g>0?fmt0(g):tr("goalDef");
   $("gpct").textContent=g>0?Math.max(0,Math.floor(b/g*100))+"%":"–";
-  $("gof").textContent=g>0?`${fmt(b)} of ${fmt(g)}`:"";
-  $("gtg").textContent=g<=0?"Enter a goal amount to start.":done?(b>g?`🎉 Goal reached! ${fmt(b-g)} over`:"🎉 Goal reached!"):`${fmt(g-b)} to go`;
+  $("gof").textContent=g>0?tr("of",{a:fmt(b),b:fmt(g)}):"";
+  $("gtg").textContent=g<=0?tr("goalStart"):done?(b>g?tr("reachedOver",{x:fmt(b-g)}):tr("reached")):tr("toGo",{x:fmt(g-b)});
   $("gtg").className="tg "+(done?"pos":"");
+  const r=g>0?Math.round(b/g*10000)/10000:0;
+  rxUpdate(r<.25?"idle":r>1?"super":r>=1?"done":r>=.9?"cry":r>=.75?"flip":r>=.5?"cheer":"clap");
 }
 function renderNW(){
-  const net=sum([...S.acc.bank,...S.acc.save])-sum(S.acc.debt);
-  $("nwc").innerHTML=`<div class="nw"><div><small>Net worth</small><b class="big ${net<0?"neg":"pos"}">${fmt(net)}</b></div></div>`;
+  const net=Math.round((sum([...S.acc.bank,...S.acc.save])-sum(S.acc.debt))*100)/100;
+  $("nwv").textContent=fmt(net);$("nwv").className="nwv "+(net<0?"neg":"pos");
+  const m=net>10000?[tr("bHi"),"hi"]:net>0?[tr("bOk"),"ok"]:net<0?[tr("bLo"),"lo"]:[tr("bZero"),"zero"];
+  $("nwb").textContent=m[0];$("nwb").className="bub "+m[1];
 }
+try{if(matchMedia("(prefers-reduced-motion: reduce)").matches){const sv=document.querySelector("#sis svg");sv.pauseAnimations&&sv.pauseAnimations()}}catch(e){}
 function shade(hex,k){const n=parseInt(hex.slice(1),16);return "#"+[n>>16,(n>>8)&255,n&255].map(v=>Math.round(v*k).toString(16).padStart(2,"0")).join("")}
 function pieSvg(all,T){
   const cx=110,cy=66,rx=100,ry=56,dp=24;let cum=0;
@@ -285,26 +504,26 @@ function pieSvg(all,T){
   let walls="",tops="";
   if(sl.length==1){const c=sl[0].r.c;
     walls=`<path d="M${cx-rx},${cy} L${cx-rx},${cy+dp} A${rx},${ry} 0 0 0 ${cx+rx},${cy+dp} L${cx+rx},${cy} A${rx},${ry} 0 0 1 ${cx-rx},${cy}Z" fill="${shade(c,.68)}"/>`;
-    tops=`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c}"><title>${esc(sl[0].r.n)}: ${fmt(sl[0].r.a)}</title></ellipse>`;
+    tops=`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${c}"><title>${esc(sl[0].r.n||tr("unnamed"))}: ${fmt(sl[0].r.a)}</title></ellipse>`;
   }else sl.forEach(({r,a0,a1})=>{
     const lo=Math.max(a0,0),hi=Math.min(a1,Math.PI);
     if(lo<hi){const s=P(lo),e=P(hi);
       walls+=`<path d="M${s[0]},${s[1]} A${rx},${ry} 0 0 1 ${e[0]},${e[1]} L${e[0]},${e[1]+dp} A${rx},${ry} 0 0 0 ${s[0]},${s[1]+dp}Z" fill="${shade(r.c,.68)}" stroke="${shade(r.c,.68)}" stroke-width=".6"/>`}
     const p0=P(a0),p1=P(a1);
-    tops+=`<path d="M${cx},${cy} L${p0[0]},${p0[1]} A${rx},${ry} 0 ${a1-a0>Math.PI?1:0} 1 ${p1[0]},${p1[1]}Z" fill="${r.c}" stroke="var(--card)" stroke-width="1.5"><title>${esc(r.n||"Unnamed")}: ${fmt(r.g=="d"?-r.a:r.a)}</title></path>`;
+    tops+=`<path d="M${cx},${cy} L${p0[0]},${p0[1]} A${rx},${ry} 0 ${a1-a0>Math.PI?1:0} 1 ${p1[0]},${p1[1]}Z" fill="${r.c}" stroke="var(--card)" stroke-width="1.5"><title>${esc(r.n||tr("unnamed"))}: ${fmt(r.g=="d"?-r.a:r.a)}</title></path>`;
   });
-  return `<svg viewBox="0 0 220 168" role="img" aria-label="3D pie chart of account balances"><ellipse cx="${cx}" cy="${cy+dp+8}" rx="${rx*.96}" ry="${ry*.9}" fill="#000" opacity=".12"/>${walls}${tops}</svg>`;
+  return `<svg viewBox="0 0 220 168" role="img" aria-label="${esc(tr("pieAria"))}"><ellipse cx="${cx}" cy="${cy+dp+8}" rx="${rx*.96}" ry="${ry*.9}" fill="#000" opacity=".12"/>${walls}${tops}</svg>`;
 }
 function renderFlow(){
-  const A=[...S.acc.bank.map(r=>({n:r.n,a:+r.a,g:"a"})),...S.acc.save.map(r=>({n:r.n,a:+r.a,g:"a"}))].filter(r=>r.a>0),
-   D=S.acc.debt.map(r=>({n:r.n,a:+r.a,g:"d"})).filter(r=>r.a>0),at=sum(A),dt=sum(D),net=at-dt,T=at+dt;
+  const AA=[...S.acc.bank,...S.acc.save].map(r=>({n:r.n,a:+r.a,g:"a"})),A=AA.filter(r=>r.a>0),
+   D=[...S.acc.debt.map(r=>({n:r.n,a:+r.a,g:"d"})).filter(r=>r.a>0),...AA.filter(r=>r.a<0).map(r=>({n:(r.n||tr("phAccount"))+" ("+tr("overdrawn")+")",a:-r.a,g:"d"}))],at=sum(A),dt=sum(D),net=at-dt,T=at+dt;
   const CA=["#2563eb","#0ea5e9","#14b8a6","#16a34a","#84cc16","#6366f1","#0891b2","#059669","#4f46e5","#65a30d","#7c3aed","#22c55e"],CD=["#dc2626","#f97316","#e11d48","#f59e0b","#b91c1c","#fb7185","#c2410c","#d97706","#be123c","#ea580c"];
   A.forEach((r,i)=>r.c=CA[i%CA.length]);D.forEach((r,i)=>r.c=CD[i%CD.length]);
-  const nw=`<div class="pn"><small>Net worth</small><b class="${net<0?"neg":"pos"}">${fmt(net)}</b><div class="pnl"><span>Assets</span><b class="pos">${fmt(at)}</b></div><div class="pnl"><span>Debt</span><b class="neg">${fmt(-dt)}</b></div></div>`;
-  if(T<=0){$("flow").innerHTML=`<div class="pw">${nw}<p class="muted">Add your balances above to see the breakdown.</p></div>`;return}
+  const nw=`<div class="pn"><small>${tr("netWorth")}</small><b class="${net<0?"neg":"pos"}">${fmt(net)}</b><div class="pnl"><span>${tr("assets")}</span><b class="pos">${fmt(at)}</b></div><div class="pnl"><span>${tr("debt")}</span><b class="neg">${fmt(-dt)}</b></div></div>`;
+  if(T<=0){$("flow").innerHTML=`<div class="pw">${nw}<p class="muted">${tr("pieEmpty")}</p></div>`;return}
   const pc=r=>{const p=r.a/T*100;return p<1?"<1%":Math.round(p)+"%"};
-  const leg=(t,l,tot,cls)=>l.length?`<div class="lgh"><span>${t}</span><span class="${cls}">${fmt(cls=="neg"?-tot:tot)}</span></div>`+l.map(r=>`<div class="lgr"><i style="background:${r.c}"></i><span class="ln" title="${esc(r.n)}">${esc(r.n||"Unnamed")}</span><span>${fmt(r.g=="d"?-r.a:r.a)}</span><span class="pc">${pc(r)}</span></div>`).join(""):"";
-  $("flow").innerHTML=`<div class="pw">${nw}<div class="pie">${pieSvg([...A,...D],T)}</div><div class="pl">${leg("Assets",A,at,"pos")}${leg("Debt",D,dt,"neg")}</div></div>`;
+  const leg=(t,l,tot,cls)=>l.length?`<div class="lgh"><span>${t}</span><span class="${cls}">${fmt(cls=="neg"?-tot:tot)}</span></div>`+l.map(r=>`<div class="lgr"><i style="background:${r.c}"></i><span class="ln" title="${esc(r.n)}">${esc(r.n||tr("unnamed"))}</span><span>${fmt(r.g=="d"?-r.a:r.a)}</span><span class="pc">${pc(r)}</span></div>`).join(""):"";
+  $("flow").innerHTML=`<div class="pw">${nw}<div class="pie">${pieSvg([...A,...D],T)}</div><div class="pl">${leg(tr("assets"),A,at,"pos")}${leg(tr("debt"),D,dt,"neg")}</div></div>`;
 }
 function fillSelects(){
   const names=acctNames();
@@ -314,20 +533,20 @@ function fillSelects(){
 }
 function renderCats(){
   const cc=$("f-cat").value;
-  $("f-cat").innerHTML=S.cats.map(c=>`<option ${c==cc?"selected":""}>${esc(c)}</option>`).join("");
+  $("f-cat").innerHTML=S.cats.map(c=>`<option value="${esc(c)}" ${c==cc?"selected":""}>${esc(cn(c))}</option>`).join("");
   fillFilters();
-  $("chips").innerHTML=S.cats.map((c,i)=>c=="Income"?`<span class="chip lock" title="Built in">${esc(c)} 🔒</span>`:`<span class="chip">${esc(c)}<button class="x" data-cdel="${i}" aria-label="Delete ${esc(c)}">✕</button></span>`).join("");
+  $("chips").innerHTML=S.cats.map((c,i)=>c=="Income"?`<span class="chip lock" title="${esc(tr("builtIn"))}">${esc(cn(c))} 🔒</span>`:`<span class="chip">${esc(cn(c))}<button class="x" data-cdel="${i}" aria-label="${esc(tr("del")+" "+cn(c))}">✕</button></span>`).join("");
 }
 function addCat(){
   const v=$("cm-n").value.trim().replace(/\s+/g," "),er=$("cm-err");er.textContent="";
   if(!v)return;
-  if(S.cats.some(c=>c.toLowerCase()==v.toLowerCase())){er.textContent="That category already exists.";return}
+  if(S.cats.some(c=>c.toLowerCase()==v.toLowerCase()||cn(c).toLowerCase()==v.toLowerCase())){er.textContent=tr("catDup");return}
   S.cats.push(v);save();$("cm-n").value="";renderCats();$("f-cat").value=v;$("cm-n").focus();
 }
 function delCat(i){
   const c=S.cats[i];if(!c||c=="Income")return;
   const used=Object.values(S.tx).flat().filter(t=>t.cat==c).length,to=c=="Misc"?"Uncategorized":"Misc";
-  if(used&&!confirm(`${used} transaction${used==1?"":"s"} use “${c}”. They will be moved to “${to}”. Continue?`))return;
+  if(used&&!confirm(tr("delConf",{n:used,c:cn(c),to:cn(to)})))return;
   Object.values(S.tx).flat().forEach(t=>{if(t.cat==c)t.cat=to});
   S.cats.splice(i,1);
   if(used&&!S.cats.includes(to))S.cats.push(to);
@@ -337,17 +556,17 @@ $("cm-add").onclick=addCat;
 $("cm-n").onkeydown=e=>{if(e.key=="Enter"){e.preventDefault();addCat()}};
 document.addEventListener("click",e=>{const b=e.target.closest("[data-cdel]");if(b)delCat(+b.dataset.cdel)});
 const allTx=()=>Object.entries(S.tx).flatMap(([m,a])=>a.map((t,i)=>({...t,m,i})));
-function bcSum(){const n=BCATS.length-F.bc.ex.length;$("bc-sum").textContent=!BCATS.length||n==BCATS.length?"All categories":n==0?"No categories":`${n} of ${BCATS.length} categories`}
+function bcSum(){const n=BCATS.length-F.bc.ex.length;$("bc-sum").textContent=!BCATS.length||n==BCATS.length?tr("allCat"):n==0?tr("noCats"):tr("nOfM",{n:n,m:BCATS.length})}
 function bcList(){
   F.bc.ex=F.bc.ex.filter(c=>BCATS.includes(c));
-  $("bc-list").innerHTML=BCATS.map(c=>`<label class="msi"><input type="checkbox" data-bc="${esc(c)}" ${F.bc.ex.includes(c)?"":"checked"}>${esc(c)}</label>`).join("");
+  $("bc-list").innerHTML=BCATS.map(c=>`<label class="msi"><input type="checkbox" data-bc="${esc(c)}" ${F.bc.ex.includes(c)?"":"checked"}>${esc(cn(c))}</label>`).join("");
   bcSum();
 }
 function fillFilters(){
   const at=allTx(),accts=[...new Set([...acctNames(),...at.map(t=>t.acct).filter(Boolean)])],cats=[...new Set([...S.cats,...at.map(t=>t.cat).filter(Boolean)])];
-  const set=(id,list,all,k,o)=>{const el=$(id);el.innerHTML=`<option value="(All)">${all}</option>`+list.map(x=>`<option>${esc(x)}</option>`).join("");if(!list.includes(o[k]))o[k]="(All)";el.value=o[k]};
-  set("bc-acct",accts,"All accounts","acct",F.bc);BCATS=cats;bcList();
-  set("lg-acct",accts,"All accounts","acct",F.lg);set("lg-cat",cats,"All categories","cat",F.lg);
+  const set=(id,list,all,k,o,dn)=>{const el=$(id);el.innerHTML=`<option value="(All)">${all}</option>`+list.map(x=>`<option value="${esc(x)}">${esc(dn?dn(x):x)}</option>`).join("");if(!list.includes(o[k]))o[k]="(All)";el.value=o[k]};
+  set("bc-acct",accts,tr("allAcc"),"acct",F.bc);BCATS=cats;bcList();
+  set("lg-acct",accts,tr("allAcc"),"acct",F.lg);set("lg-cat",cats,tr("allCat"),"cat",F.lg,cn);
   $("lg-scope").value=F.lg.scope;$("lg-q").value=F.lg.q;
 }
 function renderMonth(){
@@ -355,14 +574,14 @@ function renderMonth(){
   const mt=(S.tx[S.month]||[]).filter(t=>bc.acct=="(All)"||t.acct==bc.acct),by={};let inc=0,out=0;
   mt.forEach(t=>{if(bc.ex.includes(t.cat))return;const a=+t.a||0;if(t.cat=="Income")inc+=a;else{out+=a;by[t.cat]=(by[t.cat]||0)+a}});
   const rows=Object.entries(by).sort((a,b)=>b[1]-a[1]),max=Math.max(1,...rows.map(r=>r[1])),showInc=!bc.ex.includes("Income"),none=BCATS.length>0&&bc.ex.length>=BCATS.length;
-  $("cats").innerHTML=(showInc?`<div class="cb"><span>Income</span><span class="pos">${fmt(inc)}</span><span></span></div>`:"")+(rows.length?rows.map(([c,v])=>`<div class="cb"><span>${esc(c)}</span><span><i style="width:${v/max*100}%"></i></span><span>${fmt(-v)}</span></div>`).join(""):(none?'<p class="muted">Select at least one category.</p>':showInc&&inc?"":'<p class="muted">Nothing logged for this selection.</p>'));
+  $("cats").innerHTML=(showInc?`<div class="cb"><span>${esc(cn("Income"))}</span><span class="pos">${fmt(inc)}</span><span></span></div>`:"")+(rows.length?rows.map(([c,v])=>`<div class="cb"><span>${esc(cn(c))}</span><span><i style="width:${v/max*100}%"></i></span><span>${fmt(-v)}</span></div>`).join(""):(none?`<p class="muted">${tr("selOne")}</p>`:showInc&&inc?"":`<p class="muted">${tr("nothingSel")}</p>`));
   const rem=inc-out;$("rem").textContent=fmt(rem);$("rem").className=rem<0?"neg":"pos";
-  $("rem-l").textContent=bc.ex.length?"Total · selected":"$$$ Remaining";
+  $("rem-l").textContent=bc.ex.length?tr("totSel"):tr("remaining");
   const base=lg.scope=="all"?allTx():(S.tx[S.month]||[]).map((t,i)=>({...t,m:S.month,i})),q=lg.q.trim().toLowerCase();
   const list=base.filter(t=>(lg.acct=="(All)"||t.acct==lg.acct)&&(lg.cat=="(All)"||t.cat==lg.cat)&&(!q||((t.v||"")+" "+(t.n||"")).toLowerCase().includes(q)));
   const net=list.reduce((n,t)=>n+(t.cat=="Income"?+t.a:-t.a),0);
-  $("lg-count").textContent=base.length?`Showing ${list.length} of ${base.length} · Net ${fmt(net)}`:"";
-  $("log").innerHTML=list.length?list.slice().sort((a,b)=>(b.d||"").localeCompare(a.d||"")).map(t=>`<tr><td>${esc(t.d)}</td><td>${esc(t.v)}</td><td class="${t.cat=="Income"?"pos":"neg"}">${fmt(t.cat=="Income"?+t.a:-t.a)}</td><td>${esc(t.acct)}</td><td>${esc(t.cat)}</td><td>${esc(t.n)}</td><td><button class="x" data-tx="${t.i}" data-m="${t.m}" aria-label="Delete">✕</button></td></tr>`).join(""):`<tr><td colspan="7" class="muted">${base.length?"No transactions match your filters.":"Nothing here yet. Add your first transaction."}</td></tr>`;
+  $("lg-count").textContent=base.length?tr("showing",{a:list.length,b:base.length,n:fmt(net)}):"";
+  $("log").innerHTML=list.length?list.slice().sort((a,b)=>(b.d||"").localeCompare(a.d||"")).map(t=>`<tr><td>${esc(t.d)}</td><td>${esc(t.v)}</td><td class="${t.cat=="Income"?"pos":"neg"}">${fmt(t.cat=="Income"?+t.a:-t.a)}</td><td>${esc(t.acct)}</td><td>${esc(cn(t.cat))}</td><td>${esc(t.n)}</td><td><button class="x" data-tx="${t.i}" data-m="${t.m}" aria-label="${esc(tr("del"))}">✕</button></td></tr>`).join(""):`<tr><td colspan="7" class="muted">${base.length?tr("noMatch"):tr("nothingYet")}</td></tr>`;
 }
 $("bc-acct").onchange=e=>{F.bc.acct=e.target.value;renderMonth()};
 $("bc-list").onchange=e=>{const c=e.target.dataset.bc;if(c===undefined)return;const i=F.bc.ex.indexOf(c);if(e.target.checked){if(i>=0)F.bc.ex.splice(i,1)}else if(i<0)F.bc.ex.push(c);bcSum();renderMonth()};
@@ -383,7 +602,7 @@ function renderNotes(){
   S.notes.forEach(n=>{
     const el=document.createElement("div");el.className="note"+(n.c?" c":"");el.dataset.id=n.id;
     el.style.width=n.w+"px";el.style.height=n.h+"px";
-    el.innerHTML=`<div class="nh"><span>📝 Note</span><span><button data-nc title="Collapse">–</button><button data-nd title="Delete">✕</button></span></div><textarea placeholder="Write here…"></textarea>`;
+    el.innerHTML=`<div class="nh"><span>${tr("noteHdr")}</span><span><button data-nc title="${esc(tr("collapse"))}">–</button><button data-nd title="${esc(tr("delNote"))}">✕</button></span></div><textarea placeholder="${esc(tr("writeHere"))}"></textarea>`;
     el.querySelector("textarea").value=n.t;
     el.querySelector("textarea").oninput=e=>{n.t=e.target.value;save()};
     el.querySelector("[data-nc]").onclick=()=>{n.c=!n.c;el.classList.toggle("c",n.c);save()};
@@ -406,7 +625,7 @@ document.addEventListener("pointerup",()=>{
 addEventListener("resize",()=>S.notes.forEach(n=>{const el=document.querySelector(`.note[data-id="${n.id}"]`);if(el)clamp(n,el)}));
 $("add-note").onclick=()=>{S.notes.push(newNote(S.notes.length));save();renderNotes()};
 $("nv-add").onclick=()=>{S.notes.push(newNote(S.notes.length));save();renderNotes()};
-function renderNV(){$("nvl").innerHTML=S.notes.map((n,i)=>`<div class="nvn"><textarea data-nv="${i}" placeholder="Write here…">${esc(n.t)}</textarea><button class="x" data-nvd="${i}" aria-label="Delete note">✕</button></div>`).join("")||'<p class="muted">No notes yet. Tap + Add note.</p>'}
+function renderNV(){$("nvl").innerHTML=S.notes.map((n,i)=>`<div class="nvn"><textarea data-nv="${i}" placeholder="${esc(tr("writeHere"))}">${esc(n.t)}</textarea><button class="x" data-nvd="${i}" aria-label="${esc(tr("delNote"))}">✕</button></div>`).join("")||`<p class="muted">${tr("noNotes")}</p>`}
 document.addEventListener("input",e=>{const i=e.target.dataset.nv;if(i!==undefined){S.notes[+i].t=e.target.value;save()}});
 document.addEventListener("click",e=>{
   const tb=e.target.closest("#tabs [data-tab]");
@@ -436,7 +655,7 @@ $("goal-b").oninput=e=>{S.goal.b=parseMoney(e.target.value);save();renderGoal()}
 $("goal-b").onchange=e=>{e.target.value=fmtIn(S.goal.b)};
 document.addEventListener("input",e=>{
   const t=e.target;if(!t.classList||!t.classList.contains("money"))return;
-  const pos=t.selectionStart,before=t.value.slice(0,pos).replace(/[^0-9.]/g,"").length,nv=liveMoney(t.value);
+  const pos=t.selectionStart,before=nd(t.value.slice(0,pos)).replace(/[^0-9.]/g,"").length,nv=liveMoney(t.value);
   t.value=nv;let c=0,p=0;for(;p<nv.length&&c<before;p++)if(/[0-9.]/.test(nv[p]))c++;
   if(c==0){const d=nv.indexOf("$");p=d<0?nv.length:d+1}
   try{t.setSelectionRange(p,p)}catch(x){}
@@ -455,12 +674,12 @@ $("add-tx").onclick=()=>{
 };
 $("bk-copy").onclick=async()=>{
   const t=JSON.stringify(S);$("bk").value=t;
-  try{await navigator.clipboard.writeText(t);$("bk-copy").textContent="Copied ✓"}catch(e){$("bk").select();$("bk-copy").textContent="Select & copy ↑"}
-  setTimeout(()=>{$("bk-copy").textContent="Copy backup"},2500)};
+  try{await navigator.clipboard.writeText(t);$("bk-copy").textContent=tr("copied")}catch(e){$("bk").select();$("bk-copy").textContent=tr("selCopy")}
+  setTimeout(()=>{$("bk-copy").textContent=tr("copyB")},2500)};
 $("bk-show").onclick=()=>{$("bk").value=JSON.stringify(S);$("bk").select()};
-$("bk-load").onclick=()=>{try{const o=JSON.parse($("bk").value);if(!o.acc||!o.tx)throw 0;S=o;S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[];S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");save();$("month").value=S.month;$("goal-t").value=S.goal.t;$("goal-g").value=fmtIn(S.goal.g);$("goal-b").value=fmtIn(S.goal.b);renderAcc();renderMonth();renderNotes()}catch(e){alert("That backup text isn’t valid.")}};
-$("reset").onclick=()=>{if(confirm("Erase all data in this browser?")){S=fresh();save();$("month").value=S.month;$("goal-t").value="";$("goal-g").value="";$("goal-b").value="";F.bc={acct:"(All)",ex:[]};F.lg={q:"",acct:"(All)",cat:"(All)",scope:"month"};renderAcc();renderMonth();renderNotes()}};
-renderAcc();renderMonth();renderNotes();
+$("bk-load").onclick=()=>{try{const o=JSON.parse($("bk").value);if(!o.acc||!o.tx)throw 0;S=o;S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[];S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");save();$("month").value=S.month;$("goal-t").value=S.goal.t;$("goal-g").value=fmtIn(S.goal.g);$("goal-b").value=fmtIn(S.goal.b);renderAcc();renderMonth();renderNotes()}catch(e){alert(tr("badBackup"))}};
+$("reset").onclick=()=>{if(confirm(tr("eraseConfirm"))){S=fresh();save();$("month").value=S.month;$("goal-t").value="";$("goal-g").value="";$("goal-b").value="";F.bc={acct:"(All)",ex:[]};F.lg={q:"",acct:"(All)",cat:"(All)",scope:"month"};renderAcc();renderMonth();renderNotes()}};
+initLang();
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){addEventListener("load",()=>{try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}})}
 </script></body></html>
