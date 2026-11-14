@@ -161,6 +161,16 @@ th{color:var(--mu);font-weight:500}
 .nwv{display:block;font-size:clamp(40px,6vw,60px);line-height:1.05;font-weight:700}
 .tabadd{display:block;width:20px;height:19.8px;margin:0}
 .sis{direction:ltr}.bub{unicode-bidi:plaintext}input.money{direction:ltr}#lang{flex:none;max-width:130px}
+.banr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px}.banr[hidden],#startc[hidden]{display:none}#startc{margin-bottom:12px}
+.bbtn{display:flex;gap:6px}.stl{list-style:none;padding:0;margin:0 0 10px}.stl li{padding:4px 0;display:flex;gap:8px;align-items:center}
+.stl label{display:flex;gap:10px;align-items:center;flex:1;cursor:pointer}.stl input{width:20px;height:20px;padding:0;flex:none;accent-color:var(--gr)}.stl input:disabled{cursor:default}
+.stl li.dn span{text-decoration:line-through;color:var(--mu)}.sg{padding:2px 12px;font-size:13px;flex:none}
+.stbar{height:6px;border-radius:3px;background:var(--bd);overflow:hidden;margin:0 0 8px}.stbar i{display:block;height:100%;width:0;background:var(--gr);transition:width .4s}
+#help-b{flex:none;width:34px;padding:6px 0;font-weight:700}
+dialog#helpd{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);max-width:560px;width:calc(100% - 32px);max-height:85vh;overflow:auto;padding:0}
+#helpd::backdrop{background:rgba(0,0,0,.45)}.hin{padding:16px}.hh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.hh h2{margin:0;font-size:17px}
+#helpd section{border-top:1px solid var(--bd);padding:10px 0}#helpd h3{margin:0 0 4px;font-size:15px}#helpd p{margin:0 0 6px;color:var(--mu);font-size:14px}#helpd a{color:var(--ac);font-size:14px}
+@media(max-width:820px){body:not([data-tab=home]) #startc,body:not([data-tab=home]) #sampb,body:not([data-tab=home]) #remb{display:none}}
 .rx{flex:1 1 170px;max-width:210px;margin:0 auto;direction:ltr}.rx[hidden]{display:none}
 .rxb{display:block;text-align:center;margin:0 auto 4px;width:max-content;max-width:100%;background:var(--card);border:2px solid var(--ac);border-radius:14px;padding:4px 10px;font-weight:700;font-size:13px;position:relative;unicode-bidi:plaintext}
 .rxb::after{content:"";position:absolute;left:50%;bottom:-8px;width:10px;height:10px;margin-left:-5px;background:var(--card);border-right:2px solid var(--ac);border-bottom:2px solid var(--ac);transform:rotate(45deg)}
@@ -177,8 +187,12 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 <div class="wrap">
 <div class="bar-top">
   <div><h1>💰 Stack Money</h1><div class="muted" data-t="tagline">Your numbers stay in this browser. Nothing is uploaded.</div></div>
-  <div class="row" style="margin:0"><input type="month" id="month"><select id="lang" data-aria="langL" aria-label="Language"></select><button id="add-note" class="ghost" data-t="sticky">+ Sticky note</button></div>
+  <div class="row" style="margin:0"><input type="month" id="month"><select id="lang" data-aria="langL" aria-label="Language"></select><button id="help-b" class="ghost" data-aria="helpAria" aria-label="Help">?</button><button id="add-note" class="ghost" data-t="sticky">+ Sticky note</button></div>
 </div>
+
+<div class="card" id="startc" hidden><h2 data-t="stH">Start here</h2><p class="muted" style="margin:0 0 6px" data-t="stSub"></p><div class="muted" id="stp" style="margin:0 0 4px;font-weight:600"></div><div class="stbar"><i id="stbar"></i></div><ul class="stl" id="stl"></ul><div class="row" style="margin:0"><button id="st-sample" data-t="sample">Load sample data</button><button id="st-hide" class="ghost" data-t="hideB">Hide this</button></div></div>
+<div class="card banr" id="sampb" hidden><span data-t="sampBanner"></span><button id="samp-clear" data-t="sampClear">Clear sample data</button></div>
+<div class="card banr" id="remb" hidden><span id="remt"></span><span class="bbtn"><button id="rem-copy" data-t="copyB">Copy backup</button><button id="rem-later" class="ghost" data-t="remLater">Remind me later</button></span></div>
 
 <div class="card" id="nwc">
   <div class="nwi">
@@ -206,6 +220,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 </div>
 
 <div class="acc">
+  <p class="muted" data-t="hintAcc" style="text-align:center;margin:0 0 8px"></p>
   <div class="card bankbox"><h2 data-t="bank">🏦 Bank accounts</h2><div id="bank"></div><button class="ghost" data-add="bank" data-t="add">+ Add</button><div class="tot"><span data-t="total">Total</span><span id="t-bank"></span></div></div>
   <div class="arrows" aria-hidden="true">
     <svg viewBox="0 0 200 62"><path d="M190,8 H70 Q50,8 50,28 V46" fill="none" stroke="#ef4444" stroke-width="12"/><polygon points="34,44 66,44 50,60" fill="#ef4444"/></svg>
@@ -221,6 +236,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
   <div class="col">
     <div class="card flow"><h2 data-t="flowH">🧭 Net Worth Breakdown</h2><div id="flow"></div><div class="muted" data-t="pieCap">Each slice is one account’s share of your total balances. Assets minus debt equals your net worth.</div></div>
     <div class="card" id="goalc"><h2 id="goalh">🎯 Goal</h2>
+      <p class="muted" data-t="hintGoal" style="margin:0 0 10px"></p>
       <div class="gl">
         <div class="gf">
           <input id="goal-t" maxlength="60" data-ph="goalPh" data-aria="goalNameAria" placeholder="What are you saving for?" aria-label="Goal name">
@@ -267,6 +283,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 </div>
 <nav id="tabs"><button data-tab="home">🏠<span data-t="tabHome">Home</span></button><button data-tab="add"><svg class="tabadd" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span data-t="tabAdd">Add</span></button><button data-tab="acc">🏦<span data-t="tabAcc">Accounts</span></button><button data-tab="notes">📝<span data-t="tabNotes">Notes</span></button></nav>
 <div id="notes"></div>
+<dialog id="helpd"><div class="hin"><div class="hh"><h2 data-t="helpH">How to use Stack Money</h2><button class="ghost" id="help-x" data-t="closeB">Close</button></div><div id="helpbody"></div></div></dialog>
 
 <script>
 /* ---------- languages ---------- */
@@ -276,6 +293,40 @@ let LANG="en";
 try{const sv=localStorage.getItem("stackmoney.lang");if(LC.includes(sv))LANG=sv;else{const nl=(navigator.language||"en").toLowerCase().slice(0,2);if(LC.includes(nl))LANG=nl}}catch(e){}
 /* order: en, es, fr, pt, zh, vi, ar */
 const T={
+stGo:["Go", "Ir", "Aller", "Ir", "前往", "Đi tới", "انتقال"],
+stProg:["{n} of 3 done", "{n} de 3 listos", "{n} sur 3 terminées", "{n} de 3 concluídos", "已完成 {n}/3", "Xong {n}/3", "اكتمل {n} من 3"],
+stDone:["🎉 All set! A few minutes each week keeps your numbers honest.", "🎉 ¡Todo listo! Unos minutos a la semana mantienen tus números al día.", "🎉 Tout est prêt ! Quelques minutes par semaine gardent vos chiffres à jour.", "🎉 Tudo pronto! Alguns minutos por semana mantêm seus números em dia.", "🎉 全部完成!每周花几分钟,就能让数字保持准确。", "🎉 Xong rồi! Chỉ vài phút mỗi tuần là số liệu luôn chính xác.", "🎉 كل شيء جاهز! بضع دقائق أسبوعيًا تُبقي أرقامك دقيقة."],
+helpAria:["Help", "Ayuda", "Aide", "Ajuda", "帮助", "Trợ giúp", "مساعدة"],
+helpH:["How to use Stack Money", "Cómo usar Stack Money", "Comment utiliser Stack Money", "Como usar o Stack Money", "Stack Money 使用指南", "Cách dùng Stack Money", "كيفية استخدام Stack Money"],
+closeB:["Close", "Cerrar", "Fermer", "Fechar", "关闭", "Đóng", "إغلاق"],
+watch:["▶ Watch the video", "▶ Ver el video", "▶ Voir la vidéo", "▶ Assistir ao vídeo", "▶ 观看视频", "▶ Xem video", "▶ شاهد الفيديو"],
+hAccT:["Accounts & net worth", "Cuentas y patrimonio neto", "Comptes et valeur nette", "Contas e patrimônio líquido", "账户与净资产", "Tài khoản & tài sản ròng", "الحسابات وصافي الثروة"],
+hAccB:["Add your bank accounts at the top, then debts and savings below. Type each balance as it appears in your bank app. Net worth is assets minus debt, and it updates as you type.", "Agrega tus cuentas bancarias arriba, y abajo las deudas y los ahorros. Escribe cada saldo tal como aparece en tu app del banco. El patrimonio neto es activos menos deudas y se actualiza mientras escribes.", "Ajoutez vos comptes bancaires en haut, puis vos dettes et votre épargne en dessous. Saisissez chaque solde tel qu'il apparaît dans votre appli bancaire. La valeur nette est égale aux actifs moins les dettes et se met à jour pendant la saisie.", "Adicione suas contas bancárias no topo, depois as dívidas e a poupança abaixo. Digite cada saldo como aparece no app do seu banco. O patrimônio líquido é ativos menos dívidas e se atualiza enquanto você digita.", "在顶部添加银行账户,下方添加债务和储蓄账户。按银行应用中显示的金额输入各项余额。净资产 = 资产 − 债务,输入时会实时更新。", "Thêm tài khoản ngân hàng ở trên cùng, rồi đến nợ và tiết kiệm bên dưới. Nhập từng số dư đúng như trong ứng dụng ngân hàng. Tài sản ròng bằng tài sản trừ nợ và tự cập nhật khi bạn gõ.", "أضف حساباتك المصرفية في الأعلى ثم الديون والمدخرات أسفلها. اكتب كل رصيد كما يظهر في تطبيق البنك. صافي الثروة هو الأصول ناقص الديون ويتحدث أثناء الكتابة."],
+hTxT:["Transactions & categories", "Transacciones y categorías", "Transactions et catégories", "Transações e categorias", "交易与类别", "Giao dịch & danh mục", "المعاملات والفئات"],
+hTxB:["Use “Add a transaction” for each purchase or paycheck. Enter amounts as positive numbers: only the Income category adds money. Use “Edit categories” to add or delete your own.", "Usa «Agregar una transacción» para cada compra o pago de nómina. Ingresa los montos como números positivos: solo la categoría Ingresos suma dinero. Con «Editar categorías» puedes agregar o eliminar las tuyas.", "Utilisez « Ajouter une transaction » pour chaque achat ou salaire. Saisissez les montants en positif : seule la catégorie Revenus ajoute de l'argent. « Modifier les catégories » permet d'ajouter ou de supprimer les vôtres.", "Use “Adicionar uma transação” para cada compra ou salário. Informe os valores como positivos: só a categoria Receita soma dinheiro. Em “Editar categorias” você adiciona ou exclui as suas.", "每笔消费或收入都用“添加交易”记录。金额请输入正数:只有“收入”类别会增加资金。用“编辑类别”可添加或删除自己的类别。", "Dùng “Thêm giao dịch” cho mỗi khoản chi hoặc lương. Nhập số tiền dạng số dương: chỉ danh mục Thu nhập mới cộng thêm tiền. Dùng “Chỉnh sửa danh mục” để thêm hoặc xóa danh mục của bạn.", "استخدم «إضافة معاملة» لكل عملية شراء أو راتب. أدخل المبالغ كأرقام موجبة: فئة الدخل وحدها تضيف المال. استخدم «تعديل الفئات» لإضافة فئاتك أو حذفها."],
+hBrT:["Breakdowns & filters", "Desgloses y filtros", "Détails et filtres", "Resumos e filtros", "明细与筛选", "Phân tích & bộ lọc", "التفاصيل وعوامل التصفية"],
+hBrB:["The pie shows each account’s share of your balances. “Transaction Breakdown” shows this month’s spending by category; tick or untick categories to focus. The Transactions list can be filtered by several accounts, categories and months at once.", "El gráfico muestra la parte de cada cuenta en tus saldos. «Desglose de transacciones» muestra el gasto del mes por categoría; marca o desmarca categorías para enfocarte. La lista de transacciones se puede filtrar por varias cuentas, categorías y meses a la vez.", "Le graphique montre la part de chaque compte dans vos soldes. « Répartition des transactions » affiche les dépenses du mois par catégorie ; cochez ou décochez des catégories pour affiner. La liste des transactions peut être filtrée par plusieurs comptes, catégories et mois à la fois.", "O gráfico mostra a parte de cada conta nos seus saldos. “Resumo das transações” mostra os gastos do mês por categoria; marque ou desmarque categorias para focar. A lista de transações pode ser filtrada por várias contas, categorias e meses ao mesmo tempo.", "饼图显示各账户占总余额的比例。“交易明细”按类别显示本月支出,勾选或取消类别即可聚焦。交易记录可同时按多个账户、类别和月份筛选。", "Biểu đồ tròn cho thấy tỷ trọng của từng tài khoản trong số dư. “Phân tích giao dịch” hiển thị chi tiêu tháng này theo danh mục; chọn hoặc bỏ chọn danh mục để tập trung. Danh sách giao dịch có thể lọc theo nhiều tài khoản, danh mục và tháng cùng lúc.", "يعرض المخطط الدائري حصة كل حساب من أرصدتك. «تفصيل المعاملات» يعرض إنفاق هذا الشهر حسب الفئة؛ حدّد الفئات أو ألغِ تحديدها للتركيز. يمكن تصفية قائمة المعاملات بعدة حسابات وفئات وأشهر معًا."],
+hGoalT:["Goal", "Meta", "Objectif", "Meta", "目标", "Mục tiêu", "الهدف"],
+hGoalB:["Name your goal, enter the amount you want and how much you’ve saved. The bar fills up and the stick figure reacts as you reach 25%, 50%, 75%, 90% and 100%.", "Ponle nombre a tu meta, ingresa el monto que quieres y cuánto llevas ahorrado. La barra se llena y el muñeco reacciona al llegar al 25 %, 50 %, 75 %, 90 % y 100 %.", "Nommez votre objectif, saisissez le montant visé et ce que vous avez épargné. La jauge se remplit et le bonhomme réagit à 25 %, 50 %, 75 %, 90 % et 100 %.", "Dê um nome à sua meta, informe o valor desejado e quanto já economizou. A barra enche e o bonequinho reage aos 25%, 50%, 75%, 90% e 100%.", "给目标起个名字,输入目标金额和已攒金额。进度条会逐渐填满,达到 25%、50%、75%、90% 和 100% 时小人会有不同反应。", "Đặt tên cho mục tiêu, nhập số tiền muốn đạt và số đã tiết kiệm. Thanh sẽ đầy dần và chú người que sẽ phản ứng khi bạn đạt 25%, 50%, 75%, 90% và 100%.", "سمِّ هدفك وأدخل المبلغ المطلوب وما ادّخرته. يمتلئ الشريط وتتفاعل الشخصية عند بلوغ 25% و50% و75% و90% و100%."],
+hNoteT:["Notes", "Notas", "Notes", "Notas", "笔记", "Ghi chú", "ملاحظات"],
+hNoteB:["Add sticky notes for ideas and reminders. On a computer, drag them by the header and resize from the corner. On a phone, use the Notes tab.", "Agrega notas adhesivas para ideas y recordatorios. En computadora, arrástralas por el encabezado y cambia su tamaño desde la esquina. En el teléfono, usa la pestaña Notas.", "Ajoutez des pense-bêtes pour vos idées et rappels. Sur ordinateur, faites-les glisser par l'en-tête et redimensionnez-les par le coin. Sur téléphone, utilisez l'onglet Notes.", "Adicione notas adesivas para ideias e lembretes. No computador, arraste pelo cabeçalho e redimensione pelo canto. No celular, use a aba Notas.", "用便签记录想法和提醒。在电脑上可拖动标题栏移动、拖拽角落调整大小;手机上请使用“笔记”标签页。", "Thêm ghi chú dán cho ý tưởng và lời nhắc. Trên máy tính, kéo bằng thanh tiêu đề và đổi kích thước ở góc. Trên điện thoại, dùng tab Ghi chú.", "أضف ملاحظات لاصقة للأفكار والتذكيرات. على الحاسوب اسحبها من الرأس وغيّر حجمها من الزاوية. على الهاتف استخدم تبويب ملاحظات."],
+hBakT:["Backups & privacy", "Copias de seguridad y privacidad", "Sauvegardes et confidentialité", "Backup e privacidade", "备份与隐私", "Sao lưu & riêng tư", "النسخ الاحتياطي والخصوصية"],
+hBakB:["Your data stays in this browser only. Use “Copy backup” now and then and keep the text somewhere safe. To move to a new phone or computer, paste it into “Restore” there.", "Tus datos se quedan solo en este navegador. Usa «Copiar copia de seguridad» de vez en cuando y guarda el texto en un lugar seguro. Para pasar a otro teléfono o computadora, pégalo en «Restaurar» allí.", "Vos données restent uniquement dans ce navigateur. Utilisez « Copier la sauvegarde » de temps en temps et gardez le texte en lieu sûr. Pour changer de téléphone ou d'ordinateur, collez-le dans « Restaurer » sur le nouvel appareil.", "Seus dados ficam apenas neste navegador. Use “Copiar backup” de vez em quando e guarde o texto em um lugar seguro. Para trocar de celular ou computador, cole-o em “Restaurar” no novo aparelho.", "你的数据只保存在此浏览器中。请不时使用“复制备份”并把文字存放在安全的地方。换手机或电脑时,把它粘贴到新设备的“恢复”中即可。", "Dữ liệu của bạn chỉ nằm trong trình duyệt này. Thỉnh thoảng hãy dùng “Sao chép bản sao lưu” và cất văn bản ở nơi an toàn. Khi đổi điện thoại hoặc máy tính, dán vào “Khôi phục” trên thiết bị mới.", "تبقى بياناتك في هذا المتصفح فقط. استخدم «نسخ النسخة الاحتياطية» من وقت لآخر واحتفظ بالنص في مكان آمن. للانتقال إلى هاتف أو حاسوب جديد الصقه في «استعادة» هناك."],
+stH:["Start here", "Empieza aquí", "Commencez ici", "Comece aqui", "从这里开始", "Bắt đầu tại đây", "ابدأ من هنا"],
+stSub:["Three quick steps to get going:", "Tres pasos rápidos para empezar:", "Trois étapes rapides pour démarrer :", "Três passos rápidos para começar:", "三个简单步骤,马上上手:", "Ba bước nhanh để bắt đầu:", "ثلاث خطوات سريعة للبدء:"],
+st1:["Add your bank balance", "Agrega el saldo de tu banco", "Ajoutez le solde de votre banque", "Adicione o saldo do seu banco", "添加你的银行余额", "Thêm số dư ngân hàng", "أضف رصيدك المصرفي"],
+st2:["Add a debt or savings balance", "Agrega una deuda o un ahorro", "Ajoutez une dette ou une épargne", "Adicione uma dívida ou poupança", "添加一笔债务或储蓄", "Thêm một khoản nợ hoặc tiết kiệm", "أضف دينًا أو مدخرات"],
+st3:["Log your first transaction", "Registra tu primera transacción", "Enregistrez votre première transaction", "Registre sua primeira transação", "记录你的第一笔交易", "Ghi giao dịch đầu tiên", "سجّل معاملتك الأولى"],
+sample:["Load sample data", "Cargar datos de ejemplo", "Charger des données d'exemple", "Carregar dados de exemplo", "加载示例数据", "Tải dữ liệu mẫu", "تحميل بيانات تجريبية"],
+hideB:["Hide this", "Ocultar", "Masquer", "Ocultar", "隐藏", "Ẩn", "إخفاء"],
+sampBanner:["You’re viewing sample data. Your own numbers are saved and will return when you clear it.", "Estás viendo datos de ejemplo. Tus números están guardados y volverán al borrarlos.", "Vous voyez des données d'exemple. Vos chiffres sont sauvegardés et reviendront quand vous les effacerez.", "Você está vendo dados de exemplo. Seus números estão guardados e voltam quando você limpar.", "你正在查看示例数据。你自己的数据已保存,清除示例后会恢复。", "Bạn đang xem dữ liệu mẫu. Số liệu của bạn đã được giữ lại và sẽ trở lại khi bạn xóa dữ liệu mẫu.", "أنت تعرض بيانات تجريبية. أرقامك محفوظة وستعود عند مسحها."],
+sampClear:["Clear sample data", "Borrar datos de ejemplo", "Effacer les données d'exemple", "Limpar dados de exemplo", "清除示例数据", "Xóa dữ liệu mẫu", "مسح البيانات التجريبية"],
+sampGoal:["Vacation fund", "Fondo para vacaciones", "Fonds vacances", "Fundo de férias", "旅行基金", "Quỹ du lịch", "صندوق الإجازة"],
+hintAcc:["Type balances as shown in your bank app. Nothing is connected to your bank.", "Escribe los saldos como aparecen en tu app del banco. Nada está conectado a tu banco.", "Saisissez les soldes comme dans votre appli bancaire. Rien n'est relié à votre banque.", "Digite os saldos como aparecem no app do banco. Nada está conectado ao seu banco.", "按银行应用中的金额输入余额。本工具不会连接你的银行。", "Nhập số dư như trong ứng dụng ngân hàng. Không có gì được kết nối với ngân hàng của bạn.", "اكتب الأرصدة كما تظهر في تطبيق البنك. لا يوجد أي اتصال ببنكك."],
+hintGoal:["Enter a goal and what you’ve saved. The figure reacts as you hit milestones.", "Ingresa una meta y lo que llevas ahorrado. El muñeco reacciona al alcanzar hitos.", "Saisissez un objectif et votre épargne. Le bonhomme réagit à chaque palier.", "Informe uma meta e quanto já economizou. O bonequinho reage a cada marco.", "输入目标和已攒金额,达到里程碑时小人会有反应。", "Nhập mục tiêu và số đã tiết kiệm. Chú người que sẽ phản ứng khi bạn đạt các mốc.", "أدخل هدفًا وما ادّخرته. تتفاعل الشخصية عند بلوغ المراحل."],
+remB:["It’s been {d} days since your last backup.", "Han pasado {d} días desde tu última copia de seguridad.", "Cela fait {d} jours depuis votre dernière sauvegarde.", "Faz {d} dias desde o seu último backup.", "距离上次备份已过去 {d} 天。", "Đã {d} ngày kể từ lần sao lưu gần nhất.", "مرّت {d} يومًا منذ آخر نسخة احتياطية."],
+remNever:["Back up your data so you never lose it.", "Haz una copia de seguridad para no perder tus datos.", "Sauvegardez vos données pour ne jamais les perdre.", "Faça um backup para nunca perder seus dados.", "请备份数据,以免丢失。", "Hãy sao lưu dữ liệu để không bao giờ bị mất.", "انسخ بياناتك احتياطيًا حتى لا تفقدها أبدًا."],
+remLater:["Remind me later", "Recordármelo luego", "Me le rappeler plus tard", "Lembrar depois", "稍后提醒", "Nhắc tôi sau", "ذكّرني لاحقًا"],
 nOfAcc:["{n} of {m} accounts","{n} de {m} cuentas","{n} comptes sur {m}","{n} de {m} contas","{n}/{m} 个账户","{n}/{m} tài khoản","{n} من {m} حسابات"],
 nOfMon:["{n} of {m} months","{n} de {m} meses","{n} mois sur {m}","{n} de {m} meses","{n}/{m} 个月份","{n}/{m} tháng","{n} من {m} أشهر"],
 noAccs:["No accounts","Ninguna cuenta","Aucun compte","Nenhuma conta","无账户","Không có tài khoản","لا حسابات"],
@@ -410,6 +461,7 @@ function applyLang(){
   const L=LANGS[LANG];document.documentElement.lang=L.h;document.documentElement.dir=L.d;
   document.querySelectorAll("[data-t]").forEach(e=>{e.textContent=tr(e.dataset.t)});
   document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=tr(e.dataset.ph)});
+  buildHelp();
   document.querySelectorAll("[data-aria]").forEach(e=>{e.setAttribute("aria-label",tr(e.dataset.aria))});
   renderAcc();renderMonth();renderNotes();
 }
@@ -442,6 +494,8 @@ const fresh=()=>({acc:{bank:[{n:tr("defChk"),a:0,x:""}],debt:[{n:tr("defCC"),a:0
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){S=fresh()}
 S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");
+function ensureUI(){S.ui=S.ui||{};S.ui.created=S.ui.created||Date.now()}
+ensureUI();
 S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[newNote(0,tr("defNote"))];
 let BCATS=[];
 const LGDEF=()=>({q:"",ex:{acct:[],cat:[]},mon:null});
@@ -457,7 +511,7 @@ function renderAcc(){
 }
 function totals(){
   $("t-bank").textContent=fmt(sum(S.acc.bank));$("t-debt").textContent=fmt(-sum(S.acc.debt));$("t-save").textContent=fmt(sum(S.acc.save));
-  renderNW();renderFlow();renderGoal();
+  renderNW();renderFlow();renderGoal();renderHelp();
 }
 const fmt0=n=>{const s="$"+Math.round(n).toLocaleString("en-US");return LANG==="ar"?"\u2066"+s+"\u2069":s};
 let RX={s:null};
@@ -482,6 +536,48 @@ function rxUpdate(st){
     try{if(st&&matchMedia("(prefers-reduced-motion: reduce)").matches){const v=$("rxs").querySelector("svg");v.pauseAnimations&&v.pauseAnimations()}}catch(e){}}
   const k={idle:"rxPlan",flip:"rxGo",cry:"rxClose",done:"rxDone"}[st];$("rxb").textContent=k?tr(k):"";$("rxb").style.display=k?"":"none";
 }
+const VIDEOS={acc:"",tx:"",br:"",goal:"",note:"",bak:""};/* paste video links between the quotes */
+const HELP=[["acc","hAccT","hAccB"],["tx","hTxT","hTxB"],["br","hBrT","hBrB"],["goal","hGoalT","hGoalB"],["note","hNoteT","hNoteB"],["bak","hBakT","hBakB"]];
+function buildHelp(){$("helpbody").innerHTML=HELP.map(([k,a,b])=>`<section><h3>${esc(tr(a))}</h3><p>${esc(tr(b))}</p>${VIDEOS[k]?`<a href="${esc(VIDEOS[k])}" target="_blank" rel="noopener">${esc(tr("watch"))}</a>`:""}</section>`).join("")}
+function renderHelp(){
+  const st=[S.acc.bank.some(r=>+r.a),[...S.acc.debt,...S.acc.save].some(r=>+r.a),Object.values(S.tx).some(a=>a.length)];
+  const man=S.ui.steps||[],dn=st.map((x,i)=>x||!!man[i]),n=dn.filter(Boolean).length;
+  $("startc").hidden=!!S.ui.hideStart||!!S.sampBak;
+  $("stl").innerHTML=["st1","st2","st3"].map((k,i)=>`<li class="${dn[i]?"dn":""}"><label><input type="checkbox" data-st="${i}" ${dn[i]?"checked":""} ${st[i]?"disabled":""}><span>${esc(tr(k))}</span></label>${dn[i]?"":`<button class="ghost sg" data-go="${i}">${esc(tr("stGo"))}</button>`}</li>`).join("");
+  $("stp").textContent=n==3?tr("stDone"):tr("stProg",{n:n});$("stbar").style.width=(n/3*100)+"%";
+  $("st-sample").hidden=n==3;$("st-hide").textContent=tr(n==3?"closeB":"hideB");
+  $("sampb").hidden=!S.sampBak;
+  const last=S.ui.lastBackup||S.ui.created,days=Math.floor((Date.now()-last)/864e5),has=st.some(Boolean);
+  $("remb").hidden=!(has&&!S.sampBak&&days>=30&&Date.now()>(S.ui.snooze||0));
+  $("remt").textContent=S.ui.lastBackup?tr("remB",{d:days}):tr("remNever");
+}
+function syncAll(){$("month").value=S.month;$("goal-t").value=S.goal.t;$("goal-g").value=fmtIn(S.goal.g);$("goal-b").value=fmtIn(S.goal.b);F.bc={acct:"(All)",ex:[]};F.lg=LGDEF();renderAcc();renderMonth();renderNotes()}
+function loadSample(){
+  const snap=JSON.parse(JSON.stringify(S));delete snap.sampBak;
+  const m=today().slice(0,7),d=n=>m+"-"+String(n).padStart(2,"0"),mk=(v,a,cat,day,acct)=>({v,a,acct,cat,d:d(day),n:""}),ch=tr("defChk");
+  S.sampBak=JSON.stringify(snap);
+  S.acc={bank:[{n:ch,a:2450,x:""}],debt:[{n:tr("defCC"),a:640,m:35,x:""}],save:[{n:tr("defEF"),a:1200,x:""},{n:"Roth IRA",a:3500,x:""}]};
+  S.tx={[m]:[mk("Paycheck",1800,"Income",1,ch),mk("Landlord",950,"Bills",2,ch),mk("Shell",42.5,"Gas",3,ch),mk("Netflix",15.49,"Subscription",4,ch),mk("Gym",30,"Self Care",5,ch),mk("Card payment",120,"Credit Card Payment",6,ch)]};
+  S.goal={t:tr("sampGoal"),g:2000,b:800};S.month=m;save();syncAll();
+}
+function clearSample(){
+  if(!S.sampBak)return;const ui=S.ui;let o;try{o=JSON.parse(S.sampBak)}catch(e){return}
+  S=o;S.ui=ui;delete S.sampBak;ensureUI();S.goal=S.goal||{t:"",g:0,b:0};save();syncAll();
+}
+$("stl").onchange=e=>{const i=e.target.dataset.st;if(i===undefined)return;S.ui.steps=S.ui.steps||[false,false,false];S.ui.steps[+i]=e.target.checked;save();renderHelp()};
+$("stl").onclick=e=>{const b=e.target.closest("[data-go]");if(b)goStep(+b.dataset.go)};
+function goStep(i){
+  document.body.dataset.tab=i<2?"acc":"add";
+  setTimeout(()=>{const el=i==0?document.querySelector('#bank input[data-f="a"]'):i==1?(document.querySelector('#debt input[data-f="a"]')||document.querySelector('#save input[data-f="a"]')):$("f-v");
+    if(el){el.scrollIntoView({block:"center",behavior:"smooth"});el.focus({preventScroll:true})}},60);
+}
+$("st-sample").onclick=loadSample;$("samp-clear").onclick=clearSample;
+$("st-hide").onclick=()=>{S.ui.hideStart=true;save();renderHelp()};
+$("rem-copy").onclick=()=>$("bk-copy").click();
+$("rem-later").onclick=()=>{S.ui.snooze=Date.now()+7*864e5;save();renderHelp()};
+$("help-b").onclick=()=>{const d=$("helpd");d.showModal?d.showModal():d.setAttribute("open","")};
+$("help-x").onclick=()=>$("helpd").close();
+$("helpd").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
 function renderGoal(){
   const g=+S.goal.g||0,b=+S.goal.b||0,p=g>0?Math.max(0,Math.min(100,b/g*100)):0,done=g>0&&b>=g;
   $("goalh").textContent="🎯 "+((S.goal.t||"").trim()||tr("goalDef"));
@@ -696,10 +792,11 @@ $("add-tx").onclick=()=>{
 $("bk-copy").onclick=async()=>{
   const t=JSON.stringify(S);$("bk").value=t;
   try{await navigator.clipboard.writeText(t);$("bk-copy").textContent=tr("copied")}catch(e){$("bk").select();$("bk-copy").textContent=tr("selCopy")}
+  S.ui.lastBackup=Date.now();save();renderHelp();
   setTimeout(()=>{$("bk-copy").textContent=tr("copyB")},2500)};
 $("bk-show").onclick=()=>{$("bk").value=JSON.stringify(S);$("bk").select()};
-$("bk-load").onclick=()=>{try{const o=JSON.parse($("bk").value);if(!o.acc||!o.tx)throw 0;S=o;S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[];S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");save();$("month").value=S.month;$("goal-t").value=S.goal.t;$("goal-g").value=fmtIn(S.goal.g);$("goal-b").value=fmtIn(S.goal.b);renderAcc();renderMonth();renderNotes()}catch(e){alert(tr("badBackup"))}};
-$("reset").onclick=()=>{if(confirm(tr("eraseConfirm"))){S=fresh();save();$("month").value=S.month;$("goal-t").value="";$("goal-g").value="";$("goal-b").value="";F.bc={acct:"(All)",ex:[]};F.lg=LGDEF();renderAcc();renderMonth();renderNotes()}};
+$("bk-load").onclick=()=>{try{const o=JSON.parse($("bk").value);if(!o.acc||!o.tx)throw 0;S=o;ensureUI();S.goal=S.goal||{t:"",g:0,b:0};S.goal.b=+S.goal.b||0;S.notes=S.notes||[];S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");save();$("month").value=S.month;$("goal-t").value=S.goal.t;$("goal-g").value=fmtIn(S.goal.g);$("goal-b").value=fmtIn(S.goal.b);renderAcc();renderMonth();renderNotes()}catch(e){alert(tr("badBackup"))}};
+$("reset").onclick=()=>{if(confirm(tr("eraseConfirm"))){S=fresh();ensureUI();save();$("month").value=S.month;$("goal-t").value="";$("goal-g").value="";$("goal-b").value="";F.bc={acct:"(All)",ex:[]};F.lg=LGDEF();renderAcc();renderMonth();renderNotes()}};
 initLang();
 try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)){addEventListener("load",()=>{try{navigator.serviceWorker.register("sw.js").catch(()=>{})}catch(e){}})}
