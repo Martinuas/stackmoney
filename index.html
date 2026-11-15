@@ -66,7 +66,7 @@ body{padding-bottom:76px}
 #tabs{touch-action:none}#tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
 #tabs button{flex:1;background:transparent;color:var(--mu);border:0;border-radius:0;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;font-size:18px;line-height:1.1}
 #tabs button span{font-size:10px;line-height:1.1;text-align:center;padding:0 2px}
-body[data-tab=welcome] #tabs [data-tab=welcome],body[data-tab=home] #tabs [data-tab=home],body[data-tab=budget] #tabs [data-tab=budget],body[data-tab=add] #tabs [data-tab=add],body[data-tab=acc] #tabs [data-tab=acc],body[data-tab=notes] #tabs [data-tab=notes]{color:var(--ac);font-weight:600}
+body[data-tab=welcome] #tabs [data-tab=welcome],body[data-tab=home] #tabs [data-tab=home],body[data-tab=budget] #tabs [data-tab=budget],body[data-tab=add] #tabs [data-tab=add],body[data-tab=acc] #tabs [data-tab=acc],body[data-tab=project] #tabs [data-tab=project],body[data-tab=future] #tabs [data-tab=future],body[data-tab=notes] #tabs [data-tab=notes]{color:var(--ac);font-weight:600}
 #add-note,.bar-top>div:first-child .muted{display:none}
 #notes{display:none}
 #addc,.acc,#nv,#bkc{display:none}
@@ -171,14 +171,20 @@ th{color:var(--mu);font-weight:500}
 .hi{flex:1;min-width:0}.hn{font-weight:600}.hl{font-size:19px;font-weight:700}.hl.ok{color:var(--gr)}.hl.near{color:#d97706}.hl.over{color:var(--rd)}
 .hb{height:8px;border-radius:4px;background:var(--bd);overflow:hidden;margin:3px 0}.hb i{display:block;height:100%;background:var(--gr)}.hc.near .hb i{background:#f59e0b}.hc.over .hb i{background:var(--rd)}
 .cap{display:grid;grid-template-columns:1fr auto 120px;gap:8px;align-items:center;margin-bottom:6px}
-#pview{display:none}#pview{--sw:min(calc((100vh - 92px)*.4643),27vw);width:100vw;margin-left:calc(50% - 50vw);padding:0 12px;box-sizing:border-box}.pg{display:grid;grid-template-columns:var(--sw) minmax(0,1fr) var(--sw);gap:12px;align-items:start;margin-top:0}
+#pview{display:none}#pview{--sw:min(calc((100vh - 92px)*.3393),20vw);width:100vw;margin-left:calc(50% - 50vw);padding:0 12px;box-sizing:border-box}.pg{display:grid;grid-template-columns:var(--sw) minmax(0,1fr) var(--sw);gap:12px;align-items:start;margin-top:0}
 .pcc{display:flex;flex-direction:column;gap:12px;min-width:0}.pcl,.pcr{position:sticky;top:12px;height:calc(100vh - 92px);width:var(--sw)}.pcl .card,.pcr .card,.pbw{height:100%}.pcl .card,.pcr .card{padding:0;overflow:hidden}.pcl svg,.pcr svg{width:100%;height:100%;display:block}
 .pb i{background:var(--gr)}.pb.near i{background:#f59e0b}.pb.over i{background:var(--rd)}.pb{height:12px;border-radius:6px;margin:10px 0 2px}.pbt{font-size:13px;font-weight:700}
+.pbn{display:none}.pjm{display:none}#pic,#pic-pv{display:block;width:100%;border-radius:10px;object-fit:cover}#pic{height:100%;object-position:center 30%}#pic-pv{max-height:200px;object-fit:contain;background:var(--bd)}#pic[hidden],#pic-pv[hidden]{display:none}.sis.hasimg>svg{display:none}.sis.hasimg{width:min(100%,440px);height:auto;aspect-ratio:16/10}@media(max-width:820px){.sis.hasimg{width:100%;max-width:none;aspect-ratio:4/5}}
+.futi{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}.futi .gfl{flex:1 1 140px}#fut-out svg{width:100%;height:auto;display:block;margin:6px 0}#fut-out p{margin:6px 0;font-size:14px}#fut-out .big{font-size:16px;font-weight:700}.fl{display:flex;gap:14px;font-size:12px;color:var(--mu);flex-wrap:wrap}.fl i{display:inline-block;width:14px;height:0;border-top:3px solid var(--gr);vertical-align:middle;margin-inline-end:4px}.fl i.d{border-top:2px dashed var(--mu)}
+#fview{display:none}.scg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:12px 0;align-items:start}.sc{padding:0;overflow:hidden}.sc .sch{padding:12px;border-bottom:2px solid var(--tx);display:flex;gap:6px;align-items:center}.sc .sch input{flex:1;min-width:0;text-align:center;font-weight:700;border:0;background:transparent}.sc table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed}.sc th:nth-child(2),.sc td.am,.sc .stt td:nth-child(2){width:42%}.sc th:nth-child(3),.sc td.x,.sc .stt td:nth-child(3){width:30px}.sc td input{min-width:0}.sc th{text-align:left;font-size:12px;color:var(--mu);padding:6px 8px;border-bottom:1px solid var(--bd)}.sc td{padding:3px 6px}.sc tbody tr:nth-child(odd) td{background:rgba(99,102,241,.09)}.sc td input{width:100%;border:0;background:transparent;font:inherit;padding:6px 2px}.sc td.am input{text-align:right}.sc td.am.ng input{color:var(--rd)}.sc td.x{width:24px;padding:0}.sc .stt td{background:#92d050;color:#111;font-weight:700;padding:7px 8px}.sc .stt td:nth-child(2){text-align:right}#fu-n{width:130px}#fu-u{width:150px}.sc .mul{padding:8px 12px;font-size:13px;color:var(--mu);display:flex;justify-content:space-between;gap:8px}.sc .mul b{color:var(--tx)}.sc .ft{padding:0 8px 8px}
+#fu-rec ol{margin:6px 0 0;padding-inline-start:22px}#fu-rec li{margin:7px 0;font-size:14px}#fu-guide ol{margin:6px 0 10px;padding-inline-start:22px}#fu-guide li{margin:6px 0;font-size:14px}#fu-guide{border:2px solid var(--gr);margin-bottom:12px}#fu-chart svg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}.lg{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mu)}.lg i{display:inline-block;width:14px;height:0;border-top:3px solid;vertical-align:middle;margin-inline-end:4px}#set-notes{display:none;margin-bottom:6px}
+#wl-hd{display:none;font-size:13px;padding:6px 10px}
+@media(max-width:820px){body[data-tab=future] #bview,body[data-tab=future] #wview{display:none}body[data-tab=future] #fview{display:block}#set-notes{display:inline-flex;gap:6px}body[data-tab=project] #bview,body[data-tab=project] #wview{display:none}body[data-tab=project] #pview{display:block;width:auto;margin-left:0;padding:0}.pcl,.pcr{display:none}.pg{display:block}.pbn{display:block;margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--card);border:2px solid var(--gr);font-weight:800;font-size:16px;text-align:center}.pjm{display:block;margin:8px 0 0;padding:8px 12px;border-radius:12px;border:2px solid var(--gr);font-weight:700;font-size:14px}.pjm:empty{display:none}.pjm.warn{border-color:#f59e0b}.pjm.bad{border-color:var(--rd)}#wl-hd{display:inline-flex}.pg .pcc{margin-top:12px}.ptb td,.ptb th{padding:4px 3px;font-size:13px}#pj-rows input{min-width:0;padding:6px}}
 .pbw{position:relative}.pjb{position:absolute;left:8px;right:8px;top:8px;z-index:2;background:var(--card);border:2px solid var(--gr);border-radius:14px;padding:8px 12px;font-weight:700;font-size:14px;opacity:0;transform:translateY(-6px);transition:opacity .3s,transform .3s;pointer-events:none}
 .pjb.on{opacity:1;transform:none}.pjb.warn{border-color:#f59e0b}.pjb.bad{border-color:var(--rd)}
 .psum{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end}.psum .gfl{flex:1 1 180px}.pstat{flex:1 1 180px;display:flex;flex-direction:column;gap:2px;font-size:14px}
 .ptb{min-width:0}.ptb td{padding:4px 6px}.ptb input{width:100%}.ptb tfoot th{color:var(--tx);font-weight:700}#pj-err{color:var(--rd);font-size:13px;min-height:18px;margin:6px 0 0}
-@media(min-width:821px){body[data-view=project] #bview,body[data-view=welcome] #bview{display:none}body[data-view=project] #pview{display:block}body[data-view=welcome] #wview{display:block}}
+@media(min-width:821px){body[data-view=project] #bview,body[data-view=welcome] #bview,body[data-view=future] #bview{display:none}body[data-view=future] #fview{display:block}body[data-view=project] #pview{display:block}body[data-view=welcome] #wview{display:block}}
 @media(max-width:820px){body[data-tab=welcome] #wview{display:block}body[data-tab=welcome] #bview{display:none}body:not([data-tab=home]) #whyb{display:none}#viewsw{display:none}.hm{grid-template-columns:1fr}#homec,#capc{display:none}body[data-tab=home] #homec,body[data-tab=budget] #capc{display:block}body[data-tab=home] #nwc,body[data-tab=home] .flow,body[data-tab=home] #catc,body[data-tab=home] #logc{display:none}body:not([data-tab=home]):not([data-tab=budget]) #startc,body:not([data-tab=home]):not([data-tab=budget]) #sampb,body:not([data-tab=home]):not([data-tab=budget]) #remb{display:none}}
 .banr{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px}.banr[hidden],#startc[hidden]{display:none}#startc{margin-bottom:12px}
 .bbtn{display:flex;gap:6px}.stl{list-style:none;padding:0;margin:0 0 10px}.stl li{padding:4px 0;display:flex;gap:8px;align-items:center}
@@ -186,8 +192,8 @@ th{color:var(--mu);font-weight:500}
 .stl li.dn span{text-decoration:line-through;color:var(--mu)}.sg{padding:2px 12px;font-size:13px;flex:none}
 .stbar{height:6px;border-radius:3px;background:var(--bd);overflow:hidden;margin:0 0 8px}.stbar i{display:block;height:100%;width:0;background:var(--gr);transition:width .4s}
 #help-b{flex:none;width:34px;padding:6px 0;font-weight:700}
-dialog#helpd{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);max-width:560px;width:calc(100% - 32px);max-height:85vh;overflow:auto;padding:0}
-#helpd::backdrop{background:rgba(0,0,0,.45)}.hin{padding:16px}.hh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.hh h2{margin:0;font-size:17px}
+dialog#helpd,dialog#setd{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);max-width:560px;width:calc(100% - 32px);max-height:85vh;overflow:auto;padding:0}
+#helpd::backdrop,#setd::backdrop{background:rgba(0,0,0,.45)}.hin{padding:16px}.hh{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}.hh h2{margin:0;font-size:17px}
 #helpd section{border-top:1px solid var(--bd);padding:10px 0}#helpd h3{margin:0 0 4px;font-size:15px}#helpd p{margin:0 0 6px;color:var(--mu);font-size:14px}#helpd a{color:var(--ac);font-size:14px}
 
 .rx{flex:1 1 170px;max-width:210px;margin:0 auto;direction:ltr}.rx[hidden]{display:none}
@@ -206,8 +212,8 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 <div class="wrap">
 <div class="bar-top">
   <div><h1>💰 Stack Money</h1><div class="muted" data-t="tagline">Your numbers stay in this browser. Nothing is uploaded.</div></div>
-  <div class="seg" id="viewsw"><button data-view="welcome" id="wl-sw"></button><button data-view="budget" data-t="tabBudget">Budget</button><button data-view="project" data-t="pjSwProject">Project</button></div>
-  <div class="row" style="margin:0"><input type="month" id="month"><select id="lang" data-aria="langL" aria-label="Language"></select><button id="help-b" class="ghost" data-aria="helpAria" aria-label="Help">?</button><button id="add-note" class="ghost" data-t="sticky">+ Sticky note</button></div>
+  <div class="seg" id="viewsw"><button data-view="welcome" id="wl-sw"></button><button data-view="budget" data-t="tabBudget">Budget</button><button data-view="future" data-t="tabFuture">Projection</button><button data-view="project" data-t="pjSwProject">Project</button></div>
+  <div class="row" style="margin:0;flex-wrap:wrap"><input type="month" id="month"><select id="lang" data-aria="langL" aria-label="Language"></select><button id="wl-hd" class="ghost" type="button">👋 <span id="wl-tab"></span></button><button id="set-b" class="ghost" data-aria="setAria" aria-label="Settings">⚙️</button><button id="help-b" class="ghost" data-aria="helpAria" aria-label="Help">?</button><button id="add-note" class="ghost" data-t="sticky">+ Sticky note</button></div>
 </div>
 
 <div id="bview">
@@ -217,7 +223,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 
 <div class="card" id="nwc">
   <div class="nwi">
-    <div class="sis" id="sis">
+    <div class="sis" id="sis"><img id="pic" alt="" hidden>
       <div class="bub zero" id="nwb">Let's get stacking!</div>
       <svg viewBox="0 0 240 170" aria-hidden="true" focusable="false">
         <path class="hl" d="M0,150 L240,70 L240,170 L0,170Z"/>
@@ -310,21 +316,35 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
  <div class="card"><h2 id="wl-t"></h2><h3 data-t="wlNoteH">Why I made this</h3><p data-t="wlNote"></p></div>
  <div class="card"><h2 data-t="wlWhyH">Your Why</h2><p class="muted" data-t="wlWhyP"></p><p class="why" id="wl-bp" hidden data-t="wlBackP"></p><textarea id="wl-why" data-ph="wlWhyPh" placeholder="My why is…"></textarea><button id="wl-go" data-t="wlGo">Go to my budget</button></div>
 </div></div>
+<div id="fview">
+<div class="card" id="fu-guide" hidden><h2 data-t="fgH">New to Projection? Start here</h2><ol><li data-t="fg1"></li><li data-t="fg2"></li><li data-t="fg3"></li></ol><button id="fu-gx" data-t="fgGot">Got it</button></div>
+<div class="card"><h2 data-t="futTitle">Future scenarios</h2><p class="muted" style="margin:0 0 8px" data-t="futSub"></p>
+<div class="futi"><label class="gfl"><span data-t="scMult">Multiply by</span><input id="fu-n" type="number" min="1" step="1" inputmode="numeric"></label><label class="gfl"><span>&nbsp;</span><select id="fu-u"><option value="m" data-t="unitM">months</option><option value="y" data-t="unitY">years</option></select></label></div>
+<div class="row" style="margin:0"><button id="fu-add" data-t="scAddSc">+ Add scenario</button><button class="ghost" id="fu-bud" data-t="scFromBudget">Add my budget as a scenario</button></div></div>
+<div class="scg" id="scg"></div>
+<div class="card" id="fu-rec"></div>
+<div class="card" id="fu-chart"></div>
+</div>
 <div id="pview">
+<div class="pbn" data-t="pjQuote">The more you do, the less you wait</div>
 <div class="pg">
  <div class="pcl"><div class="card" id="pj-cliff"></div></div>
  <div class="pcc">
   <div class="card"><h2 data-t="pjSummary">Summary</h2><div class="psum"><label class="gfl"><span data-t="pjBudgeted">Budgeted amount</span><input id="pj-b" class="money" type="text" inputmode="decimal" autocomplete="off" placeholder="$0.00"></label><div class="pstat" id="pj-stat"></div></div><div class="hb pb" id="pj-bar" hidden><i></i></div><div class="pbt muted" id="pj-bt" hidden></div></div>
   <div class="card"><div class="tw"><table class="ptb"><thead><tr><th data-t="pjItem">Item</th><th data-t="pjProjected">Projected</th><th data-t="pjActual">Actual</th><th></th></tr></thead><tbody id="pj-rows"></tbody><tfoot id="pj-foot"></tfoot></table></div><button class="ghost" id="pj-additem" style="margin-top:8px" data-t="pjAddItem">+ Add item</button></div>
-  <div class="card"><h2 data-t="pjAddTx">Add transaction</h2><div class="add"><input id="pj-v" data-ph="phVendor" placeholder="Vendor"><input id="pj-a" class="money" type="text" inputmode="decimal" autocomplete="off" data-ph="phAmount" placeholder="Amount"><select id="pj-ac" data-aria="phAccount" aria-label="Account"></select><select id="pj-it" data-aria="pjItem" aria-label="Category"></select><input id="pj-d" type="date"><input id="pj-n" data-ph="notes" placeholder="Notes"></div><button id="pj-add" data-t="addBtn">Add</button><p id="pj-err" role="alert"></p></div>
+  <div class="card"><h2 data-t="pjAddTx">Add transaction</h2><div class="add"><input id="pj-v" data-ph="phVendor" placeholder="Vendor"><input id="pj-a" class="money" type="text" inputmode="decimal" autocomplete="off" data-ph="phAmount" placeholder="Amount"><select id="pj-ac" data-aria="phAccount" aria-label="Account"></select><select id="pj-it" data-aria="pjItem" aria-label="Category"></select><input id="pj-d" type="date"><input id="pj-n" data-ph="notes" placeholder="Notes"></div><button id="pj-add" data-t="addBtn">Add</button><p id="pjm" class="pjm"></p><p id="pjm" class="pjm"></p><p id="pj-err" role="alert"></p></div>
   <div class="card"><h2 data-t="pjHist">Transaction history</h2><div class="tw"><table class="ptb"><thead><tr><th data-t="thDate">Date</th><th data-t="phVendor">Vendor</th><th data-t="phAmount">Amount</th><th data-t="phAccount">Account</th><th data-t="pjItem">Category</th><th data-t="notes">Notes</th><th></th></tr></thead><tbody id="pj-h"></tbody></table></div></div>
  </div>
  <div class="pcr"><div class="pbw"><div class="pjb" id="pjb"></div><div class="card" id="pj-board"></div></div></div>
 </div>
 </div>
 </div>
-<nav id="tabs"><button data-tab="welcome">👋<span id="wl-tab"></span></button><button data-tab="home">🏠<span data-t="tabHome">Home</span></button><button data-tab="budget">📊<span data-t="tabBudget">Budget</span></button><button data-tab="add"><svg class="tabadd" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span data-t="tabAdd">Add</span></button><button data-tab="acc">🏦<span data-t="tabAcc">Accounts</span></button><button data-tab="notes">📝<span data-t="tabNotes">Notes</span></button></nav>
+<nav id="tabs"><button data-tab="home">🏠<span data-t="tabHome">Home</span></button><button data-tab="budget">📊<span data-t="tabBudget">Budget</span></button><button data-tab="future">📈<span data-t="tabFuture">Projection</span></button><button data-tab="add"><svg class="tabadd" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span data-t="tabAdd">Add</span></button><button data-tab="project">🏗️<span data-t="pjSwProject">Project</span></button><button data-tab="acc">🏦<span data-t="tabAcc">Accounts</span></button></nav>
 <div id="notes"></div>
+<dialog id="setd"><div class="hin"><div class="hh"><h2 data-t="setH">Settings</h2><button class="ghost" id="set-x" data-t="closeB">Close</button></div>
+<button class="ghost" id="set-notes" type="button"><span>📝</span> <span data-t="tabNotes">Notes</span></button>
+<h3 style="margin:8px 0 4px;font-size:15px" data-t="picH">Your picture</h3><p class="muted" style="margin:0 0 8px;font-size:14px" data-t="picP"></p>
+<img id="pic-pv" alt="" hidden><div class="row" style="margin-top:8px"><button id="pic-add" data-t="picAdd">Choose picture</button><button class="ghost" id="pic-rm" data-t="picRm" hidden>Remove</button></div><input type="file" id="pic-f" accept="image/*" hidden><p id="pic-err" style="color:var(--rd);font-size:13px;margin:6px 0 0"></p></div></dialog>
 <dialog id="helpd"><div class="hin"><div class="hh"><h2 data-t="helpH">How to use Stack Money</h2><button class="ghost" id="help-x" data-t="closeB">Close</button></div><div id="helpbody"></div></div></dialog>
 
 <script>
@@ -346,6 +366,7 @@ wlBackP:["Good to see you again. Here is the reason you started:", "Qué bueno v
 wlGo:["Go to my budget", "Ir a mi presupuesto", "Aller à mon budget", "Ir para o meu orçamento", "前往我的预算", "Đến ngân sách của tôi", "اذهب إلى ميزانيتي"],
 whyRemember:["Remember your why", "Recuerda tu porqué", "Souvenez-vous de votre pourquoi", "Lembre-se do seu porquê", "别忘了你的初衷", "Hãy nhớ lý do của bạn", "تذكّر سببك"],
 tabBudget:["Budget", "Presupuesto", "Budget", "Orçamento", "预算", "Ngân sách", "الميزانية"],
+pjQuote:["The more you do, the less you wait","Cuanto más haces, menos esperas","Plus tu en fais, moins tu attends","Quanto mais você faz, menos você espera","做得越多，等待越少","Làm càng nhiều, chờ càng ít","كلما فعلت أكثر، انتظرت أقل"],
 pjSwProject:["Project", "Proyecto", "Projet", "Projeto", "项目", "Dự án", "المشروع"],
 homeH:["Left to spend", "Disponible para gastar", "Reste à dépenser", "Disponível para gastar", "剩余可花", "Còn có thể chi", "المتبقي للإنفاق"],
 capLeft:["{x} left", "Quedan {x}", "{x} restants", "Restam {x}", "剩余 {x}", "Còn {x}", "المتبقي {x}"],
@@ -387,6 +408,57 @@ pjNoPlan:["Logged! Add a projected amount for {i} so I can track it.", "¡Regist
 stGo:["Go", "Ir", "Aller", "Ir", "前往", "Đi tới", "انتقال"],
 stProg:["{n} of 3 done", "{n} de 3 listos", "{n} sur 3 terminées", "{n} de 3 concluídos", "已完成 {n}/3", "Xong {n}/3", "اكتمل {n} من 3"],
 stDone:["🎉 All set! A few minutes each week keeps your numbers honest.", "🎉 ¡Todo listo! Unos minutos a la semana mantienen tus números al día.", "🎉 Tout est prêt ! Quelques minutes par semaine gardent vos chiffres à jour.", "🎉 Tudo pronto! Alguns minutos por semana mantêm seus números em dia.", "🎉 全部完成!每周花几分钟,就能让数字保持准确。", "🎉 Xong rồi! Chỉ vài phút mỗi tuần là số liệu luôn chính xác.", "🎉 كل شيء جاهز! بضع دقائق أسبوعيًا تُبقي أرقامك دقيقة."],
+futH:["Your future","Tu futuro","Ton avenir","Seu futuro","你的未来","Tương lai của bạn","مستقبلك"],
+futP:["Picture it: what if you stick to your monthly budgets?","Imagínalo: ¿y si cumples tus presupuestos mensuales?","Imagine : et si tu respectais tes budgets mensuels ?","Imagine: e se você cumprir seus orçamentos mensais?","想象一下：如果你坚持每月预算会怎样？","Hãy tưởng tượng: nếu bạn giữ đúng ngân sách hằng tháng thì sao?","تخيّل: ماذا لو التزمت بميزانياتك الشهرية؟"],
+futInc:["Monthly income","Ingreso mensual","Revenu mensuel","Renda mensal","每月收入","Thu nhập hằng tháng","الدخل الشهري"],
+futHor:["Look ahead","Mirar adelante","Projection","Olhar adiante","展望","Nhìn về phía trước","نظرة مستقبلية"],
+futMo:["{n} months","{n} meses","{n} mois","{n} meses","{n} 个月","{n} tháng","{n} شهرًا"],
+futNone:["Set your monthly budgets and I'll show where sticking to them could take you.","Define tus presupuestos mensuales y te mostraré a dónde puede llevarte cumplirlos.","Fixe tes budgets mensuels et je te montrerai où les respecter peut te mener.","Defina seus orçamentos mensais e eu mostro aonde cumpri-los pode levar você.","设置每月预算，我会展示坚持预算能带你去哪里。","Hãy đặt ngân sách hằng tháng, tôi sẽ cho bạn thấy giữ đúng ngân sách có thể đưa bạn đến đâu.","حدّد ميزانياتك الشهرية وسأريك إلى أين قد يقودك الالتزام بها."],
+futNeedInc:["Enter your monthly income to see your future.","Ingresa tu ingreso mensual para ver tu futuro.","Saisis ton revenu mensuel pour voir ton avenir.","Informe sua renda mensal para ver seu futuro.","输入每月收入以查看你的未来。","Nhập thu nhập hằng tháng để xem tương lai của bạn.","أدخل دخلك الشهري لترى مستقبلك."],
+futNeg:["Your budgets add up to {x} more than your income each month. Trim a budget or two and check again.","Tus presupuestos suman {x} más que tus ingresos cada mes. Recorta uno o dos y vuelve a mirar.","Tes budgets dépassent ton revenu de {x} chaque mois. Réduis-en un ou deux et regarde à nouveau.","Seus orçamentos somam {x} a mais que sua renda a cada mês. Reduza um ou dois e confira de novo.","你的预算每月比收入多出 {x}。削减一两项后再看看。","Ngân sách của bạn vượt thu nhập {x} mỗi tháng. Hãy cắt giảm một hai khoản rồi xem lại.","ميزانياتك تتجاوز دخلك بمقدار {x} كل شهر. قلّل ميزانية أو اثنتين وانظر مجددًا."],
+futMain:["Stick to your plan for {n} months and you could set aside {x}, putting your net worth around {nw}.","Cumple tu plan durante {n} meses y podrías apartar {x}, dejando tu patrimonio neto en torno a {nw}.","Respecte ton plan pendant {n} mois et tu pourrais mettre {x} de côté, pour une valeur nette d'environ {nw}.","Siga seu plano por {n} meses e você poderia guardar {x}, deixando seu patrimônio líquido perto de {nw}.","坚持计划 {n} 个月，你可以存下 {x}，净资产约为 {nw}。","Giữ đúng kế hoạch trong {n} tháng, bạn có thể để dành {x}, đưa tài sản ròng lên khoảng {nw}.","التزم بخطتك {n} شهرًا وقد تدّخر {x}، فتصل صافي ثروتك إلى نحو {nw}."],
+futGoal:["At that pace you'd reach “{g}” in about {m} months.","A ese ritmo alcanzarías “{g}” en unos {m} meses.","À ce rythme, tu atteindrais « {g} » en environ {m} mois.","Nesse ritmo você alcançaria “{g}” em cerca de {m} meses.","按这个速度，大约 {m} 个月后你就能实现“{g}”。","Với tốc độ đó, bạn sẽ đạt “{g}” sau khoảng {m} tháng.","بهذه الوتيرة ستحقق «{g}» خلال نحو {m} شهرًا."],
+futPace:["At this month's actual spending, you'd be around {nw}.","Con el gasto real de este mes, estarías en torno a {nw}.","Avec tes dépenses réelles de ce mois, tu serais autour de {nw}.","Com o gasto real deste mês, você ficaria perto de {nw}.","按本月的实际支出，你将约为 {nw}。","Với mức chi tiêu thực tế tháng này, bạn sẽ ở khoảng {nw}.","بإنفاقك الفعلي هذا الشهر ستكون عند نحو {nw}."],
+futL1:["Your plan","Tu plan","Ton plan","Seu plano","你的计划","Kế hoạch","خطتك"],
+futL2:["This month's pace","Ritmo de este mes","Rythme de ce mois","Ritmo deste mês","本月节奏","Tốc độ tháng này","وتيرة هذا الشهر"],
+tabFuture:["Projection","Proyección","Projection","Projeção","预测","Dự báo","التوقعات"],
+futTitle:["Future scenarios", "Escenarios futuros", "Scénarios futurs", "Cenários futuros", "未来情景", "Các kịch bản tương lai", "سيناريوهات المستقبل"],
+futSub:["Compare what-ifs. Costs go in as negatives, income as positives. The green row is what you save each month.", "Compara escenarios. Los costos van en negativo y los ingresos en positivo. La fila verde es lo que ahorras cada mes.", "Compare des scénarios. Les coûts sont négatifs, les revenus positifs. La ligne verte est ce que tu épargnes chaque mois.", "Compare cenários. Custos entram como negativos e renda como positiva. A linha verde é o que você economiza por mês.", "比较不同假设。成本填负数，收入填正数。绿色行是你每月的储蓄。", "So sánh các giả định. Chi phí nhập số âm, thu nhập nhập số dương. Hàng xanh là số tiền bạn tiết kiệm mỗi tháng.", "قارن بين الاحتمالات. التكاليف بالسالب والدخل بالموجب. الصف الأخضر هو ما توفره كل شهر."],
+scMult:["Multiply by", "Multiplicar por", "Multiplier par", "Multiplicar por", "乘以", "Nhân với", "اضرب في"],
+unitM:["months", "meses", "mois", "meses", "个月", "tháng", "أشهر"],
+unitY:["years", "años", "ans", "anos", "年", "năm", "سنوات"],
+scFromBudget:["Add my budget as a scenario", "Añadir mi presupuesto como escenario", "Ajouter mon budget comme scénario", "Adicionar meu orçamento como cenário", "将我的预算添加为情景", "Thêm ngân sách của tôi làm kịch bản", "أضف ميزانيتي كسيناريو"],
+scName:["Scenario {n}", "Escenario {n}", "Scénario {n}", "Cenário {n}", "情景 {n}", "Kịch bản {n}", "السيناريو {n}"],
+scBudget:["My budget", "Mi presupuesto", "Mon budget", "Meu orçamento", "我的预算", "Ngân sách của tôi", "ميزانيتي"],
+scCosts:["Costs", "Costos", "Coûts", "Custos", "成本", "Chi phí", "التكاليف"],
+scAmts:["Amounts", "Montos", "Montants", "Valores", "金额", "Số tiền", "المبالغ"],
+scTotal:["Savings Total", "Total de ahorro", "Total épargné", "Total economizado", "储蓄合计", "Tổng tiết kiệm", "إجمالي المدخرات"],
+scAddRow:["+ Add row", "+ Añadir fila", "+ Ajouter une ligne", "+ Adicionar linha", "+ 添加一行", "+ Thêm dòng", "+ إضافة صف"],
+scAddSc:["+ Add scenario", "+ Añadir escenario", "+ Ajouter un scénario", "+ Adicionar cenário", "+ 添加情景", "+ Thêm kịch bản", "+ إضافة سيناريو"],
+scDelSc:["Delete scenario", "Eliminar escenario", "Supprimer le scénario", "Excluir cenário", "删除情景", "Xóa kịch bản", "حذف السيناريو"],
+scCostDef:["Cost", "Costo", "Coût", "Custo", "成本", "Chi phí", "تكلفة"],
+recH:["Recommendations", "Recomendaciones", "Recommandations", "Recomendações", "建议", "Gợi ý", "توصيات"],
+recNone:["Add some income and costs to see recommendations.", "Añade ingresos y costos para ver recomendaciones.", "Ajoute des revenus et des coûts pour voir des recommandations.", "Adicione renda e custos para ver recomendações.", "添加收入和成本以查看建议。", "Thêm thu nhập và chi phí để xem gợi ý.", "أضف دخلًا وتكاليف لترى التوصيات."],
+recBest:["{a} saves {d} more per month than {b}. Over {n} {u} that adds up to {y} more.", "{a} ahorra {d} más al mes que {b}. En {n} {u} son {y} más.", "{a} épargne {d} de plus par mois que {b}. Sur {n} {u}, cela fait {y} de plus.", "{a} economiza {d} a mais por mês que {b}. Em {n} {u}, são {y} a mais.", "{a} 每月比 {b} 多存 {d}。{n} {u}下来多出 {y}。", "{a} tiết kiệm nhiều hơn {b} {d} mỗi tháng. Trong {n} {u}, đó là thêm {y}.", "{a} يوفّر {d} أكثر من {b} شهريًا. خلال {n} {u} يصبح الفرق {y}."],
+recNeg:["{a} spends {x} more than it brings in each month. It needs more income or fewer costs.", "{a} gasta {x} más de lo que ingresa cada mes. Necesita más ingresos o menos costos.", "{a} dépense {x} de plus qu'il ne rapporte chaque mois. Il faut plus de revenus ou moins de coûts.", "{a} gasta {x} a mais do que entra a cada mês. Precisa de mais renda ou menos custos.", "{a} 每月支出比收入多 {x}。需要提高收入或减少成本。", "{a} chi nhiều hơn thu {x} mỗi tháng. Cần thêm thu nhập hoặc bớt chi phí.", "{a} ينفق {x} أكثر مما يدخل كل شهر. يحتاج إلى دخل أكبر أو تكاليف أقل."],
+recBig:["In {a}, your biggest cost is {c}, about {p}% of income. Trimming it by 10% adds {x} a month.", "En {a}, tu mayor costo es {c}, cerca del {p}% de los ingresos. Recortarlo un 10% suma {x} al mes.", "Dans {a}, ton plus gros coût est {c}, environ {p} % du revenu. Le réduire de 10 % ajoute {x} par mois.", "Em {a}, seu maior custo é {c}, cerca de {p}% da renda. Cortar 10% adiciona {x} por mês.", "在 {a} 中，你最大的成本是 {c}，约占收入的 {p}%。削减 10% 每月可多存 {x}。", "Trong {a}, khoản chi lớn nhất của bạn là {c}, khoảng {p}% thu nhập. Cắt giảm 10% sẽ thêm {x} mỗi tháng.", "في {a}، أكبر تكلفة لديك هي {c}، نحو {p}٪ من الدخل. خفضها بنسبة 10٪ يضيف {x} شهريًا."],
+recGoal:["With {a} you'd reach “{g}” in about {m} month(s).", "Con {a} alcanzarías “{g}” en unos {m} mes(es).", "Avec {a}, tu atteindrais « {g} » en environ {m} mois.", "Com {a} você alcançaria “{g}” em cerca de {m} mês(es).", "按 {a}，大约 {m} 个月后你就能实现“{g}”。", "Với {a}, bạn sẽ đạt “{g}” sau khoảng {m} tháng.", "مع {a} ستحقق «{g}» خلال نحو {m} شهرًا."],
+chartH:["Savings over time", "Ahorro con el tiempo", "Épargne au fil du temps", "Economias ao longo do tempo", "储蓄随时间变化", "Tiết kiệm theo thời gian", "المدخرات عبر الوقت"],
+fgH:["New to Projection? Start here", "¿Nuevo en Proyección? Empieza aquí", "Nouveau dans Projection ? Commence ici", "Novo em Projeção? Comece aqui", "初次使用预测？从这里开始", "Mới dùng Dự báo? Bắt đầu tại đây", "جديد على التوقعات؟ ابدأ من هنا"],
+fg1:["Tap “Add my budget as a scenario” to start from your real numbers.", "Toca “Añadir mi presupuesto como escenario” para empezar con tus números reales.", "Touche « Ajouter mon budget comme scénario » pour partir de tes vrais chiffres.", "Toque em “Adicionar meu orçamento como cenário” para começar com seus números reais.", "点击“将我的预算添加为情景”，从你的真实数字开始。", "Chạm “Thêm ngân sách của tôi làm kịch bản” để bắt đầu từ số liệu thật của bạn.", "اضغط «أضف ميزانيتي كسيناريو» لتبدأ بأرقامك الحقيقية."],
+fg2:["Tap “+ Add scenario” to copy it, then change a number: less gas, a new roommate paying rent, more income. Costs are negative, income is positive.", "Toca “+ Añadir escenario” para copiarlo y cambia un número: menos gasolina, un compañero que paga renta, más ingresos. Los costos son negativos y los ingresos positivos.", "Touche « + Ajouter un scénario » pour le copier, puis change un chiffre : moins d'essence, un colocataire qui paie un loyer, plus de revenus. Les coûts sont négatifs, les revenus positifs.", "Toque em “+ Adicionar cenário” para copiá-lo e mude um número: menos gasolina, um colega pagando aluguel, mais renda. Custos são negativos e renda é positiva.", "点击“+ 添加情景”复制它，然后改一个数字：少花油费、新室友付租金、收入增加。成本为负数，收入为正数。", "Chạm “+ Thêm kịch bản” để sao chép, rồi đổi một con số: bớt tiền xăng, có người ở ghép trả tiền thuê, thêm thu nhập. Chi phí là số âm, thu nhập là số dương.", "اضغط «+ إضافة سيناريو» لنسخه ثم غيّر رقمًا: بنزين أقل، زميل سكن يدفع إيجارًا، دخل أكبر. التكاليف بالسالب والدخل بالموجب."],
+fg3:["Choose how far ahead to look. The green row is what you save each month, and the numbered tips below suggest where to start.", "Elige hasta cuándo mirar. La fila verde es lo que ahorras al mes y los consejos numerados te dicen por dónde empezar.", "Choisis jusqu'où regarder. La ligne verte est ce que tu épargnes par mois et les conseils numérotés t'indiquent par où commencer.", "Escolha até quando olhar. A linha verde é o que você economiza por mês e as dicas numeradas mostram por onde começar.", "选择要展望多久。绿色行是你每月的储蓄，下方带编号的建议告诉你从哪里入手。", "Chọn nhìn trước bao lâu. Hàng xanh là số tiền bạn tiết kiệm mỗi tháng, các gợi ý đánh số bên dưới cho biết nên bắt đầu từ đâu.", "اختر مدى النظر إلى الأمام. الصف الأخضر هو ما توفره كل شهر، والنصائح المرقمة أدناه تقترح من أين تبدأ."],
+fgGot:["Got it", "Entendido", "Compris", "Entendi", "知道了", "Đã hiểu", "فهمت"],
+hProjB:["Projection shows what you could save if you stick to a budget. Start from your own budget, copy it, and change a number to test a what-if. Costs are negative, income is positive. The tips are ordered from easiest to trim to hardest, and bills come last because they are usually fixed.", "Proyección muestra cuánto podrías ahorrar si cumples un presupuesto. Parte de tu presupuesto, cópialo y cambia un número para probar un “qué pasaría si”. Los costos son negativos y los ingresos positivos. Los consejos van del más fácil de recortar al más difícil, y las cuentas van al final porque suelen ser fijas.", "Projection montre ce que tu pourrais épargner si tu respectes un budget. Pars de ton budget, copie-le et change un chiffre pour tester un scénario. Les coûts sont négatifs, les revenus positifs. Les conseils vont du plus facile au plus difficile à réduire, et les factures viennent en dernier car elles sont souvent fixes.", "Projeção mostra quanto você poderia economizar se cumprir um orçamento. Parta do seu orçamento, copie e mude um número para testar um “e se”. Custos são negativos e renda é positiva. As dicas vão do mais fácil de cortar ao mais difícil, e as contas ficam por último porque costumam ser fixas.", "“预测”显示如果你坚持预算能存下多少。从你自己的预算开始，复制它，改一个数字来测试各种假设。成本为负数，收入为正数。建议按从最容易削减到最难削减排序，账单排在最后，因为它们通常是固定的。", "Dự báo cho thấy bạn có thể tiết kiệm bao nhiêu nếu giữ đúng ngân sách. Hãy bắt đầu từ ngân sách của bạn, sao chép rồi đổi một con số để thử các giả định. Chi phí là số âm, thu nhập là số dương. Các gợi ý xếp từ dễ cắt giảm nhất đến khó nhất, hóa đơn đứng cuối vì thường cố định.", "تعرض التوقعات ما يمكنك ادخاره إذا التزمت بميزانية. ابدأ من ميزانيتك، وانسخها، وغيّر رقمًا لتجربة احتمال ما. التكاليف بالسالب والدخل بالموجب. النصائح مرتبة من الأسهل تقليلًا إلى الأصعب، وتأتي الفواتير أخيرًا لأنها عادةً ثابتة."],
+recTrim:["Trim {c} by 10%: that adds {x} a month ({y} over {n} {u}).", "Recorta {c} un 10%: suma {x} al mes ({y} en {n} {u}).", "Réduis {c} de 10 % : cela ajoute {x} par mois ({y} sur {n} {u}).", "Corte {c} em 10%: isso adiciona {x} por mês ({y} em {n} {u}).", "将 {c} 削减 10%：每月多存 {x}（{n} {u}共 {y}）。", "Cắt giảm {c} 10%: thêm {x} mỗi tháng ({y} trong {n} {u}).", "خفّض {c} بنسبة 10٪: يضيف {x} شهريًا ({y} خلال {n} {u})."],
+recBill:["Bills are usually fixed, so look at {c} last. Trimming it by 10% would add {x} a month.", "Las cuentas suelen ser fijas, así que deja {c} para el final. Recortarlo un 10% sumaría {x} al mes.", "Les factures sont souvent fixes, donc regarde {c} en dernier. Le réduire de 10 % ajouterait {x} par mois.", "Contas costumam ser fixas, então deixe {c} por último. Cortar 10% adicionaria {x} por mês.", "账单通常是固定的，所以最后再考虑 {c}。削减 10% 每月可多存 {x}。", "Hóa đơn thường cố định, nên hãy xem {c} sau cùng. Cắt giảm 10% sẽ thêm {x} mỗi tháng.", "الفواتير عادة ثابتة، لذا انظر إلى {c} أخيرًا. خفضها بنسبة 10٪ سيضيف {x} شهريًا."],
+setAria:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
+setH:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
+picH:["Your picture","Tu imagen","Ton image","Sua imagem","你的图片","Hình ảnh của bạn","صورتك"],
+picP:["Add a picture to replace the boulder guy on your budget screen. Your original file is kept as is, with no quality loss, and is cropped to fit your screen. It stays on this device only and is never uploaded.","Añade una imagen que aparece en tu pantalla de presupuesto. Se queda solo en este dispositivo y nunca se sube.","Ajoute une image qui s'affiche sur ton écran de budget. Elle reste sur cet appareil et n'est jamais envoyée.","Adicione uma imagem que aparece na sua tela de orçamento. Ela fica só neste dispositivo e nunca é enviada.","添加一张显示在预算页面的图片。它只保存在此设备上，不会上传。","Thêm một hình ảnh hiển thị trên màn hình ngân sách của bạn. Hình chỉ lưu trên thiết bị này và không bao giờ được tải lên.","أضف صورة تظهر في شاشة ميزانيتك. تبقى على هذا الجهاز فقط ولا تُرفع أبدًا."],
+picAdd:["Choose picture","Elegir imagen","Choisir une image","Escolher imagem","选择图片","Chọn hình ảnh","اختيار صورة"],
+picRm:["Remove","Quitar","Retirer","Remover","移除","Xóa","إزالة"],
+picErr:["That picture could not be saved. Try a smaller one.","No se pudo guardar esa imagen. Prueba con una más pequeña.","Cette image n'a pas pu être enregistrée. Essaie-en une plus petite.","Não foi possível salvar essa imagem. Tente uma menor.","无法保存该图片。请换一张较小的。","Không thể lưu hình ảnh này. Hãy thử hình nhỏ hơn.","تعذّر حفظ هذه الصورة. جرّب صورة أصغر."],
 helpAria:["Help", "Ayuda", "Aide", "Ajuda", "帮助", "Trợ giúp", "مساعدة"],
 helpH:["How to use Stack Money", "Cómo usar Stack Money", "Comment utiliser Stack Money", "Como usar o Stack Money", "Stack Money 使用指南", "Cách dùng Stack Money", "كيفية استخدام Stack Money"],
 closeB:["Close", "Cerrar", "Fermer", "Fechar", "关闭", "Đóng", "إغلاق"],
@@ -401,6 +473,8 @@ hGoalT:["Goal", "Meta", "Objectif", "Meta", "目标", "Mục tiêu", "الهدف
 hGoalB:["Name your goal, enter the amount you want and how much you’ve saved. The bar fills up and the stick figure reacts as you reach 25%, 50%, 75%, 90% and 100%.", "Ponle nombre a tu meta, ingresa el monto que quieres y cuánto llevas ahorrado. La barra se llena y el muñeco reacciona al llegar al 25 %, 50 %, 75 %, 90 % y 100 %.", "Nommez votre objectif, saisissez le montant visé et ce que vous avez épargné. La jauge se remplit et le bonhomme réagit à 25 %, 50 %, 75 %, 90 % et 100 %.", "Dê um nome à sua meta, informe o valor desejado e quanto já economizou. A barra enche e o bonequinho reage aos 25%, 50%, 75%, 90% e 100%.", "给目标起个名字,输入目标金额和已攒金额。进度条会逐渐填满,达到 25%、50%、75%、90% 和 100% 时小人会有不同反应。", "Đặt tên cho mục tiêu, nhập số tiền muốn đạt và số đã tiết kiệm. Thanh sẽ đầy dần và chú người que sẽ phản ứng khi bạn đạt 25%, 50%, 75%, 90% và 100%.", "سمِّ هدفك وأدخل المبلغ المطلوب وما ادّخرته. يمتلئ الشريط وتتفاعل الشخصية عند بلوغ 25% و50% و75% و90% و100%."],
 hNoteT:["Notes", "Notas", "Notes", "Notas", "笔记", "Ghi chú", "ملاحظات"],
 hNoteB:["Add sticky notes for ideas and reminders. On a computer, drag them by the header and resize from the corner. On a phone, use the Notes tab.", "Agrega notas adhesivas para ideas y recordatorios. En computadora, arrástralas por el encabezado y cambia su tamaño desde la esquina. En el teléfono, usa la pestaña Notas.", "Ajoutez des pense-bêtes pour vos idées et rappels. Sur ordinateur, faites-les glisser par l'en-tête et redimensionnez-les par le coin. Sur téléphone, utilisez l'onglet Notes.", "Adicione notas adesivas para ideias e lembretes. No computador, arraste pelo cabeçalho e redimensione pelo canto. No celular, use a aba Notas.", "用便签记录想法和提醒。在电脑上可拖动标题栏移动、拖拽角落调整大小;手机上请使用“笔记”标签页。", "Thêm ghi chú dán cho ý tưởng và lời nhắc. Trên máy tính, kéo bằng thanh tiêu đề và đổi kích thước ở góc. Trên điện thoại, dùng tab Ghi chú.", "أضف ملاحظات لاصقة للأفكار والتذكيرات. على الحاسوب اسحبها من الرأس وغيّر حجمها من الزاوية. على الهاتف استخدم تبويب ملاحظات."],
+hPicT:["Your own picture","Tu propia imagen","Ta propre image","Sua própria imagem","你自己的图片","Hình ảnh của riêng bạn","صورتك الخاصة"],
+hPicB:["Tap the ⚙️ Settings button and choose a picture to replace the boulder guy on your budget screen. The picture stays on this device only. Remove it any time to bring the boulder back.","Toca el botón ⚙️ Ajustes y elige una imagen para reemplazar al hombre de la roca en tu pantalla de presupuesto. La imagen se queda solo en este dispositivo. Quítala cuando quieras para recuperar la roca.","Touche le bouton ⚙️ Paramètres et choisis une image pour remplacer le personnage au rocher sur ton écran de budget. L'image reste sur cet appareil. Retire-la à tout moment pour retrouver le rocher.","Toque no botão ⚙️ Configurações e escolha uma imagem para substituir o homem da pedra na sua tela de orçamento. A imagem fica só neste dispositivo. Remova a qualquer momento para a pedra voltar.","点击 ⚙️ 设置按钮，选择一张图片来替换预算页面上推巨石的小人。图片只保存在此设备上。随时可以移除，巨石就会回来。","Chạm nút ⚙️ Cài đặt và chọn một hình ảnh để thay thế người đẩy tảng đá trên màn hình ngân sách. Hình chỉ lưu trên thiết bị này. Xóa bất cứ lúc nào để tảng đá quay lại.","اضغط زر ⚙️ الإعدادات واختر صورة لتحل محل الرجل الذي يدفع الصخرة في شاشة ميزانيتك. تبقى الصورة على هذا الجهاز فقط. أزلها في أي وقت لتعود الصخرة."],
 hBakT:["Backups & privacy", "Copias de seguridad y privacidad", "Sauvegardes et confidentialité", "Backup e privacidade", "备份与隐私", "Sao lưu & riêng tư", "النسخ الاحتياطي والخصوصية"],
 hBakB:["Your data stays in this browser only. Use “Copy backup” now and then and keep the text somewhere safe. To move to a new phone or computer, paste it into “Restore” there.", "Tus datos se quedan solo en este navegador. Usa «Copiar copia de seguridad» de vez en cuando y guarda el texto en un lugar seguro. Para pasar a otro teléfono o computadora, pégalo en «Restaurar» allí.", "Vos données restent uniquement dans ce navigateur. Utilisez « Copier la sauvegarde » de temps en temps et gardez le texte en lieu sûr. Pour changer de téléphone ou d'ordinateur, collez-le dans « Restaurer » sur le nouvel appareil.", "Seus dados ficam apenas neste navegador. Use “Copiar backup” de vez em quando e guarde o texto em um lugar seguro. Para trocar de celular ou computador, cole-o em “Restaurar” no novo aparelho.", "你的数据只保存在此浏览器中。请不时使用“复制备份”并把文字存放在安全的地方。换手机或电脑时,把它粘贴到新设备的“恢复”中即可。", "Dữ liệu của bạn chỉ nằm trong trình duyệt này. Thỉnh thoảng hãy dùng “Sao chép bản sao lưu” và cất văn bản ở nơi an toàn. Khi đổi điện thoại hoặc máy tính, dán vào “Khôi phục” trên thiết bị mới.", "تبقى بياناتك في هذا المتصفح فقط. استخدم «نسخ النسخة الاحتياطية» من وقت لآخر واحتفظ بالنص في مكان آمن. للانتقال إلى هاتف أو حاسوب جديد الصقه في «استعادة» هناك."],
 stH:["Start here", "Empieza aquí", "Commencez ici", "Comece aqui", "从这里开始", "Bắt đầu tại đây", "ابدأ من هنا"],
@@ -554,7 +628,7 @@ function applyLang(){
   document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=tr(e.dataset.ph)});
   buildHelp();renderPJ();buildScenes();
   document.querySelectorAll("[data-aria]").forEach(e=>{e.setAttribute("aria-label",tr(e.dataset.aria))});
-  renderAcc();renderMonth();renderNotes();renderWelcome();
+  renderAcc();renderMonth();renderNotes();renderWelcome();renderFut(true);
 }
 function setLang(c){if(!LANGS[c])return;LANG=c;try{localStorage.setItem("stackmoney.lang",c)}catch(e){}document.getElementById("lang").value=c;applyLang()}
 function initLang(){const el=document.getElementById("lang");el.innerHTML=LC.map(c=>`<option value="${c}">${LANGS[c].n}</option>`).join("");el.value=LANG;el.onchange=e=>setLang(e.target.value);applyLang()}
@@ -586,7 +660,7 @@ const HAD=(()=>{try{return!!localStorage.getItem(KEY)}catch(e){return false}})()
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){S=fresh()}
 S.cats=Array.isArray(S.cats)&&S.cats.length?S.cats:CATS.slice();if(!S.cats.includes("Income"))S.cats.unshift("Income");
-function ensureUI(){S.ui=S.ui||{};S.ui.created=S.ui.created||Date.now();if(!S.caps||typeof S.caps!="object")S.caps={};if(!S.proj||!Array.isArray(S.proj.items))S.proj={b:0,items:[],tx:[]};S.proj.tx=S.proj.tx||[]}
+function ensureUI(){S.ui=S.ui||{};if(!S.fut||!Array.isArray(S.fut.sc))S.fut={n:12,u:"m",sc:[]};S.ui.created=S.ui.created||Date.now();if(!S.caps||typeof S.caps!="object")S.caps={};if(!S.proj||!Array.isArray(S.proj.items))S.proj={b:0,items:[],tx:[]};S.proj.tx=S.proj.tx||[]}
 ensureUI();
 let RETURNING=false;
 try{let r=sessionStorage.getItem("sm.ret");if(r===null){S.ui.sess=(S.ui.sess||(HAD?1:0))+1;r=S.ui.sess>1?"1":"0";sessionStorage.setItem("sm.ret",r);localStorage.setItem(KEY,JSON.stringify(S))}RETURNING=r==="1"}catch(e){RETURNING=HAD}
@@ -631,7 +705,7 @@ function rxUpdate(st){
   const k={idle:"rxPlan",flip:"rxGo",cry:"rxClose",done:"rxDone"}[st];$("rxb").textContent=k?tr(k):"";$("rxb").style.display=k?"":"none";
 }
 const VIDEOS={acc:"",tx:"",br:"",goal:"",note:"",bak:""};/* paste video links between the quotes */
-const HELP=[["acc","hAccT","hAccB"],["tx","hTxT","hTxB"],["br","hBrT","hBrB"],["goal","hGoalT","hGoalB"],["note","hNoteT","hNoteB"],["bak","hBakT","hBakB"]];
+const HELP=[["acc","hAccT","hAccB"],["tx","hTxT","hTxB"],["br","hBrT","hBrB"],["goal","hGoalT","hGoalB"],["note","hNoteT","hNoteB"],["pic","hPicT","hPicB"],["proj","tabFuture","hProjB"],["bak","hBakT","hBakB"]];
 function buildHelp(){$("helpbody").innerHTML=HELP.map(([k,a,b])=>`<section><h3>${esc(tr(a))}</h3><p>${esc(tr(b))}</p>${VIDEOS[k]?`<a href="${esc(VIDEOS[k])}" target="_blank" rel="noopener">${esc(tr("watch"))}</a>`:""}</section>`).join("")}
 function renderHelp(){
   const st=[S.acc.bank.some(r=>+r.a),[...S.acc.debt,...S.acc.save].some(r=>+r.a),Object.values(S.tx).some(a=>a.length)];
@@ -669,6 +743,27 @@ $("st-sample").onclick=loadSample;$("samp-clear").onclick=clearSample;
 $("st-hide").onclick=()=>{S.ui.hideStart=true;save();renderHelp()};
 $("rem-copy").onclick=()=>$("bk-copy").click();
 $("rem-later").onclick=()=>{S.ui.snooze=Date.now()+7*864e5;save();renderHelp()};
+/* your own picture: the original file, untouched, kept in this browser only (IndexedDB) */
+const PICK="stackmoney.pic";let picURL="";
+const idb=()=>new Promise((ok,no)=>{try{const r=indexedDB.open("stackmoney",1);r.onupgradeneeded=()=>r.result.createObjectStore("kv");r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}catch(e){no(e)}});
+const idbDo=(m,fn)=>idb().then(db=>new Promise((ok,no)=>{const t=db.transaction("kv",m),q=fn(t.objectStore("kv"));t.oncomplete=()=>ok(q&&q.result);t.onerror=t.onabort=()=>no(t.error)}));
+const picGet=()=>idbDo("readonly",o=>o.get("pic")).catch(()=>null);
+async function showPic(){
+  let bl=await picGet();
+  if(!bl){try{const o=localStorage.getItem(PICK);if(o){bl=await (await fetch(o)).blob();await idbDo("readwrite",x=>x.put(bl,"pic"));localStorage.removeItem(PICK)}}catch(e){}}
+  if(picURL){URL.revokeObjectURL(picURL);picURL=""}
+  if(bl){picURL=URL.createObjectURL(bl)}
+  $("pic").src=picURL;$("pic").hidden=!bl;$("sis").classList.toggle("hasimg",!!bl);$("pic-pv").src=picURL;$("pic-pv").hidden=!bl;$("pic-rm").hidden=!bl}
+$("set-b").onclick=()=>{const d=$("setd");$("pic-err").textContent="";showPic();d.showModal?d.showModal():d.setAttribute("open","")};
+$("set-notes").onclick=()=>{$("setd").close();document.body.dataset.tab="notes";renderNV();scrollTo(0,0)};
+$("set-x").onclick=()=>$("setd").close();
+$("setd").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
+$("pic-add").onclick=()=>$("pic-f").click();
+$("pic-rm").onclick=()=>idbDo("readwrite",o=>o.delete("pic")).then(showPic);
+$("pic-f").onchange=e=>{const f=e.target.files[0];e.target.value="";if(!f)return;$("pic-err").textContent="";
+  if(!/^image\//.test(f.type)){$("pic-err").textContent=tr("picErr");return}
+  idbDo("readwrite",o=>o.put(f,"pic")).then(showPic).catch(()=>{$("pic-err").textContent=tr("picErr")})};
+showPic();
 $("help-b").onclick=()=>{const d=$("helpd");d.showModal?d.showModal():d.setAttribute("open","")};
 $("help-x").onclick=()=>$("helpd").close();
 $("helpd").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
@@ -846,12 +941,12 @@ document.addEventListener("input",e=>{const i=e.target.dataset.nv;if(i!==undefin
   nav.addEventListener("touchend",e=>{if(y0===null)return;const t=e.changedTouches[0],dy=t.clientY-y0,dx=t.clientX-x0;y0=null;
     if(Math.abs(dy)<22||Math.abs(dy)<Math.abs(dx))return;
     const o=order(),i=o.indexOf(document.body.dataset.tab),n=Math.max(0,Math.min(o.length-1,i+(dy<0?1:-1)));if(n===i)return;
-    document.body.dataset.tab=o[n];if(o[n]=="notes")renderNV();scrollTo(0,0);
+    document.body.dataset.tab=o[n];if(o[n]=="notes")renderNV();if(o[n]=="future")renderFut(true);scrollTo(0,0);
     const b=nav.querySelector(`[data-tab="${o[n]}"]`);b.animate([{transform:`translateY(${dy<0?10:-10}px)`,opacity:.4},{transform:"none",opacity:1}],{duration:180})},{passive:true});
 })();
 document.addEventListener("click",e=>{
   const tb=e.target.closest("#tabs [data-tab]");
-  if(tb){document.body.dataset.tab=tb.dataset.tab;if(tb.dataset.tab=="notes")renderNV();scrollTo(0,0);return}
+  if(tb){document.body.dataset.tab=tb.dataset.tab;if(tb.dataset.tab=="future")renderFut(true);if(tb.dataset.tab=="notes")renderNV();scrollTo(0,0);return}
   const d=e.target.closest("[data-nvd]");
   if(d){S.notes.splice(+d.dataset.nvd,1);save();renderNotes();return}
   const h=e.target.closest(".acc .card h2,#logc h2");
@@ -959,6 +1054,71 @@ function renderHome(){
   still($("hmcats"));
   const why=(S.ui.why||"").trim();$("whyb").hidden=!(why&&w&&w.st!="ok");$("whyt").textContent=why;
 }
+/* ---------- future scenarios ---------- */
+const fm0=n=>n<0?"−"+fmt0(-n):fmt0(n);
+const fid=()=>Math.random().toString(36).slice(2,8),SCC=["#16a34a","#2563eb","#f59e0b","#a855f7","#ef4444","#14b8a6"];
+function fBudgetRows(){
+  const tx=S.tx[S.month]||[],inc0=tx.filter(t=>t.cat==="Income").reduce((n,t)=>n+(+t.a||0),0),inc=+S.ui.inc>0?+S.ui.inc:inc0;
+  const rows=Object.entries(S.caps).filter(([c,v])=>+v>0&&S.cats.includes(c)).map(([c,v])=>({id:fid(),n:cn(c),a:-(+v),k:c}));
+  rows.push({id:fid(),n:cn("Income"),a:inc||0,k:"Income"});return rows}
+const fTot=sc=>Math.round(sc.rows.reduce((n,r)=>n+(+r.a||0),0)*100)/100;
+const fMon=()=>(+S.fut.n||1)*(S.fut.u=="y"?12:1),fUnit=()=>tr(S.fut.u=="y"?"unitY":"unitM");
+const fTier=r=>{const t=((r.k||"")+" "+(r.n||"")).toLowerCase();
+  if(/misc|restaurant|dining|eat(ing)? out|takeout|entertain|\bfun\b|uncategor|coffee|fast food|\bbars?\b/.test(t))return 0;
+  if(/\bgas\b|fuel|grocer|food/.test(t))return 1;
+  if(/bill|rent|mortgage|util|insur|loan|debt|credit card|tax|phone|internet|electric|water|payment/.test(t))return 3;
+  return 2};
+function fRecs(){
+  const sc=S.fut.sc,T=sc.map(fTot),M=fMon(),n=+S.fut.n||1,u=fUnit(),out=[];
+  if(!sc.some(s=>s.rows.some(r=>+r.a))){return [tr("recNone")]}
+  const bi=T.indexOf(Math.max(...T)),best=sc[bi],ref=bi!==0?0:T.indexOf(Math.min(...T));
+  if(sc.length>1&&T[bi]>T[ref])out.push(tr("recBest",{a:best.t,b:sc[ref].t,d:fmt(T[bi]-T[ref]),n,u,y:fmt((T[bi]-T[ref])*M)}));
+  sc.forEach((s,i)=>{if(T[i]<0)out.push(tr("recNeg",{a:s.t,x:fmt(-T[i])}))});
+  const costs=best.rows.filter(r=>+r.a<0).map(r=>({r,t:fTier(r)})).sort((x,y)=>x.t-y.t||x.r.a-y.r.a);
+  const nm=r=>r.n||tr("scCostDef"),trim=r=>({c:nm(r),x:fmt(-r.a*.1),y:fmt(-r.a*.1*M),n,u});
+  costs.filter(x=>x.t<3).slice(0,3).forEach(x=>out.push(tr("recTrim",trim(x.r))));
+  const g=+S.goal.g||0,b=+S.goal.b||0;if(g>b&&T[bi]>0)out.push(tr("recGoal",{a:best.t,g:(S.goal.t||"").trim()||tr("goalDef"),m:Math.ceil((g-b)/T[bi])}));
+  const bill=costs.filter(x=>x.t==3)[0];if(bill)out.push(tr("recBill",{c:nm(bill.r),x:fmt(-bill.r.a*.1)}));
+  return out}
+function fChart(){
+  const sc=S.fut.sc,T=sc.map(fTot),M=fMon(),n=+S.fut.n||1,u=fUnit(),ys=[0,...T.map(t=>t*M)],lo=Math.min(...ys),hi=Math.max(...ys),pad=(hi-lo)*.14||1,y0=lo-pad,y1=hi+pad,X=k=>12+k/M*296,Y=v=>150-(v-y0)/(y1-y0)*132;
+  let g=`<svg viewBox="0 0 320 170" role="img" aria-label="${esc(tr("chartH"))}"><path d="M${X(0)},${Y(0)} H${X(M)}" stroke="var(--bd)" stroke-width="1.5" stroke-dasharray="3 3"/>`;
+  const ly=[];sc.forEach((s,i)=>{const e=T[i]*M;let y=e<0?Y(e)+16:Y(e)-9;ly.push(y)});
+  const ord=ly.map((y,i)=>i).sort((a,b)=>ly[a]-ly[b]);for(let k=1;k<ord.length;k++){if(ly[ord[k]]-ly[ord[k-1]]<14)ly[ord[k]]=ly[ord[k-1]]+14}
+  sc.forEach((s,i)=>{const c=SCC[i%6],e=T[i]*M;g+=`<path d="M${X(0)},${Y(0)} L${X(M)},${Y(e)}" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round"/><circle cx="${X(M)}" cy="${Y(e)}" r="4" fill="${c}"/><text x="${X(M)-6}" y="${ly[i]}" text-anchor="end" font-size="11" font-weight="700" fill="${c}">${esc(fm0(e))}</text>`});
+  g+="</svg>";
+  return `<h2>${esc(tr("chartH"))} · ${n} ${esc(u)}</h2>${g}<div class="lg">${sc.map((s,i)=>`<span><i style="border-color:${SCC[i%6]}"></i>${esc(s.t)}</span>`).join("")}</div>`}
+function fUpdate(){
+  S.fut.sc.forEach(sc=>{const t=fTot(sc),c=document.querySelector(`[data-tot="${sc.id}"]`),m=document.querySelector(`[data-mul="${sc.id}"]`);if(c)c.textContent=fmt(t);if(m)m.innerHTML=`<span>×${+S.fut.n||1} ${esc(fUnit())}</span><b>${fmt(t*fMon())}</b>`});
+  $("fu-rec").innerHTML=`<h2>${esc(tr("recH"))}</h2><ol>`+fRecs().map(x=>`<li>${esc(x)}</li>`).join("")+"</ol>";
+  $("fu-chart").innerHTML=fChart()}
+function renderFut(force){
+  $("fu-guide").hidden=!!S.ui.hideFut;
+  const F2=S.fut;if(!F2.sc.length){F2.sc.push({id:fid(),t:tr("scName",{n:1}),rows:Object.keys(S.caps).length?fBudgetRows():[{id:fid(),n:cn("Income"),a:0},{id:fid(),n:tr("scCostDef"),a:0}]})}
+  if(!force&&$("fview").contains(document.activeElement))return;
+  const nI=$("fu-n");if(document.activeElement!==nI)nI.value=F2.n;$("fu-u").value=F2.u;
+  $("scg").innerHTML=F2.sc.map(sc=>`<div class="card sc" data-sc="${sc.id}"><div class="sch"><input data-f="t" value="${esc(sc.t)}" aria-label="${esc(tr("scName",{n:""}))}">${F2.sc.length>1?`<button class="x" data-scdel="${sc.id}" aria-label="${esc(tr("scDelSc"))}">✕</button>`:""}</div>
+<table><thead><tr><th>${esc(tr("scCosts"))}</th><th style="text-align:right">${esc(tr("scAmts"))}</th><th></th></tr></thead><tbody>${sc.rows.map(r=>`<tr data-r="${r.id}"><td><input data-f="n" value="${esc(r.n)}" placeholder="${esc(tr("scCostDef"))}"></td><td class="am ${+r.a<0?"ng":""}"><input class="money" data-f="a" type="text" inputmode="decimal" autocomplete="off" value="${esc(fmtIn(+r.a||0))}" placeholder="$0.00"></td><td class="x"><button class="x" data-rdel="${r.id}" aria-label="✕">✕</button></td></tr>`).join("")}</tbody><tfoot><tr class="stt"><td>${esc(tr("scTotal"))}</td><td data-tot="${sc.id}"></td><td></td></tr></tfoot></table>
+<div class="mul" data-mul="${sc.id}"></div><div class="ft"><button class="ghost" data-radd="${sc.id}">${esc(tr("scAddRow"))}</button></div></div>`).join("");
+  fUpdate()}
+$("fview").addEventListener("input",e=>{
+  const t=e.target,F2=S.fut;
+  if(t.id=="fu-n"){F2.n=Math.max(1,Math.min(1200,Math.round(+t.value)||1));save();fUpdate();return}
+  const card=t.closest("[data-sc]");if(!card)return;const sc=F2.sc.find(x=>x.id==card.dataset.sc);if(!sc)return;
+  if(t.dataset.f=="t"){sc.t=t.value;save();$("fu-rec").innerHTML;fUpdate();return}
+  const row=sc.rows.find(r=>r.id==t.closest("[data-r]").dataset.r);
+  if(t.dataset.f=="n")row.n=t.value;else{row.a=parseMoney(t.value);t.closest("td").classList.toggle("ng",row.a<0)}
+  save();fUpdate()});
+$("fview").addEventListener("change",e=>{if(e.target.id=="fu-u"){S.fut.u=e.target.value;save();renderFut(true)}});
+$("fview").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;const F2=S.fut;
+  if(b.id=="fu-gx"){S.ui.hideFut=true;save();$("fu-guide").hidden=true;return}
+  if(b.id=="fu-add"){const l=F2.sc[F2.sc.length-1];F2.sc.push({id:fid(),t:tr("scName",{n:F2.sc.length+1}),rows:l?l.rows.map(r=>({id:fid(),n:r.n,a:r.a,k:r.k})):[{id:fid(),n:cn("Income"),a:0}]});save();renderFut(true)}
+  else if(b.id=="fu-bud"){const f0=F2.sc[0];if(F2.sc.length==1&&!f0.rows.some(r=>+r.a))F2.sc[0]={id:f0.id,t:tr("scBudget"),rows:fBudgetRows()};else F2.sc.push({id:fid(),t:tr("scBudget"),rows:fBudgetRows()});save();renderFut(true)}
+  else if(b.dataset.scdel){F2.sc=F2.sc.filter(x=>x.id!=b.dataset.scdel);save();renderFut(true)}
+  else if(b.dataset.radd){F2.sc.find(x=>x.id==b.dataset.radd).rows.push({id:fid(),n:"",a:0});save();renderFut(true);const r=document.querySelector(`[data-sc="${b.dataset.radd}"] tbody tr:last-child input`);if(r)r.focus()}
+  else if(b.dataset.rdel){F2.sc.forEach(sc=>{sc.rows=sc.rows.filter(r=>r.id!=b.dataset.rdel)});save();renderFut(true)}
+});
 $("capl").addEventListener("input",e=>{const c=e.target.dataset.cap;if(c===undefined)return;const v=parseMoney(e.target.value);if(v>0)S.caps[c]=v;else delete S.caps[c];save();renderHome()});
 $("homec").addEventListener("click",e=>{if(e.target.closest("#home-set")){if(matchMedia("(max-width:820px)").matches)document.body.dataset.tab="budget";setTimeout(()=>$("capc").scrollIntoView({block:"start",behavior:"smooth"}),60)}});
 /* ---------- welcome + your why ---------- */
@@ -970,6 +1130,7 @@ function renderWelcome(){
 }
 $("wl-why").value=S.ui.why||"";
 $("wl-why").oninput=e=>{S.ui.why=e.target.value;save();$("wl-bp").hidden=!(RETURNING&&e.target.value.trim());renderHome()};
+$("wl-hd").onclick=()=>{document.body.dataset.tab="welcome";scrollTo(0,0)};
 $("wl-go").onclick=()=>{setView("budget");save();document.body.dataset.tab="home";scrollTo(0,0)};
 /* ---------- project page (desktop) ---------- */
 const pjId=()=>Math.random().toString(36).slice(2,9);
@@ -1003,6 +1164,7 @@ let pjTimer=0;
 function pjSay(msg,kind){
   const b=$("pjb");b.textContent=msg;b.className="pjb on "+kind;
   document.querySelectorAll("#pview svg.pjs").forEach(v=>{try{v.setCurrentTime(0)}catch(e){}});
+  const pm=$("pjm");pm.textContent=msg;pm.className="pjm "+kind;
   clearTimeout(pjTimer);pjTimer=setTimeout(()=>{b.classList.remove("on")},8000);
 }
 function pjAddTx(){
@@ -1051,15 +1213,15 @@ function cliffSvg(){
   const kt=["0",...W.map(w=>f(w[0])),"1"].join(";"),pos=[[W[0][1],W[0][2]],...W.map(w=>[w[1],w[2]]),[W[6][1],W[6][2]]].map(p=>p.join(" ")).join(";"),rot=[0,...W.map(w=>w[3]),0].map(a=>`${a} 0 0`).join(";");
   const dis=(v,t)=>SMA("opacity",v,D,`calcMode="discrete" keyTimes="${t.map(f).join(";")}"`).replace(/keyTimes="0;/,'keyTimes="0;');
   const holds=[[78,500,"#f97316"],[80,466,"#22c55e"],[82,440,"#3b82f6"],[52,300,"#ec4899"],[50,255,"#eab308"],[52,205,"#f97316"],[54,160,"#22c55e"],[120,480,"#3b82f6"],[170,400,"#eab308"],[140,300,"#ec4899"],[200,220,"#22c55e"],[110,180,"#f97316"]];
-  return `<svg class="pjs" viewBox="0 0 260 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<rect width="260" height="560" fill="#dbeafe"/>
+  return `<svg class="pjs" viewBox="20 -60 240 707" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect x="0" y="-100" width="300" height="800" fill="#dbeafe"/>
 <g fill="#fff" opacity=".95">${SMT("translate","0 0;24 0;0 0","24s")}<ellipse cx="170" cy="56" rx="26" ry="9"/><ellipse cx="188" cy="50" rx="18" ry="9"/><ellipse cx="60" cy="86" rx="22" ry="8"/></g>
-<path d="M84,540 L86,470 L72,466 L72,460 L88,456 L84,420 L86,372 L40,342 Q34,336 38,330 L44,318 L40,260 L48,230 L42,190 L50,150 L44,118 L250,118 L250,540Z" fill="#9a8c7e" stroke="#6b5f54" stroke-width="3" stroke-linejoin="round"/>
+<path d="M84,540 L86,470 L72,466 L72,460 L88,456 L84,420 L86,372 L40,342 Q34,336 38,330 L44,318 L40,260 L48,230 L42,190 L50,150 L44,118 L270,118 L270,540Z" fill="#9a8c7e" stroke="#6b5f54" stroke-width="3" stroke-linejoin="round"/>
 <path d="M86,372 L40,342 L36,350 L86,384Z" fill="#6f6459"/>
 <g stroke="#6b5f54" stroke-width="2" fill="none" stroke-linecap="round"><path d="M110,200 l10,24 -8,22 12,26"/><path d="M170,140 l-6,30 10,24"/><path d="M190,320 l-12,26 8,24 -10,28"/><path d="M120,440 l14,20 -4,26"/><path d="M150,260 l8,24 -10,22"/></g>
 ${holds.map(h=>`<ellipse cx="${h[0]}" cy="${h[1]}" rx="5.5" ry="4" fill="${h[2]}"/>`).join("")}
-<rect x="40" y="108" width="214" height="14" rx="7" fill="#22c55e"/><path d="M220,108 V68" stroke="#64748b" stroke-width="3"/><path d="M220,68 L244,76 L220,84Z" fill="#ef4444">${SMT("skewY","-4;4;-4","1.6s")}</path>
-<rect x="0" y="538" width="260" height="22" fill="#22c55e"/><g fill="#16a34a"><circle cx="20" cy="536" r="12"/><circle cx="244" cy="537" r="14"/></g>
+<rect x="40" y="108" width="230" height="14" rx="7" fill="#22c55e"/><path d="M205,108 V68" stroke="#64748b" stroke-width="3"/><path d="M205,68 L229,76 L205,84Z" fill="#ef4444">${SMT("skewY","-4;4;-4","1.6s")}</path>
+<rect x="-20" y="538" width="320" height="170" fill="#22c55e"/><rect x="-20" y="560" width="320" height="150" fill="#16a34a" opacity=".55"/><g fill="#16a34a"><circle cx="20" cy="536" r="12"/><circle cx="244" cy="537" r="14"/></g>
 <g>${SMT("translate","310 540;310 540;112 540;112 540",D,`keyTimes="0;${f(17)};${f(21)};1"`)}${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(17)};${f(21)}"`)}<g transform="scale(.7)">${walker(2)}</g></g>
 <g>${SMT("translate",pos,D,`keyTimes="${kt}"`)}<g>${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(21)};${f(35.3)}"`)}${cliffer(false)}</g></g>
 <g>${SMT("translate","150 116;150 116;330 116;330 116",D,`keyTimes="0;${f(35.3)};${f(37.6)};1"`)}${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(35.3)};${f(37.6)}"`)}<g transform="scale(.7)">${glider(2)}</g></g>
@@ -1069,21 +1231,21 @@ function boardSvg(){
   const D="40s",f=t=>(t/40).toFixed(4),lines=[[62,"M142,62 q8,-6 16,0 t16,0 t16,0 t16,0 t16,0",1],[84,"M142,84 q8,-6 16,0 t16,0 t16,0",3.6],[106,"M142,106 q8,-6 16,0 t16,0 t16,0 t16,0",6.2],[128,"M142,128 q8,-6 16,0 t16,0",8.8],[150,"M142,150 q8,-6 16,0 t16,0 t16,0 t16,0 t16,0 t16,0",11]];
   const draw=lines.map(([y,d,t])=>{const a=f(t),b=f(t+1.8);return `<circle cx="128" cy="${y-2}" r="4.5" fill="none" stroke="#334155" stroke-width="1.8">${SMA("opacity","0;0;1;1",D,`keyTimes="0;${a};${b};1"`)}</circle><path d="${d}" fill="none" stroke="#475569" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="110" stroke-dashoffset="110">${SMA("stroke-dashoffset","110;110;0;0",D,`keyTimes="0;${a};${b};1"`)}</path>`}).join("");
   const marks=`<g fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round">${SMA("opacity","0;0;1;1",D,`keyTimes="0;${f(5)};${f(6)};1"`)}<path d="M262,70 l8,8 m0,-8 l-8,8"/><circle cx="288" cy="76" r="5"/><path d="M262,104 l8,8 m0,-8 l-8,8"/><path d="M280,100 q10,-8 20,4"/><circle cx="276" cy="136" r="5"/><path d="M290,128 l8,8 m0,-8 l-8,8"/></g>`;
-  return `<svg class="pjs" viewBox="0 0 260 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-<rect width="260" height="560" fill="#e2e8f0"/><rect x="26" y="36" width="208" height="120" rx="6" fill="#dbeafe" stroke="#94a3b8" stroke-width="4"/><path d="M130,36 V156 M26,96 H234" stroke="#94a3b8" stroke-width="3"/><g fill="#fff" opacity=".95"><ellipse cx="80" cy="64" rx="18" ry="6"/><ellipse cx="94" cy="60" rx="12" ry="6"/><ellipse cx="190" cy="124" rx="16" ry="6"/></g><rect y="378" width="260" height="182" fill="#cbd5e1"/><rect y="378" width="260" height="4" fill="#94a3b8"/><g transform="translate(0 190) scale(.8125)"><path d="M130,168 L118,232 M290,168 L302,232" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
+  return `<svg class="pjs" viewBox="-25 -60 240 707" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<rect x="-60" y="-100" width="320" height="800" fill="#e2e8f0"/><rect x="16" y="36" width="158" height="120" rx="6" fill="#dbeafe" stroke="#94a3b8" stroke-width="4"/><path d="M95,36 V156 M16,96 H174" stroke="#94a3b8" stroke-width="3"/><g fill="#fff" opacity=".95"><ellipse cx="50" cy="64" rx="18" ry="6"/><ellipse cx="64" cy="60" rx="12" ry="6"/><ellipse cx="140" cy="126" rx="16" ry="6"/></g><rect x="-60" y="378" width="320" height="330" fill="#cbd5e1"/><rect x="-60" y="378" width="320" height="4" fill="#94a3b8"/><g transform="translate(-13 234) scale(.62)"><path d="M130,168 L118,232 M290,168 L302,232" stroke="#64748b" stroke-width="4" stroke-linecap="round"/>
 <rect x="110" y="14" width="202" height="154" rx="6" fill="#fff" stroke="#64748b" stroke-width="4"/>
 <text x="211" y="42" text-anchor="middle" font-size="22" font-weight="700" fill="#334155" font-family="'Bradley Hand','Segoe Script','Comic Sans MS',cursive">${esc(tr("pjPlan"))}</text>
 <path d="M170,48 H252" stroke="#334155" stroke-width="2" stroke-linecap="round" opacity=".5"/>${draw}${marks}</g>
-<g>${SMT("translate","80 378;80 378;-150 378;-150 378;80 378;80 378",D,`keyTimes="0;${f(12)};${f(17)};${f(36.4)};${f(38.6)};1"`)}<g transform="scale(1)"><g>${SMA("opacity","1;0;1",D,`calcMode="discrete" keyTimes="0;${f(12)};${f(38.6)}"`)}${writer()}</g><g>${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(12)};${f(17)}"`)}${walker(1)}</g><g>${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(36.4)};${f(38.6)}"`)}${glider(1)}</g></g></g>
+<g>${SMT("translate","28 378;28 378;-110 378;-110 378;28 378;28 378",D,`keyTimes="0;${f(12)};${f(17)};${f(36.4)};${f(38.6)};1"`)}<g transform="scale(.85)"><g>${SMA("opacity","1;0;1",D,`calcMode="discrete" keyTimes="0;${f(12)};${f(38.6)}"`)}${writer()}</g><g>${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(12)};${f(17)}"`)}${walker(1)}</g><g>${SMA("opacity","0;1;0",D,`calcMode="discrete" keyTimes="0;${f(36.4)};${f(38.6)}"`)}${glider(1)}</g></g></g>
 </svg>`;
 }
 function buildScenes(){$("pj-cliff").innerHTML=cliffSvg();$("pj-board").innerHTML=boardSvg();still($("pview"))}
 /* ---------- view switch (desktop) ---------- */
-function setView(v){S.ui.view=v;document.body.dataset.view=v;document.querySelectorAll("#viewsw button").forEach(b=>b.classList.toggle("on",b.dataset.view==v))}
+function setView(v){S.ui.view=v;if(v=="future")renderFut(true);document.body.dataset.view=v;document.querySelectorAll("#viewsw button").forEach(b=>b.classList.toggle("on",b.dataset.view==v))}
 $("viewsw").onclick=e=>{const b=e.target.closest("button");if(b){setView(b.dataset.view);save();scrollTo(0,0)}};
 $("pj-d").value=today();
 document.body.dataset.tab=RETURNING?"home":"welcome";
-setView(!RETURNING?"welcome":S.ui.view=="project"?"project":"budget");
+setView(!RETURNING?"welcome":S.ui.view=="project"?"project":S.ui.view=="future"?"future":"budget");
 $("logc").classList.toggle("cl",!!S.ui.logCl);
 
 initLang();
