@@ -9,6 +9,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>try{if(localStorage.getItem("stackmoney.compat")=="1")document.documentElement.classList.add("compat")}catch(e){}</script>
 <title>Stack Money – Budget Tracker</title>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--tx:#1b1f24;--mu:#6b7280;--bd:#e2e5ea;--ac:#2563eb;--rd:#dc2626;--gr:#16a34a;--inp:#f9fafb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -63,6 +64,7 @@ button.x{background:transparent;color:var(--mu);border:0;padding:2px 6px}
 .two{grid-template-columns:1fr;margin-top:8px}.two .card{margin-top:0}
 .arrows svg{width:120px;height:40px}
 body{padding-bottom:76px}
+html.compat{padding-top:0!important;padding-bottom:0!important;scroll-padding-top:0!important}html.compat body::before{display:none!important}html.compat *{touch-action:auto!important}html.compat #tabs{padding-bottom:0!important}
 input,textarea,select{-webkit-user-select:text;user-select:text;touch-action:manipulation}#tabs{touch-action:none}#tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
 #tabs button{flex:1;background:transparent;color:var(--mu);border:0;border-radius:0;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;font-size:18px;line-height:1.1}
 #tabs button span{font-size:10px;line-height:1.1;text-align:center;padding:0 2px}
@@ -344,6 +346,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 <div id="notes"></div>
 <dialog id="setd"><div class="hin"><div class="hh"><h2 data-t="setH">Settings</h2><button class="ghost" id="set-x" data-t="closeB">Close</button></div>
 <button class="ghost" id="set-notes" type="button"><span>📝</span> <span data-t="tabNotes">Notes</span></button>
+<label class="row" style="margin:6px 0 12px;gap:8px;align-items:flex-start"><input type="checkbox" id="set-compat" style="flex:none;width:22px;height:22px;margin-top:1px"><span><b data-t="setCompat">Compatibility mode</b><br><small class="muted" data-t="setCompatP"></small></span></label>
 <h3 style="margin:8px 0 4px;font-size:15px" data-t="picH">Your picture</h3><p class="muted" style="margin:0 0 8px;font-size:14px" data-t="picP"></p>
 <img id="pic-pv" alt="" hidden><div class="row" style="margin-top:8px"><button id="pic-add" data-t="picAdd">Choose picture</button><button class="ghost" id="pic-rm" data-t="picRm" hidden>Remove</button></div><input type="file" id="pic-f" accept="image/*" hidden><p id="pic-err" style="color:var(--rd);font-size:13px;margin:6px 0 0"></p></div></dialog>
 <dialog id="helpd"><div class="hin"><div class="hh"><h2 data-t="helpH">How to use Stack Money</h2><button class="ghost" id="help-x" data-t="closeB">Close</button></div><div id="helpbody"></div></div></dialog>
@@ -468,6 +471,8 @@ mOhOver:["Oh no, you're {x} over budget", "Ay no, te pasaste {x} del presupuesto
 mTotal:["All budgets", "Todos los presupuestos", "Tous les budgets", "Todos os orçamentos", "全部预算", "Tất cả ngân sách", "كل الميزانيات"],
 mNoInc:["Log your income for this month and I'll show what's left to spend.", "Registra tus ingresos de este mes y te mostraré lo que queda por gastar.", "Note tes revenus de ce mois et je te montrerai ce qu'il reste à dépenser.", "Registre sua renda deste mês e eu mostro o que resta para gastar.", "记录本月收入，我会显示还剩多少可花。", "Hãy ghi thu nhập tháng này và tôi sẽ cho bạn thấy còn bao nhiêu để chi.", "سجّل دخل هذا الشهر وسأعرض لك ما تبقى للإنفاق."],
 mIncSp:["income minus spending", "ingresos menos gastos", "revenus moins dépenses", "renda menos gastos", "收入减支出", "thu nhập trừ chi tiêu", "الدخل ناقص الإنفاق"],
+setCompat:["Compatibility mode", "Modo de compatibilidad", "Mode compatibilité", "Modo de compatibilidade", "兼容模式", "Chế độ tương thích", "وضع التوافق"],
+setCompatP:["Try this if you can't type on your phone. It turns off extra effects and reloads the app.", "Pruébalo si no puedes escribir en tu teléfono. Desactiva efectos extra y recarga la app.", "Essaie si tu ne peux pas écrire sur ton téléphone. Il désactive les effets supplémentaires et recharge l'app.", "Experimente se você não consegue digitar no celular. Desativa efeitos extras e recarrega o app.", "如果手机上无法输入，请试试。它会关闭额外效果并重新加载应用。", "Hãy thử nếu bạn không gõ được trên điện thoại. Chế độ này tắt các hiệu ứng thêm và tải lại ứng dụng.", "جرّب هذا إذا لم تستطع الكتابة على هاتفك. يوقف التأثيرات الإضافية ويعيد تحميل التطبيق."],
 setAria:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 setH:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 picH:["Your picture","Tu imagen","Ton image","Sua imagem","你的图片","Hình ảnh của bạn","صورتك"],
@@ -771,6 +776,8 @@ async function showPic(){
   if(bl){picURL=URL.createObjectURL(bl)}
   $("pic").src=picURL;$("pic").hidden=!bl;$("sis").classList.toggle("hasimg",!!bl);$("pic-pv").src=picURL;$("pic-pv").hidden=!bl;$("pic-rm").hidden=!bl}
 $("set-b").onclick=()=>{const d=$("setd");$("pic-err").textContent="";showPic();d.showModal?d.showModal():d.setAttribute("open","")};
+$("set-compat").checked=document.documentElement.classList.contains("compat");
+$("set-compat").onchange=e=>{try{e.target.checked?localStorage.setItem("stackmoney.compat","1"):localStorage.removeItem("stackmoney.compat")}catch(x){}location.reload()};
 $("set-notes").onclick=()=>{$("setd").close();document.body.dataset.tab="notes";renderNV();scrollTo(0,0)};
 $("set-x").onclick=()=>$("setd").close();
 $("setd").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
@@ -1016,7 +1023,7 @@ $("reset").onclick=()=>{if(confirm(tr("eraseConfirm"))){S=fresh();ensureUI();sav
 /* ---------- animation helpers ---------- */
 const SMA=(a,v,d,x)=>`<animate attributeName="${a}" values="${v}" dur="${d}" repeatCount="indefinite" ${x||""}/>`;
 const SMT=(ty,v,d,x)=>`<animateTransform attributeName="transform" type="${ty}" values="${v}" dur="${d}" repeatCount="indefinite" ${x||""}/>`;
-const rmo=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){return false}};
+const rmo=()=>{try{return document.documentElement.classList.contains("compat")||matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){return false}};
 const still=el=>{if(rmo())el.querySelectorAll("svg").forEach(v=>v.pauseAnimations&&v.pauseAnimations())};
 const INK="#1f2937",SK=`fill="none" stroke="${INK}" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"`;
 const morph=(vals,dur,begin)=>`<path d="${vals[0]}">${SMA("d",vals.join(";"),dur,begin?`begin="${begin}"`:"")}</path>`;
