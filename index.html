@@ -8,8 +8,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>try{if(localStorage.getItem("stackmoney.compat")=="1")document.documentElement.classList.add("compat")}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<script>try{if(localStorage.getItem("stackmoney.compat")=="1")document.documentElement.classList.add("compat")}catch(e){}try{var fx=localStorage.getItem("stackmoney.fix");if(fx)document.documentElement.classList.add("fx"+fx)}catch(e){}</script>
 <title>Stack Money – Budget Tracker</title>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--tx:#1b1f24;--mu:#6b7280;--bd:#e2e5ea;--ac:#2563eb;--rd:#dc2626;--gr:#16a34a;--inp:#f9fafb;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -26,6 +26,7 @@ h2{font-size:15px;margin:0 0 8px}
 .bar-top{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:12px}
 .main{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin:12px 0}
 .col{display:flex;flex-direction:column;gap:12px;min-width:0}
+html,body{touch-action:manipulation;-webkit-text-size-adjust:100%}input,select,textarea{font-size:16px!important}#rot{display:none}@media (orientation:landscape) and (max-height:480px) and (max-width:950px) and (pointer:coarse){#rot{display:flex;position:fixed;inset:0;z-index:999;background:var(--bg);color:var(--tx);align-items:center;justify-content:center;text-align:center;padding:24px;font-size:20px;font-weight:700;flex-direction:column;gap:12px}#rot span{font-size:44px}}
 @media(max-width:820px){.main{grid-template-columns:1fr}}
 input,select,button{font:inherit;color:var(--tx);background:var(--inp);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;min-width:0}
 button{cursor:pointer;background:var(--ac);color:#fff;border-color:var(--ac)}
@@ -64,6 +65,7 @@ button.x{background:transparent;color:var(--mu);border:0;padding:2px 6px}
 .two{grid-template-columns:1fr;margin-top:8px}.two .card{margin-top:0}
 .arrows svg{width:120px;height:40px}
 body{padding-bottom:76px}
+html.fx3 *{touch-action:auto!important;-webkit-user-select:auto!important;user-select:auto!important}html.fx3 body::before{display:none!important}html.fx3{-webkit-text-size-adjust:auto}.fxb{display:block;width:100%;text-align:left;margin:0 0 6px}.fxb.on{outline:2px solid #22c55e}#fx-log{font:11px/1.35 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-all;max-height:130px;overflow:auto;background:rgba(0,0,0,.18);border-radius:8px;padding:6px;margin:6px 0}dialog#typd{border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);width:calc(100% - 32px);max-width:420px}dialog#typd input{width:100%;box-sizing:border-box}
 html.compat{padding-top:0!important;padding-bottom:0!important;scroll-padding-top:0!important}html.compat body::before{display:none!important}html.compat *{touch-action:auto!important}html.compat #tabs{padding-bottom:0!important}
 input,textarea,select{-webkit-user-select:text;user-select:text;touch-action:manipulation}#tabs{touch-action:none}#tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
 #tabs button{flex:1;background:transparent;color:var(--mu);border:0;border-radius:0;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;font-size:18px;line-height:1.1}
@@ -342,21 +344,42 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 </div>
 </div>
 </div>
+<div id="rot" role="alert"><span>📱</span><div data-t="rotMsg">Please turn your phone upright to use Stack Money.</div></div>
 <nav id="tabs"><button data-tab="home">🏠<span data-t="tabHome">Home</span></button><button data-tab="budget">📊<span data-t="tabBudget">Budget</span></button><button data-tab="future">📈<span data-t="tabFuture">Projection</span></button><button data-tab="add"><svg class="tabadd" viewBox="0 0 24 24" fill="none" stroke="#00e676" stroke-width="4.5" stroke-linecap="round" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg><span data-t="tabAdd">Add</span></button><button data-tab="project">🏗️<span data-t="pjSwProject">Project</span></button><button data-tab="acc">🏦<span data-t="tabAcc">Accounts</span></button></nav>
 <div id="notes"></div>
 <dialog id="setd"><div class="hin"><div class="hh"><h2 data-t="setH">Settings</h2><button class="ghost" id="set-x" data-t="closeB">Close</button></div>
 <button class="ghost" id="set-notes" type="button"><span>📝</span> <span data-t="tabNotes">Notes</span></button>
 <label class="row" style="margin:6px 0 12px;gap:8px;align-items:flex-start"><input type="checkbox" id="set-compat" style="flex:none;width:22px;height:22px;margin-top:1px"><span><b data-t="setCompat">Compatibility mode</b><br><small class="muted" data-t="setCompatP"></small></span></label>
-<h3 style="margin:8px 0 4px;font-size:15px" data-t="picH">Your picture</h3><p class="muted" style="margin:0 0 8px;font-size:14px" data-t="picP"></p>
+<h3 style="margin:8px 0 4px;font-size:15px" data-t="fixH">Typing help</h3><p class="muted" style="margin:0 0 8px;font-size:14px" data-t="fixP">Can't type? Try each fix below. The page reloads after each one. Then tap the test box.</p>
+<button class="ghost fxb" data-fx="2" type="button" data-t="fix2">Fix A: focus on tap (default)</button>
+<button class="ghost fxb" data-fx="1" type="button" data-t="fix1">Fix B: let iPhone handle it (no tricks)</button>
+<button class="ghost fxb" data-fx="3" type="button" data-t="fix3">Fix C: remove all touch and select styling</button>
+<button class="ghost fxb" data-fx="4" type="button" data-t="fix4">Fix D: type in a pop-up box</button>
+<input id="fx-test" data-ph="fixTest" placeholder="Test box: tap here and type">
+<div id="fx-log"></div><button class="ghost" id="fx-copy" type="button" data-t="fixCopy">Copy report</button>
+<h3 style="margin:14px 0 4px;font-size:15px" data-t="picH">Your picture</h3><p class="muted" style="margin:0 0 8px;font-size:14px" data-t="picP"></p>
 <img id="pic-pv" alt="" hidden><div class="row" style="margin-top:8px"><button id="pic-add" data-t="picAdd">Choose picture</button><button class="ghost" id="pic-rm" data-t="picRm" hidden>Remove</button></div><input type="file" id="pic-f" accept="image/*" hidden><p id="pic-err" style="color:var(--rd);font-size:13px;margin:6px 0 0"></p></div></dialog>
+<dialog id="typd"><div class="hin"><div id="typl" class="muted" style="margin-bottom:6px"></div><input id="typi"><div class="row" style="margin-top:10px"><button id="typok" type="button">OK</button><button class="ghost" id="typx" type="button">&#10005;</button></div></div></dialog>
 <dialog id="helpd"><div class="hin"><div class="hh"><h2 data-t="helpH">How to use Stack Money</h2><button class="ghost" id="help-x" data-t="closeB">Close</button></div><div id="helpbody"></div></div></dialog>
 
 <script>
-/* iPhone home-screen mode: make sure a tap on a text box always focuses it and opens the keyboard */
-(()=>{const ok=e=>e&&e.matches&&e.matches('input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]),textarea');
-  document.addEventListener("pointerup",e=>{const t=e.target&&e.target.closest?e.target.closest("input,textarea"):null;
-    if(!ok(t)||t.disabled||t.readOnly)return;setTimeout(()=>{if(document.activeElement!==t){try{t.focus({preventScroll:false})}catch(x){}}},40)},true);
-  document.addEventListener("click",e=>{const l=e.target&&e.target.closest?e.target.closest("label"):null;if(l){const t=l.querySelector("input:not([type=checkbox]):not([type=radio]),textarea,select");if(t&&document.activeElement!==t&&t.tagName!="SELECT")try{t.focus()}catch(x){}}},true);
+/* iPhone home-screen mode: focus the tapped box right inside the tap, which is the only moment iOS opens the keyboard */
+const FIX=(()=>{try{return localStorage.getItem("stackmoney.fix")||"2"}catch(x){return"2"}})();
+(()=>{const SEL="input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]):not([type=range]),textarea";
+  const go=e=>{const t=e.target&&e.target.closest?e.target.closest(SEL):null;if(!t||t.disabled||t.readOnly)return;if(document.activeElement!==t){try{t.focus()}catch(x){}}};
+  if(FIX==="2"){document.addEventListener("touchend",go,true);document.addEventListener("click",go,true);
+  document.addEventListener("click",e=>{const l=e.target&&e.target.closest?e.target.closest("label"):null;if(l){const t=l.querySelector(SEL);if(t&&document.activeElement!==t)try{t.focus()}catch(x){}}},true)}
+  if(FIX==="4"){let tg=null;const D=()=>document.getElementById("typd"),I=()=>document.getElementById("typi");
+    document.addEventListener("click",e=>{const t=e.target&&e.target.closest?e.target.closest(SEL):null;if(!t||t.disabled||t.readOnly||t.closest("#typd"))return;
+      e.preventDefault();tg=t;const i=I();i.type=(t.type==="number"||t.type==="email"||t.type==="tel"||t.type==="password")?t.type:"text";i.inputMode=t.inputMode||"";i.step="any";i.placeholder=t.placeholder||"";i.value=t.value;
+      document.getElementById("typl").textContent=t.getAttribute("aria-label")||t.placeholder||"";try{t.blur()}catch(x){}
+      const d=D();d.showModal?d.showModal():d.setAttribute("open","");i.focus();try{i.select()}catch(x){}},true);
+    const ok=()=>{if(tg){tg.value=I().value;tg.dispatchEvent(new Event("input",{bubbles:true}));tg.dispatchEvent(new Event("change",{bubbles:true}))}D().close()};
+    document.addEventListener("DOMContentLoaded",()=>{document.getElementById("typok").onclick=ok;document.getElementById("typx").onclick=()=>D().close();I().onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();ok()}}});
+    if(document.readyState!=="loading"){document.getElementById("typok").onclick=ok;document.getElementById("typx").onclick=()=>D().close();I().onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();ok()}}}}
+  /* no pinch zoom, no double-tap zoom */
+  ["gesturestart","gesturechange","gestureend"].forEach(n=>document.addEventListener(n,e=>e.preventDefault(),{passive:false}));
+  try{screen.orientation&&screen.orientation.lock&&screen.orientation.lock("portrait").catch(()=>{})}catch(x){}
 })();
 /* ---------- languages ---------- */
 const LANGS={en:{n:"English",h:"en",d:"ltr"},es:{n:"Español",h:"es",d:"ltr"},fr:{n:"Français",h:"fr",d:"ltr"},pt:{n:"Português",h:"pt",d:"ltr"},zh:{n:"中文(简体)",h:"zh-CN",d:"ltr"},vi:{n:"Tiếng Việt",h:"vi",d:"ltr"},ar:{n:"العربية",h:"ar",d:"rtl"}};
@@ -473,6 +496,15 @@ mNoInc:["Log your income for this month and I'll show what's left to spend.", "R
 mIncSp:["income minus spending", "ingresos menos gastos", "revenus moins dépenses", "renda menos gastos", "收入减支出", "thu nhập trừ chi tiêu", "الدخل ناقص الإنفاق"],
 setCompat:["Compatibility mode", "Modo de compatibilidad", "Mode compatibilité", "Modo de compatibilidade", "兼容模式", "Chế độ tương thích", "وضع التوافق"],
 setCompatP:["Try this if you can't type on your phone. It turns off extra effects and reloads the app.", "Pruébalo si no puedes escribir en tu teléfono. Desactiva efectos extra y recarga la app.", "Essaie si tu ne peux pas écrire sur ton téléphone. Il désactive les effets supplémentaires et recharge l'app.", "Experimente se você não consegue digitar no celular. Desativa efeitos extras e recarrega o app.", "如果手机上无法输入，请试试。它会关闭额外效果并重新加载应用。", "Hãy thử nếu bạn không gõ được trên điện thoại. Chế độ này tắt các hiệu ứng thêm và tải lại ứng dụng.", "جرّب هذا إذا لم تستطع الكتابة على هاتفك. يوقف التأثيرات الإضافية ويعيد تحميل التطبيق."],
+rotMsg:["Please turn your phone upright to use Stack Money.", "Gira tu teléfono en vertical para usar Stack Money.", "Remets ton téléphone à la verticale pour utiliser Stack Money.", "Vire o celular na vertical para usar o Stack Money.", "请将手机竖过来使用 Stack Money。", "Hãy xoay điện thoại thẳng đứng để dùng Stack Money.", "يرجى تدوير هاتفك عموديًا لاستخدام Stack Money."],
+fixH:["Typing help", "Ayuda para escribir", "Aide à la saisie", "Ajuda para digitar", "输入帮助", "Trợ giúp nhập liệu", "مساعدة في الكتابة"],
+fixP:["Can't type? Try each fix below. The page reloads after each one. Then tap the test box.", "¿No puedes escribir? Prueba cada solución. La página se recarga con cada una. Luego toca la casilla de prueba.", "Impossible de saisir ? Essaie chaque solution. La page se recharge à chaque fois. Puis touche la case de test.", "Não consegue digitar? Teste cada solução. A página recarrega a cada uma. Depois toque na caixa de teste.", "无法输入？依次尝试下面的方法，每次页面都会重新加载，然后点击测试框。", "Không gõ được? Hãy thử từng cách bên dưới. Trang sẽ tải lại sau mỗi cách. Sau đó chạm vào ô thử.", "لا تستطيع الكتابة؟ جرّب كل حل أدناه. تُعاد تحميل الصفحة بعد كل حل. ثم المس مربع الاختبار."],
+fix2:["Fix A: focus on tap (default)", "Solución A: enfocar al tocar (predeterminada)", "Solution A : focus au toucher (par défaut)", "Solução A: focar ao tocar (padrão)", "方法 A：点击时聚焦（默认）", "Cách A: lấy tiêu điểm khi chạm (mặc định)", "الحل أ: التركيز عند اللمس (الافتراضي)"],
+fix1:["Fix B: let iPhone handle it (no tricks)", "Solución B: dejar que el iPhone lo maneje (sin trucos)", "Solution B : laisser l'iPhone gérer (sans astuce)", "Solução B: deixar o iPhone cuidar (sem truques)", "方法 B：交给 iPhone 处理（无特殊处理）", "Cách B: để iPhone tự xử lý (không mẹo)", "الحل ب: ترك الآيفون يتولى الأمر (بدون حيل)"],
+fix3:["Fix C: remove all touch and select styling", "Solución C: quitar todo el estilo táctil y de selección", "Solution C : retirer tout style tactile et de sélection", "Solução C: remover todo estilo de toque e seleção", "方法 C：移除所有触摸和选择样式", "Cách C: bỏ mọi kiểu cảm ứng và chọn văn bản", "الحل ج: إزالة كل أنماط اللمس والتحديد"],
+fix4:["Fix D: type in a pop-up box", "Solución D: escribir en una ventana emergente", "Solution D : saisir dans une fenêtre", "Solução D: digitar em uma janela pop-up", "方法 D：在弹出框中输入", "Cách D: gõ trong hộp bật lên", "الحل د: الكتابة في نافذة منبثقة"],
+fixTest:["Test box: tap here and type", "Casilla de prueba: toca y escribe", "Case de test : touche et écris", "Caixa de teste: toque e digite", "测试框：点击并输入", "Ô thử: chạm và gõ", "مربع الاختبار: المس واكتب"],
+fixCopy:["Copy report", "Copiar informe", "Copier le rapport", "Copiar relatório", "复制报告", "Sao chép báo cáo", "نسخ التقرير"],
 setAria:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 setH:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 picH:["Your picture","Tu imagen","Ton image","Sua imagem","你的图片","Hình ảnh của bạn","صورتك"],
@@ -778,6 +810,12 @@ async function showPic(){
 $("set-b").onclick=()=>{const d=$("setd");$("pic-err").textContent="";showPic();d.showModal?d.showModal():d.setAttribute("open","")};
 $("set-compat").checked=document.documentElement.classList.contains("compat");
 $("set-compat").onchange=e=>{try{e.target.checked?localStorage.setItem("stackmoney.compat","1"):localStorage.removeItem("stackmoney.compat")}catch(x){}location.reload()};
+document.querySelectorAll(".fxb").forEach(b=>{b.classList.toggle("on",b.dataset.fx===FIX);b.onclick=()=>{try{localStorage.setItem("stackmoney.fix",b.dataset.fx)}catch(x){}location.reload()}});
+(()=>{const LOG=[];const lg=$("fx-log");const add=(n,e)=>{const t=e.target;if(!t||!t.tagName||!/INPUT|TEXTAREA/.test(t.tagName))return;LOG.push(n+" "+(t.id||t.tagName.toLowerCase()));if(LOG.length>40)LOG.shift();lg.textContent=LOG.slice(-8).join("\n")};
+  ["touchstart","touchend","mousedown","click","focusin","focusout","input","keydown"].forEach(n=>document.addEventListener(n,e=>add(n,e),true));
+  $("fx-copy").onclick=async()=>{const st=(navigator.standalone===true||matchMedia("(display-mode: standalone)").matches);const vv=window.visualViewport;
+    const r=["StackMoney v35 fix="+FIX+" compat="+document.documentElement.classList.contains("compat"),"standalone="+st,navigator.userAgent,"inner "+innerWidth+"x"+innerHeight+" vv "+(vv?Math.round(vv.width)+"x"+Math.round(vv.height):"-"),"active="+(document.activeElement&&(document.activeElement.id||document.activeElement.tagName)),"--- events",...LOG].join("\n");
+    lg.textContent=r;try{await navigator.clipboard.writeText(r);$("fx-copy").textContent="✓"}catch(x){const R=document.createRange();R.selectNodeContents(lg);const sl=getSelection();sl.removeAllRanges();sl.addRange(R)}}})();
 $("set-notes").onclick=()=>{$("setd").close();document.body.dataset.tab="notes";renderNV();scrollTo(0,0)};
 $("set-x").onclick=()=>$("setd").close();
 $("setd").addEventListener("click",e=>{if(e.target===e.currentTarget)e.currentTarget.close()});
