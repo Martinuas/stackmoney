@@ -169,6 +169,7 @@ th{color:var(--mu);font-weight:500}
 .mbub::after{content:"";position:absolute;left:50%;bottom:-8px;width:10px;height:10px;margin-left:-5px;background:var(--card);border-right:2px solid;border-bottom:2px solid;border-color:inherit;transform:rotate(45deg)}.mbub.near{border-color:#f59e0b}.mbub.over{border-color:var(--rd)}
 .hc{display:flex;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd)}.hc:last-child{border-bottom:0}.hf{flex:none;width:50px}.hf svg{width:50px;height:auto;display:block}
 .hi{flex:1;min-width:0}.hn{font-weight:600}.hl{font-size:19px;font-weight:700}.hl.ok{color:var(--gr)}.hl.near{color:#d97706}.hl.over{color:var(--rd)}
+.mamt{text-align:center;margin-top:6px;line-height:1.15}.mamt[hidden]{display:none}.mamt b{display:block;font-size:30px;font-weight:800;color:var(--gr)}.mamt small{display:block;font-size:12px;color:var(--mu)}.mamt.near b{color:#d97706}.mamt.over b{color:var(--rd)}
 .hb{height:8px;border-radius:4px;background:var(--bd);overflow:hidden;margin:3px 0}.hb i{display:block;height:100%;background:var(--gr)}.hc.near .hb i{background:#f59e0b}.hc.over .hb i{background:var(--rd)}
 .cap{display:grid;grid-template-columns:1fr auto 120px;gap:8px;align-items:center;margin-bottom:6px}
 #pview{display:none}#pview{--sw:min(calc((100vh - 92px)*.3393),20vw);width:100vw;margin-left:calc(50% - 50vw);padding:0 12px;box-sizing:border-box}.pg{display:grid;grid-template-columns:var(--sw) minmax(0,1fr) var(--sw);gap:12px;align-items:start;margin-top:0}
@@ -176,7 +177,7 @@ th{color:var(--mu);font-weight:500}
 .pb i{background:var(--gr)}.pb.near i{background:#f59e0b}.pb.over i{background:var(--rd)}.pb{height:12px;border-radius:6px;margin:10px 0 2px}.pbt{font-size:13px;font-weight:700}
 .pbn{display:none}.pjm{display:none}#pic,#pic-pv{display:block;width:100%;border-radius:10px;object-fit:cover}#pic{height:100%;object-position:center 30%}#pic-pv{max-height:200px;object-fit:contain;background:var(--bd)}#pic[hidden],#pic-pv[hidden]{display:none}.sis.hasimg>svg{display:none}.sis.hasimg{width:min(100%,440px);height:auto;aspect-ratio:16/10}@media(max-width:820px){.sis.hasimg{width:100%;max-width:none;aspect-ratio:4/5}}
 .futi{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}.futi .gfl{flex:1 1 140px}#fut-out svg{width:100%;height:auto;display:block;margin:6px 0}#fut-out p{margin:6px 0;font-size:14px}#fut-out .big{font-size:16px;font-weight:700}.fl{display:flex;gap:14px;font-size:12px;color:var(--mu);flex-wrap:wrap}.fl i{display:inline-block;width:14px;height:0;border-top:3px solid var(--gr);vertical-align:middle;margin-inline-end:4px}.fl i.d{border-top:2px dashed var(--mu)}
-#fview{display:none}.scg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:12px 0;align-items:start}.sc{padding:0;overflow:hidden}.sc .sch{padding:12px;border-bottom:2px solid var(--tx);display:flex;gap:6px;align-items:center}.sc .sch input{flex:1;min-width:0;text-align:center;font-weight:700;border:0;background:transparent}.sc table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed}.sc th:nth-child(2),.sc td.am,.sc .stt td:nth-child(2){width:42%}.sc th:nth-child(3),.sc td.x,.sc .stt td:nth-child(3){width:30px}.sc td input{min-width:0}.sc th{text-align:left;font-size:12px;color:var(--mu);padding:6px 8px;border-bottom:1px solid var(--bd)}.sc td{padding:3px 6px}.sc tbody tr:nth-child(odd) td{background:rgba(99,102,241,.09)}.sc td input{width:100%;border:0;background:transparent;font:inherit;padding:6px 2px}.sc td.am input{text-align:right}.sc td.am.ng input{color:var(--rd)}.sc td.x{width:24px;padding:0}.sc .stt td{background:#92d050;color:#111;font-weight:700;padding:7px 8px}.sc .stt td:nth-child(2){text-align:right}#fu-n{width:130px}#fu-u{width:150px}.sc .mul{padding:8px 12px;font-size:13px;color:var(--mu);display:flex;justify-content:space-between;gap:8px}.sc .mul b{color:var(--tx)}.sc .ft{padding:0 8px 8px}
+#fview{display:none}.scg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:12px 0;align-items:start}.sc{padding:0;overflow:hidden}.sc .sch{padding:12px;border-bottom:2px solid var(--tx);display:flex;gap:6px;align-items:center}.sc .sch input{flex:1;min-width:0;text-align:center;font-weight:700;border:0;background:transparent}.sc table{width:100%;min-width:0;border-collapse:collapse;table-layout:fixed}.sc th:nth-child(2),.sc td.am,.sc .stt td:nth-child(2){width:42%}.sc th:nth-child(3),.sc td.x,.sc .stt td:nth-child(3){width:30px}.sc td input{min-width:0}.sc th{text-align:left;font-size:12px;color:var(--mu);padding:6px 8px;border-bottom:1px solid var(--bd)}.sc td{padding:3px 6px}.sc tbody tr:nth-child(odd) td{background:rgba(99,102,241,.09)}.sc td input{width:100%;border:0;background:transparent;font:inherit;padding:6px 2px}.sc td.am input{text-align:right}.sc td.am.ng input{color:var(--rd)}.sc td.am.ps input{color:var(--gr)}.sc .mul b.ps,#fu-rec .ps{color:var(--gr)}.sc .mul b.ng,#fu-rec .ng{color:var(--rd)}.co{color:#d97706!important;font-weight:700}.sc .stt.neg td{background:#fca5a5;color:#7f1d1d}.sc .stt td{color:#14532d}#fu-n,#fu-u{color:#d97706;font-weight:700}#fu-rec .ps,#fu-rec .ng{font-weight:700}.sc td.x{width:24px;padding:0}.sc .stt td{background:#92d050;font-weight:700;padding:7px 8px}.sc .stt td:nth-child(2){text-align:right}#fu-n{width:130px}#fu-u{width:150px}.sc .mul{padding:8px 12px;font-size:13px;color:var(--mu);display:flex;justify-content:space-between;gap:8px}.sc .mul b{color:var(--tx)}.sc .ft{padding:0 8px 8px}
 #fu-rec ol{margin:6px 0 0;padding-inline-start:22px}#fu-rec li{margin:7px 0;font-size:14px}#fu-guide ol{margin:6px 0 10px;padding-inline-start:22px}#fu-guide li{margin:6px 0;font-size:14px}#fu-guide{border:2px solid var(--gr);margin-bottom:12px}#fu-chart svg{width:100%;max-width:560px;height:auto;display:block;margin:0 auto}.lg{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--mu)}.lg i{display:inline-block;width:14px;height:0;border-top:3px solid;vertical-align:middle;margin-inline-end:4px}#set-notes{display:none;margin-bottom:6px}
 #wl-hd{display:none;font-size:13px;padding:6px 10px}
 @media(max-width:820px){body[data-tab=future] #bview,body[data-tab=future] #wview{display:none}body[data-tab=future] #fview{display:block}#set-notes{display:inline-flex;gap:6px}body[data-tab=project] #bview,body[data-tab=project] #wview{display:none}body[data-tab=project] #pview{display:block;width:auto;margin-left:0;padding:0}.pcl,.pcr{display:none}.pg{display:block}.pbn{display:block;margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--card);border:2px solid var(--gr);font-weight:800;font-size:16px;text-align:center}.pjm{display:block;margin:8px 0 0;padding:8px 12px;border-radius:12px;border:2px solid var(--gr);font-weight:700;font-size:14px}.pjm:empty{display:none}.pjm.warn{border-color:#f59e0b}.pjm.bad{border-color:var(--rd)}#wl-hd{display:inline-flex}.pg .pcc{margin-top:12px}.ptb td,.ptb th{padding:4px 3px;font-size:13px}#pj-rows input{min-width:0;padding:6px}}
@@ -246,7 +247,7 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
   </div>
 </div>
 
-<div class="card" id="homec"><h2 data-t="homeH">Left to spend</h2><div class="hm"><div class="hms"><div class="mbub ok" id="mbub"></div><div id="mscene"></div></div><div id="hmcats"></div></div></div>
+<div class="card" id="homec"><h2 data-t="homeH">Left to spend</h2><div class="hm"><div class="hms"><div class="mbub ok" id="mbub"></div><div id="mscene"></div><div class="mamt" id="mamt" hidden></div></div><div id="hmcats"></div></div></div>
 <div class="card" id="whyb" hidden><b data-t="whyRemember">Remember your why</b><p class="why" id="whyt" style="margin:6px 0 0"></p></div>
 
 <div class="acc">
@@ -452,6 +453,15 @@ fgGot:["Got it", "Entendido", "Compris", "Entendi", "知道了", "Đã hiểu", 
 hProjB:["Projection shows what you could save if you stick to a budget. Start from your own budget, copy it, and change a number to test a what-if. Costs are negative, income is positive. The tips are ordered from easiest to trim to hardest, and bills come last because they are usually fixed.", "Proyección muestra cuánto podrías ahorrar si cumples un presupuesto. Parte de tu presupuesto, cópialo y cambia un número para probar un “qué pasaría si”. Los costos son negativos y los ingresos positivos. Los consejos van del más fácil de recortar al más difícil, y las cuentas van al final porque suelen ser fijas.", "Projection montre ce que tu pourrais épargner si tu respectes un budget. Pars de ton budget, copie-le et change un chiffre pour tester un scénario. Les coûts sont négatifs, les revenus positifs. Les conseils vont du plus facile au plus difficile à réduire, et les factures viennent en dernier car elles sont souvent fixes.", "Projeção mostra quanto você poderia economizar se cumprir um orçamento. Parta do seu orçamento, copie e mude um número para testar um “e se”. Custos são negativos e renda é positiva. As dicas vão do mais fácil de cortar ao mais difícil, e as contas ficam por último porque costumam ser fixas.", "“预测”显示如果你坚持预算能存下多少。从你自己的预算开始，复制它，改一个数字来测试各种假设。成本为负数，收入为正数。建议按从最容易削减到最难削减排序，账单排在最后，因为它们通常是固定的。", "Dự báo cho thấy bạn có thể tiết kiệm bao nhiêu nếu giữ đúng ngân sách. Hãy bắt đầu từ ngân sách của bạn, sao chép rồi đổi một con số để thử các giả định. Chi phí là số âm, thu nhập là số dương. Các gợi ý xếp từ dễ cắt giảm nhất đến khó nhất, hóa đơn đứng cuối vì thường cố định.", "تعرض التوقعات ما يمكنك ادخاره إذا التزمت بميزانية. ابدأ من ميزانيتك، وانسخها، وغيّر رقمًا لتجربة احتمال ما. التكاليف بالسالب والدخل بالموجب. النصائح مرتبة من الأسهل تقليلًا إلى الأصعب، وتأتي الفواتير أخيرًا لأنها عادةً ثابتة."],
 recTrim:["Trim {c} by 10%: that adds {x} a month ({y} over {n} {u}).", "Recorta {c} un 10%: suma {x} al mes ({y} en {n} {u}).", "Réduis {c} de 10 % : cela ajoute {x} par mois ({y} sur {n} {u}).", "Corte {c} em 10%: isso adiciona {x} por mês ({y} em {n} {u}).", "将 {c} 削减 10%：每月多存 {x}（{n} {u}共 {y}）。", "Cắt giảm {c} 10%: thêm {x} mỗi tháng ({y} trong {n} {u}).", "خفّض {c} بنسبة 10٪: يضيف {x} شهريًا ({y} خلال {n} {u})."],
 recBill:["Bills are usually fixed, so look at {c} last. Trimming it by 10% would add {x} a month.", "Las cuentas suelen ser fijas, así que deja {c} para el final. Recortarlo un 10% sumaría {x} al mes.", "Les factures sont souvent fixes, donc regarde {c} en dernier. Le réduire de 10 % ajouterait {x} par mois.", "Contas costumam ser fixas, então deixe {c} por último. Cortar 10% adicionaria {x} por mês.", "账单通常是固定的，所以最后再考虑 {c}。削减 10% 每月可多存 {x}。", "Hóa đơn thường cố định, nên hãy xem {c} sau cùng. Cắt giảm 10% sẽ thêm {x} mỗi tháng.", "الفواتير عادة ثابتة، لذا انظر إلى {c} أخيرًا. خفضها بنسبة 10٪ سيضيف {x} شهريًا."],
+mAmtLeft:["left to spend", "por gastar", "restant à dépenser", "restante para gastar", "可花费", "còn có thể chi", "المتبقي للإنفاق"],
+mAmtOver:["over your budget", "sobre tu presupuesto", "au-dessus de ton budget", "acima do seu orçamento", "超出预算", "vượt ngân sách", "فوق ميزانيتك"],
+mChill:["You chillin fr", "Vas relajado, de verdad", "T'es tranquille, sérieux", "Você tá de boa, sério", "你真的很从容", "Bạn thoải mái thật đấy", "أنت مرتاح فعلًا"],
+mGood:["Doing good", "Vas bien", "Ça va bien", "Indo bem", "做得不错", "Đang tốt lắm", "أداؤك جيد"],
+mOh:["Oh no, {x} left to spend", "Ay no, quedan {x} por gastar", "Oh non, il reste {x} à dépenser", "Ai não, restam {x} para gastar", "糟了，只剩 {x} 可花", "Ôi không, chỉ còn {x} để chi", "يا للهول، تبقى {x} فقط للإنفاق"],
+mOhOver:["Oh no, you're {x} over budget", "Ay no, te pasaste {x} del presupuesto", "Oh non, tu dépasses le budget de {x}", "Ai não, você passou {x} do orçamento", "糟了，你超出预算 {x}", "Ôi không, bạn vượt ngân sách {x}", "يا للهول، تجاوزت ميزانيتك بمقدار {x}"],
+mTotal:["All budgets", "Todos los presupuestos", "Tous les budgets", "Todos os orçamentos", "全部预算", "Tất cả ngân sách", "كل الميزانيات"],
+mNoInc:["Log your income for this month and I'll show what's left to spend.", "Registra tus ingresos de este mes y te mostraré lo que queda por gastar.", "Note tes revenus de ce mois et je te montrerai ce qu'il reste à dépenser.", "Registre sua renda deste mês e eu mostro o que resta para gastar.", "记录本月收入，我会显示还剩多少可花。", "Hãy ghi thu nhập tháng này và tôi sẽ cho bạn thấy còn bao nhiêu để chi.", "سجّل دخل هذا الشهر وسأعرض لك ما تبقى للإنفاق."],
+mIncSp:["income minus spending", "ingresos menos gastos", "revenus moins dépenses", "renda menos gastos", "收入减支出", "thu nhập trừ chi tiêu", "الدخل ناقص الإنفاق"],
 setAria:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 setH:["Settings","Ajustes","Paramètres","Configurações","设置","Cài đặt","الإعدادات"],
 picH:["Your picture","Tu imagen","Ton image","Sua imagem","你的图片","Hình ảnh của bạn","صورتك"],
@@ -1047,12 +1057,15 @@ function renderHome(){
   document.querySelectorAll("[data-spent]").forEach(el=>{el.textContent=tr("capSpent",{x:fmt(by[el.dataset.spent]||0)})});
   const rows=Object.entries(S.caps).filter(([c,v])=>+v>0&&S.cats.includes(c)).map(([c,v])=>{const sp=by[c]||0,u=sp/v;return {c,cap:+v,sp,left:v-sp,u,st:capState(u),ft:tier(u)}}).sort((a,b)=>b.u-a.u);
   $("hmcats").innerHTML=rows.length?rows.map(r=>`<div class="hc ${r.st}"><div class="hf">${mFace(r.ft)}</div><div class="hi"><div class="hn">${esc(cn(r.c))}</div><div class="hl ${r.st}">${r.st=="over"?tr("capOver",{x:fmt(-r.left)}):tr("capLeft",{x:fmt(r.left)})}</div><div class="hb"><i style="width:${Math.min(100,r.u*100)}%"></i></div><div class="muted">${tr("of",{a:fmt(r.sp),b:fmt(r.cap)})}</div></div></div>`).join(""):`<p class="muted">${tr("homeEmpty")}</p><button id="home-set">${tr("homeSet")}</button>`;
-  const w=rows[0],ft=w?w.ft:"good",bub=$("mbub");
-  bub.textContent=!w?tr("mNone"):ft=="over"?tr("mOver",{c:cn(w.c),x:fmt(-w.left)}):w.st=="near"?tr("mNear",{c:cn(w.c),x:fmt(w.left)}):tr("mOk");
-  bub.className="mbub "+(w?w.st:"ok");
+  /* the big animation reacts only to income minus spending this month */
+  const incT=(S.tx[S.month]||[]).filter(t=>t.cat==="Income").reduce((n,t)=>n+(+t.a||0),0),spT=Object.values(by).reduce((n,v)=>n+v,0),left=Math.round((incT-spT)*100)/100,w=incT>0?{left}:null;
+  const ft=!w?"good":left<0?"over":left<150?"tight":left<300?"near":left<=500?"ok":"good",bub=$("mbub"),st=ft=="over"?"over":ft=="tight"||ft=="near"?"near":"ok";
+  bub.textContent=!w?tr("mNoInc"):ft=="over"?tr("mOhOver",{x:fmt(-left)}):st=="near"?tr("mOh",{x:fmt(left)}):ft=="ok"?tr("mGood"):tr("mChill");
+  bub.className="mbub "+st;
+  const am=$("mamt");am.hidden=!w;if(w){am.className="mamt "+st;am.innerHTML=`<small>${esc(tr("mIncSp"))}</small><b>${esc(left<0?"−"+fmt(-left):fmt(left))}</b><small>${esc(tr(left<0?"mAmtOver":"mAmtLeft"))}</small>`}
   if(RXH.s!==ft){RXH.s=ft;$("mscene").innerHTML=mascot(ft);still($("mscene"))}
   still($("hmcats"));
-  const why=(S.ui.why||"").trim();$("whyb").hidden=!(why&&w&&w.st!="ok");$("whyt").textContent=why;
+  const why=(S.ui.why||"").trim();$("whyb").hidden=!(why&&w&&st!="ok");$("whyt").textContent=why;
 }
 /* ---------- future scenarios ---------- */
 const fm0=n=>n<0?"−"+fmt0(-n):fmt0(n);
@@ -1068,18 +1081,20 @@ const fTier=r=>{const t=((r.k||"")+" "+(r.n||"")).toLowerCase();
   if(/\bgas\b|fuel|grocer|food/.test(t))return 1;
   if(/bill|rent|mortgage|util|insur|loan|debt|credit card|tax|phone|internet|electric|water|payment/.test(t))return 3;
   return 2};
+const fN=v=>"\u0003"+v+"\u0004",fR=v=>"\u0005"+v+"\u0006";   /* markers: orange count, forced red */
+function fHtml(t){return esc(t.replace(/\u0004 (?=[)\.,;:。，）]|[\u4e00-\u9fff])/g,"\u0004")).replace(/\u0003/g,'<span class="co">').replace(/\u0004|\u0006/g,"</span>").replace(/\u0005/g,'<span class="ng">').replace(/(−|-)?\$[\d,]+(\.\d+)?/g,(m,sg,_,off,str)=>{const open=str.lastIndexOf('<span class="ng">',off)>str.lastIndexOf("</span>",off);return open?m:`<span class="${sg?"ng":"ps"}">${m}</span>`})}
 function fRecs(){
-  const sc=S.fut.sc,T=sc.map(fTot),M=fMon(),n=+S.fut.n||1,u=fUnit(),out=[];
+  const sc=S.fut.sc,T=sc.map(fTot),M=fMon(),n=fN((+S.fut.n||1)+" "+fUnit()),u="",out=[];
   if(!sc.some(s=>s.rows.some(r=>+r.a))){return [tr("recNone")]}
   const bi=T.indexOf(Math.max(...T)),best=sc[bi],ref=bi!==0?0:T.indexOf(Math.min(...T));
+  sc.forEach((s,i)=>{if(T[i]<0)out.push(tr("recNeg",{a:s.t,x:fR(fmt(-T[i]))}))});
   if(sc.length>1&&T[bi]>T[ref])out.push(tr("recBest",{a:best.t,b:sc[ref].t,d:fmt(T[bi]-T[ref]),n,u,y:fmt((T[bi]-T[ref])*M)}));
-  sc.forEach((s,i)=>{if(T[i]<0)out.push(tr("recNeg",{a:s.t,x:fmt(-T[i])}))});
   const costs=best.rows.filter(r=>+r.a<0).map(r=>({r,t:fTier(r)})).sort((x,y)=>x.t-y.t||x.r.a-y.r.a);
   const nm=r=>r.n||tr("scCostDef"),trim=r=>({c:nm(r),x:fmt(-r.a*.1),y:fmt(-r.a*.1*M),n,u});
   costs.filter(x=>x.t<3).slice(0,3).forEach(x=>out.push(tr("recTrim",trim(x.r))));
-  const g=+S.goal.g||0,b=+S.goal.b||0;if(g>b&&T[bi]>0)out.push(tr("recGoal",{a:best.t,g:(S.goal.t||"").trim()||tr("goalDef"),m:Math.ceil((g-b)/T[bi])}));
+  const g=+S.goal.g||0,b=+S.goal.b||0;if(g>b&&T[bi]>0)out.push(tr("recGoal",{a:best.t,g:(S.goal.t||"").trim()||tr("goalDef"),m:fN(Math.ceil((g-b)/T[bi]))}));
   const bill=costs.filter(x=>x.t==3)[0];if(bill)out.push(tr("recBill",{c:nm(bill.r),x:fmt(-bill.r.a*.1)}));
-  return out}
+  return out.slice(0,3)}
 function fChart(){
   const sc=S.fut.sc,T=sc.map(fTot),M=fMon(),n=+S.fut.n||1,u=fUnit(),ys=[0,...T.map(t=>t*M)],lo=Math.min(...ys),hi=Math.max(...ys),pad=(hi-lo)*.14||1,y0=lo-pad,y1=hi+pad,X=k=>12+k/M*296,Y=v=>150-(v-y0)/(y1-y0)*132;
   let g=`<svg viewBox="0 0 320 170" role="img" aria-label="${esc(tr("chartH"))}"><path d="M${X(0)},${Y(0)} H${X(M)}" stroke="var(--bd)" stroke-width="1.5" stroke-dasharray="3 3"/>`;
@@ -1087,10 +1102,10 @@ function fChart(){
   const ord=ly.map((y,i)=>i).sort((a,b)=>ly[a]-ly[b]);for(let k=1;k<ord.length;k++){if(ly[ord[k]]-ly[ord[k-1]]<14)ly[ord[k]]=ly[ord[k-1]]+14}
   sc.forEach((s,i)=>{const c=SCC[i%6],e=T[i]*M;g+=`<path d="M${X(0)},${Y(0)} L${X(M)},${Y(e)}" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round"/><circle cx="${X(M)}" cy="${Y(e)}" r="4" fill="${c}"/><text x="${X(M)-6}" y="${ly[i]}" text-anchor="end" font-size="11" font-weight="700" fill="${c}">${esc(fm0(e))}</text>`});
   g+="</svg>";
-  return `<h2>${esc(tr("chartH"))} · ${n} ${esc(u)}</h2>${g}<div class="lg">${sc.map((s,i)=>`<span><i style="border-color:${SCC[i%6]}"></i>${esc(s.t)}</span>`).join("")}</div>`}
+  return `<h2>${esc(tr("chartH"))} · <span class="co">${n} ${esc(u)}</span></h2>${g}<div class="lg">${sc.map((s,i)=>`<span><i style="border-color:${SCC[i%6]}"></i>${esc(s.t)}</span>`).join("")}</div>`}
 function fUpdate(){
-  S.fut.sc.forEach(sc=>{const t=fTot(sc),c=document.querySelector(`[data-tot="${sc.id}"]`),m=document.querySelector(`[data-mul="${sc.id}"]`);if(c)c.textContent=fmt(t);if(m)m.innerHTML=`<span>×${+S.fut.n||1} ${esc(fUnit())}</span><b>${fmt(t*fMon())}</b>`});
-  $("fu-rec").innerHTML=`<h2>${esc(tr("recH"))}</h2><ol>`+fRecs().map(x=>`<li>${esc(x)}</li>`).join("")+"</ol>";
+  S.fut.sc.forEach(sc=>{const t=fTot(sc),c=document.querySelector(`[data-tot="${sc.id}"]`),m=document.querySelector(`[data-mul="${sc.id}"]`);if(c){c.textContent=fmt(t);c.closest("tr").classList.toggle("neg",t<0)}if(m)m.innerHTML=`<span class="co">×${+S.fut.n||1} ${esc(fUnit())}</span><b class="${t<0?"ng":"ps"}">${fmt(t*fMon())}</b>`});
+  $("fu-rec").innerHTML=`<h2>${esc(tr("recH"))}</h2><ol>`+fRecs().map(x=>`<li>${fHtml(x)}</li>`).join("")+"</ol>";
   $("fu-chart").innerHTML=fChart()}
 function renderFut(force){
   $("fu-guide").hidden=!!S.ui.hideFut;
@@ -1098,7 +1113,7 @@ function renderFut(force){
   if(!force&&$("fview").contains(document.activeElement))return;
   const nI=$("fu-n");if(document.activeElement!==nI)nI.value=F2.n;$("fu-u").value=F2.u;
   $("scg").innerHTML=F2.sc.map(sc=>`<div class="card sc" data-sc="${sc.id}"><div class="sch"><input data-f="t" value="${esc(sc.t)}" aria-label="${esc(tr("scName",{n:""}))}">${F2.sc.length>1?`<button class="x" data-scdel="${sc.id}" aria-label="${esc(tr("scDelSc"))}">✕</button>`:""}</div>
-<table><thead><tr><th>${esc(tr("scCosts"))}</th><th style="text-align:right">${esc(tr("scAmts"))}</th><th></th></tr></thead><tbody>${sc.rows.map(r=>`<tr data-r="${r.id}"><td><input data-f="n" value="${esc(r.n)}" placeholder="${esc(tr("scCostDef"))}"></td><td class="am ${+r.a<0?"ng":""}"><input class="money" data-f="a" type="text" inputmode="decimal" autocomplete="off" value="${esc(fmtIn(+r.a||0))}" placeholder="$0.00"></td><td class="x"><button class="x" data-rdel="${r.id}" aria-label="✕">✕</button></td></tr>`).join("")}</tbody><tfoot><tr class="stt"><td>${esc(tr("scTotal"))}</td><td data-tot="${sc.id}"></td><td></td></tr></tfoot></table>
+<table><thead><tr><th>${esc(tr("scCosts"))}</th><th style="text-align:right">${esc(tr("scAmts"))}</th><th></th></tr></thead><tbody>${sc.rows.map(r=>`<tr data-r="${r.id}"><td><input data-f="n" value="${esc(r.n)}" placeholder="${esc(tr("scCostDef"))}"></td><td class="am ${+r.a<0?"ng":+r.a>0?"ps":""}"><input class="money" data-f="a" type="text" inputmode="decimal" autocomplete="off" value="${esc(fmtIn(+r.a||0))}" placeholder="$0.00"></td><td class="x"><button class="x" data-rdel="${r.id}" aria-label="✕">✕</button></td></tr>`).join("")}</tbody><tfoot><tr class="stt"><td>${esc(tr("scTotal"))}</td><td data-tot="${sc.id}"></td><td></td></tr></tfoot></table>
 <div class="mul" data-mul="${sc.id}"></div><div class="ft"><button class="ghost" data-radd="${sc.id}">${esc(tr("scAddRow"))}</button></div></div>`).join("");
   fUpdate()}
 $("fview").addEventListener("input",e=>{
@@ -1107,7 +1122,7 @@ $("fview").addEventListener("input",e=>{
   const card=t.closest("[data-sc]");if(!card)return;const sc=F2.sc.find(x=>x.id==card.dataset.sc);if(!sc)return;
   if(t.dataset.f=="t"){sc.t=t.value;save();$("fu-rec").innerHTML;fUpdate();return}
   const row=sc.rows.find(r=>r.id==t.closest("[data-r]").dataset.r);
-  if(t.dataset.f=="n")row.n=t.value;else{row.a=parseMoney(t.value);t.closest("td").classList.toggle("ng",row.a<0)}
+  if(t.dataset.f=="n")row.n=t.value;else{row.a=parseMoney(t.value);{const td=t.closest("td");td.classList.toggle("ng",row.a<0);td.classList.toggle("ps",row.a>0)}}
   save();fUpdate()});
 $("fview").addEventListener("change",e=>{if(e.target.id=="fu-u"){S.fut.u=e.target.value;save();renderFut(true)}});
 $("fview").addEventListener("click",e=>{
