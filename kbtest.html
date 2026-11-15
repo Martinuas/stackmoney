@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KB Test">
+<link rel="manifest" href="kbtest.webmanifest">
+<title>KB Test</title>
+<style>body{font:17px system-ui;margin:0;padding:calc(env(safe-area-inset-top) + 16px) 16px 16px}input,textarea,div[contenteditable]{display:block;width:100%;box-sizing:border-box;font-size:16px;padding:12px;margin:10px 0;border:1px solid #888;border-radius:8px;min-height:44px}pre{background:#eee;padding:8px;font-size:12px;white-space:pre-wrap}</style></head>
+<body><h2>Keyboard test</h2><p>Tap each box and try to type. Nothing else is on this page.</p>
+<input id="plain" placeholder="1. plain input">
+<textarea id="ta" placeholder="2. textarea"></textarea>
+<div id="ce" contenteditable="true">3. editable div (tap here)</div>
+<button id="fb" style="font-size:16px;padding:10px 14px">Focus box 1 by code</button>
+<pre id="log">mode: <span id="m"></span>
+</pre>
+<script>
+document.getElementById("m").textContent=(navigator.standalone===true||matchMedia("(display-mode: standalone)").matches)?"HOME SCREEN APP":"browser tab";
+var L=document.getElementById("log"),n=0;
+["touchstart","click","focusin","focusout","keydown","input"].forEach(function(e){document.addEventListener(e,function(ev){var t=ev.target;if(!t||!t.id||t.id=="log")return;if(++n>30){L.textContent="";n=0}L.textContent+=e+" "+t.id+(document.hasFocus()?"":" [page not focused]")+"\n"},true)});
+document.getElementById("fb").addEventListener("click",function(){document.getElementById("plain").focus();L.textContent+="focus() called, active="+(document.activeElement&&document.activeElement.id)+"\n"});
+var ios=(navigator.userAgent.match(/OS (\d+[_\d]*)/)||[])[1];L.textContent+="iOS "+(ios?ios.replace(/_/g,"."):"?")+" hasFocus="+document.hasFocus()+"\n";
+</script></body></html>
