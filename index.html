@@ -63,7 +63,7 @@ button.x{background:transparent;color:var(--mu);border:0;padding:2px 6px}
 .two{grid-template-columns:1fr;margin-top:8px}.two .card{margin-top:0}
 .arrows svg{width:120px;height:40px}
 body{padding-bottom:76px}
-#tabs{touch-action:none}#tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+input,textarea,select{-webkit-user-select:text;user-select:text;touch-action:manipulation}#tabs{touch-action:none}#tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:35;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
 #tabs button{flex:1;background:transparent;color:var(--mu);border:0;border-radius:0;padding:8px 0 6px;display:flex;flex-direction:column;align-items:center;font-size:18px;line-height:1.1}
 #tabs button span{font-size:10px;line-height:1.1;text-align:center;padding:0 2px}
 body[data-tab=welcome] #tabs [data-tab=welcome],body[data-tab=home] #tabs [data-tab=home],body[data-tab=budget] #tabs [data-tab=budget],body[data-tab=add] #tabs [data-tab=add],body[data-tab=acc] #tabs [data-tab=acc],body[data-tab=project] #tabs [data-tab=project],body[data-tab=future] #tabs [data-tab=future],body[data-tab=notes] #tabs [data-tab=notes]{color:var(--ac);font-weight:600}
@@ -349,6 +349,12 @@ body[data-tab=add] #tabs [data-tab=add]{color:#00c853}
 <dialog id="helpd"><div class="hin"><div class="hh"><h2 data-t="helpH">How to use Stack Money</h2><button class="ghost" id="help-x" data-t="closeB">Close</button></div><div id="helpbody"></div></div></dialog>
 
 <script>
+/* iPhone home-screen mode: make sure a tap on a text box always focuses it and opens the keyboard */
+(()=>{const ok=e=>e&&e.matches&&e.matches('input:not([type=checkbox]):not([type=radio]):not([type=file]):not([type=button]),textarea');
+  document.addEventListener("pointerup",e=>{const t=e.target&&e.target.closest?e.target.closest("input,textarea"):null;
+    if(!ok(t)||t.disabled||t.readOnly)return;setTimeout(()=>{if(document.activeElement!==t){try{t.focus({preventScroll:false})}catch(x){}}},40)},true);
+  document.addEventListener("click",e=>{const l=e.target&&e.target.closest?e.target.closest("label"):null;if(l){const t=l.querySelector("input:not([type=checkbox]):not([type=radio]),textarea,select");if(t&&document.activeElement!==t&&t.tagName!="SELECT")try{t.focus()}catch(x){}}},true);
+})();
 /* ---------- languages ---------- */
 const LANGS={en:{n:"English",h:"en",d:"ltr"},es:{n:"Español",h:"es",d:"ltr"},fr:{n:"Français",h:"fr",d:"ltr"},pt:{n:"Português",h:"pt",d:"ltr"},zh:{n:"中文(简体)",h:"zh-CN",d:"ltr"},vi:{n:"Tiếng Việt",h:"vi",d:"ltr"},ar:{n:"العربية",h:"ar",d:"rtl"}};
 const LC=Object.keys(LANGS);
